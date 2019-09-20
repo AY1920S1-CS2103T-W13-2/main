@@ -1,15 +1,11 @@
 package seedu.address.testutil;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import seedu.address.model.person.Address;
-import seedu.address.model.person.Email;
-import seedu.address.model.person.Name;
-import seedu.address.model.person.Person;
-import seedu.address.model.person.Phone;
+import seedu.address.model.person.*;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.util.SampleDataUtil;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A utility class to help with building Person objects.
@@ -26,6 +22,7 @@ public class PersonBuilder {
     private Email email;
     private Address address;
     private Set<Tag> tags;
+    private Remark remark;
 
     public PersonBuilder() {
         name = new Name(DEFAULT_NAME);
@@ -87,7 +84,11 @@ public class PersonBuilder {
     }
 
     public Person build() {
-        return new Person(name, phone, email, address, tags);
+        return new Person(name, phone, email, address, new Remark(""), tags);
     }
 
+    public PersonBuilder withRemark(String remarkStub) {
+        this.remark = new Remark(remarkStub);
+        return this;
+    }
 }
