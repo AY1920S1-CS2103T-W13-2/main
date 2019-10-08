@@ -2,17 +2,19 @@ package seedu.address.logic.commands.question;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.CommandResult;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
-import seedu.address.model.question.McqQuestion;
-import seedu.address.model.question.OpenEndedQuestion;
 import seedu.address.model.question.Question;
+import seedu.address.model.question.QuestionType;
 
 /**
  * Creates a new question to be added to the question list.
  */
-public class QuestionAddCommand extends QuestionCommand {
+public class CreateQuestionCommand extends Command {
+
+    public static final String COMMAND_WORD = "question";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Creates a new question\n"
         + "Parameters:\n"
@@ -25,16 +27,16 @@ public class QuestionAddCommand extends QuestionCommand {
 
     private final String question;
     private final String answer;
-    private final String type;
+    private final QuestionType type;
 
     /**
-     * Creates a QuestionAddCommand object.
+     * Creates a CreateQuestionCommand object.
      *
      * @param question to set.
      * @param answer   to the question.
      * @param type     of question e.g open or mcq.
      */
-    public QuestionAddCommand(String question, String answer, String type) {
+    public CreateQuestionCommand(String question, String answer, QuestionType type) {
         requireAllNonNull(question);
         this.question = question;
         this.answer = answer;
@@ -43,19 +45,7 @@ public class QuestionAddCommand extends QuestionCommand {
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
-        Question question;
-        switch (type) {
-        case "open":
-            question = new OpenEndedQuestion(this.question, this.answer);
-            break;
-        case "mcq":
-            question = new McqQuestion(this.question, this.answer);
-            break;
-        default:
-            question = new OpenEndedQuestion(this.question, this.answer);
-            break;
-        }
-
+        Question question = new Question(this.question, this.answer, this.type);
         model.addQuestion(question);
         return new CommandResult(generateSuccessMessage(question));
     }
@@ -77,12 +67,12 @@ public class QuestionAddCommand extends QuestionCommand {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof QuestionAddCommand)) {
+        if (!(other instanceof CreateQuestionCommand)) {
             return false;
         }
 
         // state check
-        QuestionAddCommand e = (QuestionAddCommand) other;
+        CreateQuestionCommand e = (CreateQuestionCommand) other;
         return question.equals(e.question);
     }
 }
