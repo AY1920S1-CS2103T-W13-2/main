@@ -22,8 +22,8 @@
 </li>
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></li>
+<li><a href="#question-feature">3.1. Question feature</a></li>
+<li><a href="#Feature-Slideshow">3.2. Slideshow feature</a></li>
 <li><a href="#logging">3.3. Logging</a></li>
 <li><a href="#Implementation-Configuration">3.4. Configuration</a></li>
 </ul>
@@ -330,177 +330,144 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></h3>
-<div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.1.1. Proposed Implementation</a></h4>
+<h3 id="question-feature"><a class="link" href="#question-feature">3.1. Question feature</a></h3>
 <div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
-It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
-Additionally, it implements the following operations:</p>
+<p>The question feature utilises the <code>QuestionCommandParser</code> class to parse the user command input into the different
+command types and validates the input. There are two types of questions <code>OpenEndedQuestion</code> and <code>McqQuestion</code> which
+extends the <code>Question</code> class. Questions are then added into the <code>QuestionBank#questions</code> observable list.<br></p>
+</div>
+<div class="paragraph">
+<p>The feature comprises of five commands namely,</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>VersionedAddressBook#commit()</code>&#8201;&#8212;&#8201;Saves the current address book state in its history.</p>
+<p><a href="#Feature-Question-Add"><code>QuestionAddCommand</code></a> - Adding questions</p>
 </li>
 <li>
-<p><code>VersionedAddressBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous address book state from its history.</p>
+<p><a href="#Feature-Question-Edit"><code>QuestionEditCommand</code></a> - Editing questions</p>
 </li>
 <li>
-<p><code>VersionedAddressBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone address book state from its history.</p>
+<p><a href="#Feature-Question-Delete"><code>QuestionDeleteCommand</code></a> - Deleting questions</p>
+</li>
+<li>
+<p><a href="#Feature-Question-List"><code>QuestionListCommand</code></a> - Listing questions</p>
+</li>
+<li>
+<p><code>QuestionSlideshowCommand</code> - Starting a slideshow (See <a href="#Feature-Slideshow">slideshow feature</a>)</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> and <code>Model#redoAddressBook()</code> respectively.</p>
+<p>The commands when executed, will interface with the methods exposed by the <code>Model</code> interface to perform the related operations
+(See <a href="#Design-Logic">logic component</a> for the general overview).</p>
 </div>
 <div class="paragraph">
-<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
+<p><em>To Add: Class diagram of the interaction between the question parser and commands</em></p>
+</div>
+<div class="sect3">
+<h4 id="Feature-Question-Add"><a class="link" href="#Feature-Question-Add">3.1.1. Add command</a></h4>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>QuestionAddCommand</code> performs.<br></p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedAddressBook</code> will be initialized with the initial address book state, and the <code>currentStatePointer</code> pointing to that single address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState0.png" alt="UndoRedoState0">
-</div>
+<p><strong>Step 1</strong>. The <code>QuestionAddCommand#execute(Model model)</code> method is executed and it validates type of question defined.
+The type defined will dictate if the resulting question will be a <code>OpenEndedQuestion</code> or <code>McqQuestion</code> question type.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th person in the address book. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState1.png" alt="UndoRedoState1">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new person. The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified address book state to be saved into the <code>addressBookStateList</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState2.png" alt="UndoRedoState2">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the address book state will not be saved into the <code>addressBookStateList</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState3.png" alt="UndoRedoState3">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial address book state, then there are no previous address book states to restore. The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the undo operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoSequenceDiagram.png" alt="UndoSequenceDiagram">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoAddressBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the address book to that state.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index <code>addressBookStateList.size() - 1</code>, pointing to the latest address book state, then there are no undone address book states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the address book, such as <code>list</code>, will usually not call <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> or <code>Model#redoAddressBook()</code>. Thus, the <code>addressBookStateList</code> remains unchanged.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState4.png" alt="UndoRedoState4">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState5.png" alt="UndoRedoState5">
-</div>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/CommitActivityDiagram.png" alt="CommitActivityDiagram">
-</div>
+<p><strong>Step 2</strong>. The method <code>Model#addQuestion(Question question)</code> will then be called to add the question and a success message will
+be generated by the <code>QuestionAddCommand#generateSuccessMessage(Question question)</code> method and a new <code>CommandResult</code> will be
+returned with the generated success message.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
+<h4 id="Feature-Question-Edit"><a class="link" href="#Feature-Question-Edit">3.1.2. Edit command</a></h4>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>QuestionEditCommand</code> performs.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>QuestionEditCommand#execute(Model model)</code> method is executed and it checks if the <code>Index</code> defined when
+instantiating <code>QuestionEditCommand(Index index, HashMap&lt;String, String&gt; fields)</code> is valid.
+Since it is optional for the users to input fields, the fields not entered will reuse the existing value currently defined in
+the <code>Question</code> object.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the question type is changed from open ended to mcq, it is necessary for the user to defined all four options i.e a/ b/ c/ d/.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. A new <code>Question</code> with the updated values will be created and replace the existing question object
+through the <code>Model#setQuestion(Index index, Question question)</code> method at the specified <code>Index</code> defined by the user.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. A success message will be generated by the <code>QuestionAddCommand#generateSuccessMessage(Question question)</code> method
+and a new <code>CommandResult</code> will be returned with the generated success message.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Feature-Question-Delete"><a class="link" href="#Feature-Question-Delete">3.1.3. Delete command</a></h4>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>QuestionDeleteCommand</code> performs.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>QuestionDeleteCommand#execute(Model model)</code> method is executed and it checks if the <code>Index</code> defined when
+instantiating <code>QuestionDeleteCommand(Index index, HashMap&lt;String, String&gt; fields)</code> is valid.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. The <code>Question</code> at the specified <code>Index</code> is then removed from the <code>QuestionBank#questions</code> observable list through
+the <code>Model#deleteQuestion(Index index)</code> method.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 3</strong>. A success message will be generated by the <code>QuestionAddCommand#generateSuccessMessage(Question question)</code> method
+and a new <code>CommandResult</code> will be returned with the generated success message.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Feature-Question-List"><a class="link" href="#Feature-Question-List">3.1.4. List command</a></h4>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>QuestionListCommand</code> performs.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1</strong>. The <code>QuestionListCommand#execute(Model model)</code> method is executed. No validation is necessary here since it
+does not write to the question list.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 2</strong>. The <code>Model#getQuestionsSummary()</code> method is then called and the questions are returned as a <code>String</code> to the new <code>CommandResult</code>
+object.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.5. Design Considerations</a></h4>
 <div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
+<h5 id="command-syntax"><a class="link" href="#command-syntax">Command Syntax</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire address book.</p>
+<p><strong> Current Implementation: </strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to implement.</p>
-</li>
-<li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
+<p>Current implementation of the commands follows the command word syntax e.g question followed by the arguments necessary
+to execute the add, edit, delete, list and slideshow command.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
+<p><strong> Alternatives Considered: </strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the person being deleted).</p>
-</li>
-<li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
+<p>Usage of a forward slash <code>/</code> and then the command word. Although it makes it clearer that the input is a command, we
+realised it is redundant as the only input will be commands and will make it more tedious for the user.</p>
 </li>
 </ul>
 </div>
@@ -509,31 +476,28 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
+<h5 id="command-length"><a class="link" href="#command-length">Command Length</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of address book states.</p>
+<p><strong> Current Implementation: </strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
-</li>
-<li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedAddressBook</code>.</p>
+<p>Commands are currently shortened as much as possible through the use of initials without much loss in clarity.
+For example, instead of using optionA/ to denote the first option, we use a/ instead. Although this may be unfamiliar
+to the user initially, it should be easy to pick up and will make it less tedious during input.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
+<p><strong> Alternatives Considered: </strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
-</li>
-<li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
+<p>Using more descriptive terms as arguments such that each argument will be specified clearly. However, this decreases
+the user experience as the command will be too long.</p>
 </li>
 </ul>
 </div>
@@ -544,9 +508,163 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></h3>
+<h3 id="Feature-Slideshow"><a class="link" href="#Feature-Slideshow">3.2. Slideshow feature</a></h3>
 <div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
+<p>The slideshow feature is dependent on the questions added by the <code>question slideshow [question no(s).]</code> command and
+interacts with the <code>ModelManager</code> to retrieve the list of questions to be displayed in the slideshow.
+The logic control for displaying the ui resides in the <code>SlideshowWindow</code> class and handles the controls and instantiation
+of the various <code>QuestionPanel</code> that contains each question.<br></p>
+</div>
+<div class="paragraph">
+<p>Below is the sequence diagram of the interactions that happen from when the slideshow command is entered, to the corresponding
+questions displayed in the slideshow.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SlideshowFeatureSequenceDiagram.png" alt="SlideshowFeatureSequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>The following is an example and detailed explanation as to how the questions are fetched and displayed on the slideshow.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1.</strong> The user requests to start a slideshow with a selection of questions using the <code>question slideshow [question no(s).]</code> command.
+This will add questions based on the <code>Index</code> specified and will be added to the <code>slideshowQuestions</code> list under the <code>SavedQuestions</code> class.
+The usage of <code>Index</code> here is such that it follows the same convention of when the user edits or deletes a question.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The order of the questions displayed on the slideshow will be <strong>based on the input order</strong>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 2.</strong> The command is executed and the <code>MainWindow</code> calls <code>CommandResult#isShowSlideshow()</code> to verify if the command specified
+is to start a slideshow. The <code>SlideshowWindow</code> is then displayed through the <code>SlideshowWindow#slideShowWindow.show()</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The slideshow window has already been instantiated on application launch and the window is merely being hidden or shown.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Step 3.</strong> The window is now visible and existing questions are cleared. The list of slideshow questions is then fetched through
+<code>Logic#getSlideshowQuestions()</code> which in turn calls the <code>ModelManager#getSlideshowQuestions()</code> that fetches
+the <code>slideshowQuestions</code> list in <code>SavedQuestions</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 4.</strong> The user will then navigate and control the slideshow using the <code>Left/Right</code>, <code>Space</code> and <code>Esc</code> key as defined by the key
+listeners in <code>SlideshowWindow#initialiseKeyboardControls(Stage root)</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 5.</strong> The user exits the slideshow when the <code>Esc</code> key event is triggered or when the <code>currQuestionIndex</code> exceeds the <code>questionPanels.size()</code> or
+it falls below <code>0</code>. The behaviour of this follows the common procedure that most presentation programs adopt thus, it will not
+feel foreign to users.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SlideshowFeatureActivityDiagram.png" alt="SlideshowFeatureActivityDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Activity diagram of the actions performed</em></p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.1. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="controls"><a class="link" href="#controls">Controls</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong> Current Implementation: </strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>The choice of using the arrow keys for navigation and the <code>Escape</code> key to quit the slideshow is such that it will feel
+familiar to users who uses presentation programs often as they have similar controls. The only difference will be the usage
+of the <code>Space</code> key to show answers as it will be something new to the users and is unique to Njoy.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong> Alternatives Considered: </strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Usage of the <code>A</code> key to show answers. However, this is not very feasible as it is easily forgotten and not as user-friendly
+due to the smaller surface of the key as compared to the <code>Space</code> key.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="display"><a class="link" href="#display">Display</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong> Current Implementation: </strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>The ordering of the questions is defined based on the user input so it gives flexibility to the user to choose the ordering
+that they want the questions to be displayed.</p>
+</li>
+<li>
+<p>Placement of the question numbering, topic, options and answer follows the common convention where
+the question numbering will be at the top followed by the topic, options and then the answer. This is such that viewers
+will not be confused by the layout.</p>
+</li>
+<li>
+<p><strong>Font sizes</strong> are displayed in the following descending order to allow the text for easy viewing:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="big">Question Number</span></p>
+</li>
+<li>
+<p>Question Topic &amp; Options</p>
+</li>
+<li>
+<p><span class="small">Answer</span></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong> Alternatives Considered: </strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Having a separate answer format for MCQ such that it will have an arrow beside the correct option <em>e.g A) 1965</em> <strong>&lt; (Answer)</strong>.
+However, this is not feasible as it will break the standard formatting of the answers display since both <strong>Open Ended</strong> and <strong>MCQ</strong>
+questions will have 2 different answer formats and may cause confusion to the user.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1410,6 +1528,9 @@ appropriate slots when I am free</p></td>
 <div class="paragraph">
 <p><strong>Class</strong> - A manageable unit of Student that Teacher can create, read, edit and delete.</p>
 </div>
+<div class="paragraph">
+<p><strong>UI</strong> - User Interface that users use to interact with the application.</p>
+</div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><a id="mainstream-os"></a> Mainstream OS</dt>
@@ -1429,9 +1550,6 @@ appropriate slots when I am free</p></td>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Njoy</strong></p>
-</div>
-<div class="paragraph">
-<p>Author: Jeong Yu Han</p>
 </div>
 <div class="paragraph">
 <p>Pros:</p>
@@ -1571,4 +1689,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-22 09:03:45 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-22 14:16:26 UTC</div></div></div></body></html>
