@@ -22,12 +22,13 @@
 <li><a href="#class-code-class-code">4.2. Class​ - <code>​/class</code></a></li>
 <li><a href="#timetable-code-timetable-code">4.3. Timetable​ - <code>​/timetable</code></a></li>
 <li><a href="#attendance-code-attendance-code">4.4. Attendance ​-​ <code>/attendance</code></a></li>
-<li><a href="#generating-questions-code-question-code">4.5. Generating Questions ​-​ <code>/question</code></a></li>
-<li><a href="#quizzes-code-quiz-code">4.6. Quizzes ​-​ <code>/quiz</code></a></li>
+<li><a href="#generating-questions-code-question-code">4.5. Generating Questions ​-​ <code>question</code></a></li>
+<li><a href="#quizzes-code-quiz-code">4.6. Quizzes ​-​ <code>quiz</code></a></li>
 <li><a href="#help-code-help-code">4.7. Help ​-​ <code>/help</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">5. FAQ</a></li>
+<li><a href="#command-summary">6. Command Summary</a></li>
 </ul>
 </div>
 </div>
@@ -35,7 +36,7 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Creating and managing your students and classes have never been easier.</strong> Njoy assistant aims to enable teachers to easily manage their students and activities right from their keyboard. With just a few commands, you will be able to <strong>manage your classes, create questions, generate quizzes and much more!</strong></p>
+<p><strong>Creating and managing your students and classes have never been easier.</strong> Njoy assistant aims to enable teachers to easily manage their students and activities right from their keyboard. With just a few commands, you will be able to <strong>manage your classes, create questions, generate quizzes and much more!</strong> Interested? Jump to the <a href="#getting-started">Section 3, &#8220;Getting Started&#8221;</a> to get started.</p>
 </div>
 </div>
 </div>
@@ -125,6 +126,31 @@
 <div class="sect1">
 <h2 id="getting-started"><a class="link" href="#getting-started">3. Getting Started</a></h2>
 <div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ensure you have Java <code>11</code> or above installed in your Computer.</p>
+</li>
+<li>
+<p>Download the latest <code>ichifund.jar</code> <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/releases">here</a>.</p>
+</li>
+<li>
+<p>Copy the file to the folder you want to use as the home folder for your IchiFund.</p>
+</li>
+<li>
+<p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/Ui.png" alt="Ui" width="790">
+</div>
+</div>
+</li>
+<li>
+<p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
+e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.<br></p>
+</li>
+</ol>
+</div>
 <div class="sect2">
 <h3 id="running-jar-file"><a class="link" href="#running-jar-file">3.1. Running .jar file</a></h3>
 <div class="olist arabic">
@@ -266,7 +292,7 @@ e.g. <code>/attendance check unity 1</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="generating-questions-code-question-code"><a class="link" href="#generating-questions-code-question-code">4.5. Generating Questions ​-​ <code>/question</code></a></h3>
+<h3 id="generating-questions-code-question-code"><a class="link" href="#generating-questions-code-question-code">4.5. Generating Questions ​-​ <code>question</code></a></h3>
 <div class="paragraph">
 <p>Create and store questions according to the type specified.</p>
 </div>
@@ -284,38 +310,248 @@ e.g <code>​/question mcq “Which year did Singapore gain independence?” “
 </div>
 </div>
 <div class="sect2">
-<h3 id="quizzes-code-quiz-code"><a class="link" href="#quizzes-code-quiz-code">4.6. Quizzes ​-​ <code>/quiz</code></a></h3>
+<h3 id="quizzes-code-quiz-code"><a class="link" href="#quizzes-code-quiz-code">4.6. Quizzes ​-​ <code>quiz</code></a></h3>
+<div class="sect3">
+<h4 id="creating-a-quiz-manually-code-manual-code"><a class="link" href="#creating-a-quiz-manually-code-manual-code">4.6.1. Creating a Quiz manually: <code>manual</code></a></h4>
 <div class="paragraph">
-<p>Create and store quizzes using questions specified. Users are also able to edit the quizzes after creation.</p>
+<p>Allows a user to create a quiz manually.<br>
+Format: <code>quiz manual quizID/&#8230;&#8203; questionNumber/&#8230;&#8203;</code></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><strong>Creating quizzes manually</strong> ​- <code>/quiz manual/ quizID/[quizName] questionNumbers/[questionNumbers]</code><br>
-e.g. <code>/quiz manual/ quizID/CS2103T_Quiz questionNumbers/1 2 3</code>
-This creates a quiz named "CS2103T_Quiz" and adds question numbers 1, 2 and 3 from the question bank to the quiz.</p>
+<p><code>Quiz ID</code> (The name of the quiz)</p>
 </li>
 <li>
-<p><strong>Creating quizzes automatically</strong> ​- <code>/quiz auto/ quizID/[quizName] numQuestions/[numberOfQuestions] type/[typeOfQuestion]</code><br>
-e.g. <code>/quiz auto/ quizID/CS2103T_Quiz numQuestions/3 type/open</code>
-This creates a quiz named "CS2103T_Quiz" and adds 3 questions from the question bank to the quiz, ensuring there are no duplicates.</p>
+<p><code>Question Numbers</code> (The question numbers you want to add to the quiz)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>quiz manual quizID/CS2103T questionNumber/1 2 3</code><br>
+Adds question numbers 1, 2 and 3 to the quiz named CS2103T.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="creating-a-quiz-automatically-code-auto-code"><a class="link" href="#creating-a-quiz-automatically-code-auto-code">4.6.2. Creating a Quiz automatically: <code>auto</code></a></h4>
+<div class="paragraph">
+<p>Allows a user to create a quiz automatically.<br>
+Format: <code>quiz auto quizID/&#8230;&#8203; numQuestions/&#8230;&#8203; type/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Quiz ID</code> (The name of the quiz)</p>
 </li>
 <li>
-<p><strong>Adding questions to quizzes</strong> ​- <code>/quiz add quizID/[quizName] questionNumber/[questionNumber] quizQuestionNumber/[quizQuestionNumber]</code><br>
-e.g. <code>/quiz add quizID/CS2103T_Quiz questionNumber/1 quizQuestionNumber/3</code>
-This adds the question number 1 from the question bank to the quiz "CS2103T_Quiz"'s question number 3, shifting questions previously at or after question 3, down by 1 question. I.e question 3 becomes question 4, question 4 becomes question 5 to accomodate for the added question.</p>
+<p><code>Number of Questions</code> (The number of questions you want added to the quiz)</p>
 </li>
 <li>
-<p><strong>Removing questions from quizzes</strong> ​- <code>/quiz remove quizID/[quizName] quizQuestionNumber/[quizQuestionNumber]</code><br>
-e.g. <code>/quiz remove quizID/CS2103T_Quiz quizQuestionNumber/3</code>
-This removes the question number 3 from the quiz "CS2103T_Quiz", shifting questions previously after question 3, up by 1 question. I.e question 4 becomes question 3, question 5 becomes question 4 to acoomodate for the removed question.</p>
+<p><code>Question Type</code> (mcq, open, all)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>quiz auto quizID/CS2103T numQuestions/2 type/mcq</code><br>
+Adds 2 questions of type mcq to the quiz named CS2103T.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adding-a-question-to-a-quiz-code-add-code"><a class="link" href="#adding-a-question-to-a-quiz-code-add-code">4.6.3. Adding a Question to a Quiz: <code>add</code></a></h4>
+<div class="paragraph">
+<p>Allows a user to add a question to a quiz.<br>
+Format: <code>quiz add quizID/&#8230;&#8203; questionNumber/&#8230;&#8203; quizQuestionNumber/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Quiz ID</code> (The name of your quiz)</p>
 </li>
 <li>
-<p><strong>List all questions and answers in a readable format</strong> ​- <code>/quiz list quizID/[quizName]</code><br>
-e.g. <code>/quiz list quizID/CS2103T_Quiz</code>
-This fetches the quiz named "CS2103T_Quiz" and displays all the questions followed by answers of the quiz.</p>
+<p><code>Question Number</code> (The question number you want to add to the quiz)</p>
 </li>
-</ol>
+<li>
+<p><code>Quiz Question Number</code> (The question number in the quiz you want to add the question to)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>quiz add quizID/CS2103T questionNumber/2 quizQuestionNumber/3</code><br>
+Adds question 2 to the quiz question number 3 for the quiz named CS2103T.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-question-from-a-quiz-code-delete-code"><a class="link" href="#deleting-a-question-from-a-quiz-code-delete-code">4.6.4. Deleting a Question from a Quiz: <code>delete</code></a></h4>
+<div class="paragraph">
+<p>Allows a user to delete a question from a quiz.<br>
+Format: <code>quiz delete quizID/&#8230;&#8203; quizQuestionNumber/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Quiz ID</code> (The name of the quiz)</p>
+</li>
+<li>
+<p><code>Quiz Question Number</code> (The question number of the question in the quiz to be deleted)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>quiz delete quizID/CS2103T quizQuestionNumber/3</code><br>
+Deletes the quiz question number 3 for the quiz named CS2103T.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="exporting-a-quiz-to-html-code-export-code"><a class="link" href="#exporting-a-quiz-to-html-code-export-code">4.6.5. Exporting a Quiz to HTML: <code>export</code></a></h4>
+<div class="paragraph">
+<p>Allows a user to export a quiz to a HTML file.<br>
+Format: <code>quiz export quizID/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Quiz ID</code> (The name of the quiz)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>quiz export quizID/CS2103T</code><br>
+Exports the quiz named CS2103T to a HTML file.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-a-quiz-code-list-code"><a class="link" href="#listing-a-quiz-code-list-code">4.6.6. Listing a Quiz: <code>list</code></a></h4>
+<div class="paragraph">
+<p>Allows a user to list a quiz&#8217;s questions and answers.<br>
+Format: <code>quiz list quizID/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Quiz ID</code> (The name of the quiz)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>quiz list quizID/CS2103T</code><br>
+Lists the questions and answers for the quiz named CS2103T.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="showing-only-a-quiz-s-questions-code-showquestions-code"><a class="link" href="#showing-only-a-quiz-s-questions-code-showquestions-code">4.6.7. Showing only a Quiz&#8217;s Questions: <code>showQuestions</code></a></h4>
+<div class="paragraph">
+<p>Allows a user to show only a quiz&#8217;s questions.<br>
+Format: <code>quiz showQuestions quizID/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Quiz ID</code> (The name of the quiz)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>quiz showQuestions quizID/CS2103T</code><br>
+Shows only the questions for the quiz named CS2103T.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="showing-only-a-quiz-s-answers-code-showanswers-code"><a class="link" href="#showing-only-a-quiz-s-answers-code-showanswers-code">4.6.8. Showing only a Quiz&#8217;s Answers: <code>showAnswers</code></a></h4>
+<div class="paragraph">
+<p>Allows a user to show only a quiz&#8217;s answers.<br>
+Format: <code>quiz showAnswers quizID/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Quiz ID</code> (The name of the quiz)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>quiz showAnswers quizID/CS2103T</code><br>
+Shows only the answers for the quiz named CS2103T.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -334,4 +570,37 @@ This fetches the quiz named "CS2103T_Quiz" and displays all the questions follow
 <strong>A</strong>: Please ensure that the command is entered as specified in the format above. Note that all fields all mandatory except those marked as ​(optional).​</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-28 04:20:16 UTC</div></div></div></body></html>
+</div>
+<div class="sect1">
+<h2 id="command-summary"><a class="link" href="#command-summary">6. Command Summary</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Help</strong> : <code>help</code></p>
+</li>
+<li>
+<p><strong>Creating a Quiz Manually</strong> : <code>quiz manual quizID/&#8230;&#8203; questionNumber/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Creating a Quiz Automatically</strong> : <code>quiz auto quizID/&#8230;&#8203; numQuestions/&#8230;&#8203; type/&#8230;&#8203;</code> [Where type is: mcq, open or all]</p>
+</li>
+<li>
+<p><strong>Adding a Question to Quiz</strong> : <code>quiz add quizID/&#8230;&#8203; questionNumber/&#8230;&#8203; quizQuestionNumber/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Deleting a Question from Quiz</strong> : <code>quiz delete quizID/&#8230;&#8203; quizQuestionNumber/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Listing a Quiz</strong> : <code>quiz list quizID/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Showing only Questions of a Quiz</strong> : <code>quiz showQuestions quizID/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Showing only Answers of a Quiz</strong> : <code>quiz showAnswers quizID/&#8230;&#8203;</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-28 09:05:21 UTC</div></div></div></body></html>
