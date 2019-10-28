@@ -22,9 +22,9 @@
 <li><a href="#class-code-class-code">4.2. Class​ - <code>​/class</code></a></li>
 <li><a href="#timetable-code-timetable-code">4.3. Timetable​ - <code>​/timetable</code></a></li>
 <li><a href="#attendance-code-attendance-code">4.4. Attendance ​-​ <code>/attendance</code></a></li>
-<li><a href="#generating-questions-code-question-code">4.5. Generating Questions ​-​ <code>question</code></a></li>
+<li><a href="#questions-code-question-code">4.5. Questions ​-​ <code>question</code></a></li>
 <li><a href="#quizzes-code-quiz-code">4.6. Quizzes ​-​ <code>quiz</code></a></li>
-<li><a href="#help-code-help-code">4.7. Help ​-​ <code>/help</code></a></li>
+<li><a href="#help-code-help-code">4.7. Help ​-​ <code>help</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">5. FAQ</a></li>
@@ -36,7 +36,11 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Creating and managing your students and classes have never been easier.</strong> Njoy assistant aims to enable teachers to easily manage their students and activities right from their keyboard. With just a few commands, you will be able to <strong>manage your classes, create questions, generate quizzes and much more!</strong> Interested? Jump to the <a href="#getting-started">Section 3, &#8220;Getting Started&#8221;</a> to get started.</p>
+<p>Creating and managing your students and classes have never been easier.
+<strong>Njoy</strong> teaching assistant aims to enable teachers to easily manage their students and activities
+right from their keyboard. With just a few commands, you will be able to
+<em>manage your classes, create questions, generate quizzes and much more!</em> Interested?
+Jump to <a href="#getting-started">Section 3, &#8220;Getting Started&#8221;</a> to get started.</p>
 </div>
 </div>
 </div>
@@ -59,14 +63,12 @@
 </div>
 </li>
 <li>
-<p><strong>Creating questions</strong> is simple. Simply type a topic and an answer and it is done.</p>
+<p><strong>Create questions</strong> that allows you to start in-class activities and distribute quizzes to your students.
+Simply define a type, a topic and an answer and you are all set.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Easy input</p>
-</li>
-<li>
-<p>Repeatable</p>
+<p>Easy input and management of your questions.</p>
 </li>
 </ol>
 </div>
@@ -147,7 +149,7 @@
 </li>
 <li>
 <p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
-e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.<br></p>
+e.g. typing <code>help</code> and pressing <kbd>Enter</kbd> will open the help window.<br></p>
 </li>
 </ol>
 </div>
@@ -156,18 +158,18 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Download the njoy.jar file</p>
+<p>Download the <code>njoy.jar</code> file</p>
 </li>
 <li>
-<p>Double click on ‘njoy.jar’ file to run the application</p>
+<p>Double click on <code>njoy.jar</code> file to run the application</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p><em>If you are not able to run the application using the method above, use the following:</em><br>
-. Open Terminal(Mac)/Command Prompt(Windows)
-. Type cd [path to directory containing jar file]
-. Type ‘java -jar njoy.jar’ to run the application.</p>
+<p><em>If you are not able to run the application using the method above, use the following:</em>
+. Open <strong>Terminal</strong>(Mac)/<strong>Command Prompt</strong>(Windows)
+. Type cd [PATH TO DIRECTORY CONTAINING .JAR FILE]
+. Type <code>java -jar njoy.jar</code> to run the application.</p>
 </div>
 </div>
 </div>
@@ -292,21 +294,256 @@ e.g. <code>/attendance check unity 1</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="generating-questions-code-question-code"><a class="link" href="#generating-questions-code-question-code">4.5. Generating Questions ​-​ <code>question</code></a></h3>
+<h3 id="questions-code-question-code"><a class="link" href="#questions-code-question-code">4.5. Questions ​-​ <code>question</code></a></h3>
+<div class="sect3">
+<h4 id="creating-a-question"><a class="link" href="#creating-a-question">4.5.1. Creating a question</a></h4>
 <div class="paragraph">
-<p>Create and store questions according to the type specified.</p>
+<p>Create and store questions according to the type specified.<br>
+Format: <code>question question/&#8230;&#8203; answer/&#8230;&#8203; type/&#8230;&#8203; (MCQ OPTIONS IF APPLICABLE)</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Note that for mcq question type, it is necessary to input options <code>a/</code>, <code>b/</code>, <code>c/</code>, <code>d/</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>Open ended questions</strong> ​- <code>/question open “[topic]” “[answer]”</code><br>
-e.g. <code>/question open “Which year did Singapore gain independence?” “1965”</code></p>
+<p><code>question</code> - Question topic.</p>
 </li>
 <li>
-<p><strong>MCQs</strong> ​- <code>/question mcq “[topic]” “[answer]” “[option1]” “[option2]” “[option3]” “[option 4]”</code><br>
-e.g <code>​/question mcq “Which year did Singapore gain independence?” “1965” “1963” “2019” “1926” “1965”</code></p>
+<p><code>answer</code> - Answer to the question.</p>
+</li>
+<li>
+<p><code>type</code> - Type of question(<code>open</code> or <code>mcq</code>).</p>
+</li>
+<li>
+<p><code>a</code> - Option A for MCQ.</p>
+</li>
+<li>
+<p><code>b</code> - Option B for MCQ.</p>
+</li>
+<li>
+<p><code>c</code> - Option C for MCQ.</p>
+</li>
+<li>
+<p><code>d</code> - Option D for MCQ.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Open ended question</strong>: <code>question question/Which year did Singapore gain independence? answer/1965 type/open</code><br>
+Creates an open ended question with topic <em>'Which year did Singapore gain independence?'</em> with answer <em>'1965'</em>.</p>
+</li>
+<li>
+<p><strong>MCQ</strong>: <code>question question/Which year did Singapore gain independence? answer/1965 type/mcq a/1965 b/1963 c/1968 d/1970</code><br>
+Creates an mcq with topic <em>'Which year did Singapore gain independence?'</em> with answer <em>'1965'</em> and
+choices <em>'1965', '1963', '1968', '1970'</em>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-question"><a class="link" href="#editing-a-question">4.5.2. Editing a question</a></h4>
+<div class="paragraph">
+<p>Edit a question currently stored. All fields are <strong>optional</strong>.<br>
+Format: <code>question [INDEX] question/&#8230;&#8203; answer/&#8230;&#8203; type/&#8230;&#8203; (MCQ OPTIONS IF APPLICABLE)</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Note that when changing question type from open ended to mcq, it is necessary to input options <code>a/</code>, <code>b/</code>, <code>c/</code>, <code>d/</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>[INDEX]</code> - The question index as defined by the <a href="#Feature-Question-List">list</a> and <a href="#Feature-Question-Find">find</a>find commands.</p>
+</li>
+<li>
+<p><code>question</code> - Question topic.</p>
+</li>
+<li>
+<p><code>answer</code> - Answer to the question.</p>
+</li>
+<li>
+<p><code>type</code> - Type of question(<code>open</code> or <code>mcq</code>).</p>
+</li>
+<li>
+<p><code>a</code> - Option A for MCQ.</p>
+</li>
+<li>
+<p><code>b</code> - Option B for MCQ.</p>
+</li>
+<li>
+<p><code>c</code> - Option C for MCQ.</p>
+</li>
+<li>
+<p><code>d</code> - Option D for MCQ.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>question 1 question/What is 1+1? answer/2</code><br>
+Edits the first question in the list changing existing question topic to <em>'What is 1+1?'</em> and answer to <em>'2'</em>.</p>
+</li>
+<li>
+<p><code>question 1 type/mcq a/1965 b/1963 c/1968 d/1970</code><br>
+Edits the type of the first question in the list from open ended question to mcq and state choices <em>'1965', '1963', '1968', '1970'</em>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-question"><a class="link" href="#deleting-a-question">4.5.3. Deleting a question</a></h4>
+<div class="paragraph">
+<p>Delete a question from the question list.<br>
+Format: <code>question delete [INDEX]</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>[INDEX]</code> - The question index as defined by the <a href="#Feature-Question-List">list</a> and <a href="#Feature-Question-Find">find</a>find commands.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>question delete 1</code><br>
+Deletes the first question in the list.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Feature-Question-List"><a class="link" href="#Feature-Question-List">4.5.4. Listing your saved questions</a></h4>
+<div class="paragraph">
+<p>Display the stored questions and list them in ascending order according to the time created.<br>
+Format: <code>question list</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:<br>
+<strong><em>-This command does not require any additional options-</em></strong></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>question list</code><br>
+Lists the question list.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Feature-Question-Find"><a class="link" href="#Feature-Question-Find">4.5.5. Searching for a question</a></h4>
+<div class="paragraph">
+<p>Search and display questions with similar terms.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The ordering of questions is based on <strong>similarity</strong> and in ascending order such that the question that is most similar
+to your search term will be at the top.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code>question find/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>find</code> - Search term to find in the list of questions.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>question find/What is 1+1?</code><br>
+Searches through the question list to find questions close to the search term <em>'What is 1+1?'</em>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="starting-a-slideshow"><a class="link" href="#starting-a-slideshow">4.5.6. Starting a Slideshow</a></h4>
+<div class="paragraph">
+<p>Start a slideshow based on the questions selected.<br>
+Format: <code>question slideshow [QUESTIONS INDEX]</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>[QUESTIONS INDEX]</code> - Index of questions <strong>separated by a whitespace</strong>.
+Follows the index as defined in the <a href="#Feature-Question-List">list</a> and <a href="#Feature-Question-Find">find</a>find commands.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>question slideshow 1 2 3</code><br>
+Starts a slideshow with questions containing index <em>'1'</em>, <em>'2'</em> and <em>'3'</em>.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -555,9 +792,16 @@ Shows only the answers for the quiz named CS2103T.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="help-code-help-code"><a class="link" href="#help-code-help-code">4.7. Help ​-​ <code>/help</code></a></h3>
+<h3 id="help-code-help-code"><a class="link" href="#help-code-help-code">4.7. Help ​-​ <code>help</code></a></h3>
 <div class="paragraph">
-<p>Show all available commands usable in the application.</p>
+<p>Opens up the help window.<br>
+Format: <code>help</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<div class="paragraph">
+<p><em>-This command does not require any additional options-</em></p>
 </div>
 </div>
 </div>
@@ -567,7 +811,8 @@ Shows only the answers for the quiz named CS2103T.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: Typing a command result in “Invalid command entered.”<br>
-<strong>A</strong>: Please ensure that the command is entered as specified in the format above. Note that all fields all mandatory except those marked as ​(optional).​</p>
+<strong>A</strong>: Please ensure that the command is entered as specified in the format above.
+Note that all fields all mandatory unless stated otherwise.​</p>
 </div>
 </div>
 </div>
@@ -603,4 +848,4 @@ Shows only the answers for the quiz named CS2103T.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-28 11:16:50 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-28 16:40:47 UTC</div></div></div></body></html>
