@@ -24,7 +24,8 @@
 <li><a href="#attendance-code-attendance-code">4.4. Attendance ​-​ <code>/attendance</code></a></li>
 <li><a href="#questions-code-question-code">4.5. Questions ​-​ <code>question</code></a></li>
 <li><a href="#quizzes-code-quiz-code">4.6. Quizzes ​-​ <code>quiz</code></a></li>
-<li><a href="#help-code-help-code">4.7. Help ​-​ <code>help</code></a></li>
+<li><a href="#events-code-event-code">4.7. Events ​-​ <code>event</code></a></li>
+<li><a href="#help-code-help-code">4.8. Help ​-​ <code>help</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">5. FAQ</a></li>
@@ -382,7 +383,7 @@ Note that when changing question type from open ended to mcq, it is necessary to
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>[INDEX]</code> - The question index as defined by the <a href="#Feature-Question-List">list</a> and <a href="#Feature-Question-Find">find</a>find commands.</p>
+<p><code>[INDEX]</code> - The question index as defined by the <a href="#Feature-Question-List">list</a> and <a href="#Feature-Question-Find">find</a> commands.</p>
 </li>
 <li>
 <p><code>question</code> - Question topic.</p>
@@ -792,7 +793,221 @@ Shows only the answers for the quiz named CS2103T.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="help-code-help-code"><a class="link" href="#help-code-help-code">4.7. Help ​-​ <code>help</code></a></h3>
+<h3 id="events-code-event-code"><a class="link" href="#events-code-event-code">4.7. Events ​-​ <code>event</code></a></h3>
+<div class="sect3">
+<h4 id="creating-a-event"><a class="link" href="#creating-a-event">4.7.1. Creating a event</a></h4>
+<div class="paragraph">
+<p>Create, store and render a event<br>
+Format: <code>event eventName/&#8230;&#8203; startDateTime/&#8230;&#8203; endDateTime/&#8230;&#8203; recur/&#8230;&#8203; color/&#8230;&#8203;</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Note that for start and end date-time, it is necessary to input it in the following manner:
+YYYY-MM-DDThh:mm. For example, 21st Oct 2019 2PM should be expressed in this manner: 2019-10-21T14:00
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>eventName</code> - Name of the event</p>
+</li>
+<li>
+<p><code>startDateTime</code> - The start date and time of the event</p>
+</li>
+<li>
+<p><code>endDateTime</code> - The end date and time of the event</p>
+</li>
+<li>
+<p><code>recur</code> - Recurrence of the event. Either none, daily or weekly.</p>
+</li>
+<li>
+<p><code>color</code> - Enter any number from 0 - 23 to set the color of this event.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Weekly Event</strong>: <code>event eventName/CS2101 Lecture startDateTime/2019-10-21T14:00 endDateTime/2019-10-21T16:00
+recur/weekly color/1</code><br>
+Creates a weekly event with event name <em>'CS2101 Lecture'</em> with start date and time <em>'21st Oct 2019, 1400'</em> with end
+date and time <em>'21st Oct 2019, 1600'</em> and a color grouping of <em>'1'</em>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Feature-Event-Index"><a class="link" href="#Feature-Event-Index">4.7.2. Indexing a event</a></h4>
+<div class="paragraph">
+<p>Gets the index a event based on its event name. If the event name is not found, it shows the event which has the most
+similar event name +s
+Format: <code>event indexOf/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>indexOf/</code> - Name of the event</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>event indexOf/CS2103T Lecture</code><br>
+Returns the index of the event in the calendar</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-event"><a class="link" href="#editing-a-event">4.7.3. Editing a event</a></h4>
+<div class="paragraph">
+<p>Edit a event currently stored. All fields are <strong>optional</strong>.<br>
+Format: <code>event [INDEX] eventName/&#8230;&#8203; startDateTime/&#8230;&#8203; endDateTime/&#8230;&#8203; recur/&#8230;&#8203; color/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>[INDEX]</code> - The event index as defined by the <a href="#Feature-Event-Index">index</a>  command.</p>
+</li>
+<li>
+<p><code>eventName</code> - Name of the event</p>
+</li>
+<li>
+<p><code>startDateTime</code> - The start date and time of the event</p>
+</li>
+<li>
+<p><code>endDateTime</code> - The end date and time of the event</p>
+</li>
+<li>
+<p><code>recur</code> - Recurrence of the event. Either none, daily or weekly.</p>
+</li>
+<li>
+<p><code>color</code> - Enter any number from 0 - 23 to set the color of this event.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>event 2 eventName/CS2103T Lecture</code><br>
+Edits the first event in the list changing existing event name to <em>'CS2103T Lecture'</em>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-event"><a class="link" href="#deleting-a-event">4.7.4. Deleting a event</a></h4>
+<div class="paragraph">
+<p>Delete a event from the calendar.<br>
+Format: <code>event delete [INDEX]</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>[INDEX]</code> - The event index as defined by the <a href="#Feature-Event-Index">index</a> command.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Deleting a event which is recurring (daily or weeekly) will delete all instances of that event.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>question delete 1</code><br>
+Deletes the event with index 1</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="viewing-all-events"><a class="link" href="#viewing-all-events">4.7.5. Viewing all events</a></h4>
+<div class="paragraph">
+<p>Show all your events in the calendar<br>
+Format: <code>event view</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>question view</code><br>
+Opens the calendar view consisting of all your events</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="export-all-events"><a class="link" href="#export-all-events">4.7.6. Export all events</a></h4>
+<div class="paragraph">
+<p>Exports stored events into a .ics file. This file type can easily be imported into Google Calendar and other
+mainstream calendar applications<br>
+Format: <code>event export directory/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>[directory]</code> - The full path of where you want the .ics file to be saved to.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>event export directory/Users/John/Desktop</code><br>
+Exports your events into your Desktop with the file name: <code>nJoy_Event_Schedule.ics</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="help-code-help-code"><a class="link" href="#help-code-help-code">4.8. Help ​-​ <code>help</code></a></h3>
 <div class="paragraph">
 <p>Opens up the help window.<br>
 Format: <code>help</code></p>
@@ -848,4 +1063,4 @@ Note that all fields all mandatory unless stated otherwise.​</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-28 16:40:47 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-29 07:37:08 UTC</div></div></div></body></html>
