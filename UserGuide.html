@@ -25,7 +25,9 @@
 <li><a href="#questions-code-question-code">4.5. Questions ​-​ <code>question</code></a></li>
 <li><a href="#quizzes-code-quiz-code">4.6. Quizzes ​-​ <code>quiz</code></a></li>
 <li><a href="#events-code-event-code">4.7. Events ​-​ <code>event</code></a></li>
-<li><a href="#help-code-help-code">4.8. Help ​-​ <code>help</code></a></li>
+<li><a href="#notes-code-notes-code">4.8. Notes - <code>notes</code></a></li>
+<li><a href="#statistics-code-statistics-code">4.9. Statistics - <code>statistics</code></a></li>
+<li><a href="#help-code-help-code">4.10. Help ​-​ <code>help</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">5. FAQ</a></li>
@@ -110,14 +112,27 @@ Simply define a type, a topic and an answer and you are all set.</p>
 </div>
 </li>
 <li>
+<p><strong>Notes Manager</strong> to act as lightweight, digital Post-It to easily identify your priorities.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Keep track of your reminders.</p>
+</li>
+<li>
+<p>View in a glance the important tasks.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
 <p><strong>Statistics</strong> provide a comprehensive view of your students' performance.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>View underperforming students</p>
+<p>Understand the academic performance of your class.</p>
 </li>
 <li>
-<p>Trends of the academic year</p>
+<p>View honourable students and identify the struggling students in one look.</p>
 </li>
 </ol>
 </div>
@@ -184,7 +199,7 @@ e.g. typing <code>help</code> and pressing <kbd>Enter</kbd> will open the help w
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>All commands start with a forward slash “/” followed by the command name. Certain commands may include additional options and will be specified in the description. An optional field will be marked ​(optional) b​ eside the field.</p>
+<p>All commands start with a forward slash “/” followed by the command name. Certain commands may include additional options and will be specified in the description. An optional field will be marked ​(optional) beside the field.</p>
 </div>
 </div>
 </div>
@@ -1007,7 +1022,369 @@ Exports your events into your Desktop with the file name: <code>nJoy_Event_Sched
 </div>
 </div>
 <div class="sect2">
-<h3 id="help-code-help-code"><a class="link" href="#help-code-help-code">4.8. Help ​-​ <code>help</code></a></h3>
+<h3 id="notes-code-notes-code"><a class="link" href="#notes-code-notes-code">4.8. Notes - <code>notes</code></a></h3>
+<div class="sect3">
+<h4 id="creating-a-note"><a class="link" href="#creating-a-note">4.8.1. Creating a note</a></h4>
+<div class="paragraph">
+<p>Create lightweight, digital notes and reminders quickly and easily as specified.<br>
+Format: <code>note note/&#8230;&#8203; desc/&#8230;&#8203; priority/&#8230;&#8203; (optional)</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>note</code> - The note title.</p>
+</li>
+<li>
+<p><code>desc</code> - The description of the note.</p>
+</li>
+<li>
+<p><code>priority(optional)</code> - The level of priority placed on this note. It can be of type <code>unmarked</code>, <code>low</code>, <code>medium</code> or <code>high</code>. It is by default set to unmarked if field is omitted.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All priority fields can be in either lowercase or UPPERCASE. (e.g. <code>note note/sample title desc/sample desc priority/low</code> is the same as e.g. <code>note note/sample title desc/sample desc priority/LOW</code>).
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>priority</code> levels are distinguishable by their colour in the User Interface. <code>unmarked</code> or default notes have grey panels, while <code>low</code>, <code>medium</code> and <code>high</code> priority notes have green, yellow and red panels respectively.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The notes panel on the User Interface only supports title and description of limited length. Notes that exceed this length will be truncated. For information on how to view these notes, see <a href="#Feature-Note-List">notes list</a> command.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Unmarked Note</strong>: <code>note note/Friday morning class 6A desc/give back prelim papers</code><br>
+Creates an unmarked note with title <em>'Friday morning class 6A'</em> with description <em>'give back prelim papers'</em>.</p>
+</li>
+<li>
+<p><strong>High priority note</strong>: <code>note note/Tuesday 1pm desc/Science Conference priority/high</code><br>
+Creates a high priority note with title <em>'Tuesday 1pm'</em> with description <em>'Science Conference'</em>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-note"><a class="link" href="#editing-a-note">4.8.2. Editing a note</a></h4>
+<div class="paragraph">
+<p>Edit a note currently stored. All fields are <strong>optional</strong>.<br>
+Format: <code>note [INDEX] note/&#8230;&#8203; desc/&#8230;&#8203; priority/&#8230;&#8203;</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To change the priority of a <code>high</code>, <code>medium</code> or <code>low</code> note to the default status, the prefix <code>priority/</code> is to be followed by <code>unmarked</code>. (e.g. note 2 priority/unmarked).
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>[INDEX]</code> - The note index as shown in the User Interface. The topmost note has index 1, followed by 2 and so on.</p>
+</li>
+<li>
+<p><code>note</code> - The note title.</p>
+</li>
+<li>
+<p><code>desc</code> - The description of the note.</p>
+</li>
+<li>
+<p><code>priority</code> - The level of priority placed on this note. It can be of type <code>unmarked</code>, <code>low</code>, <code>medium</code> or <code>high</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>note 1 note/changed title</code><br>
+Edits the first note in the list to the title <em>'changed title'</em>.</p>
+</li>
+<li>
+<p><code>note 2 desc/give speech priority/unmarked</code><br>
+Edits the description of the second note in the list to <em>’give speech’</em> of unmarked/default priority.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-note"><a class="link" href="#deleting-a-note">4.8.3. Deleting a note</a></h4>
+<div class="paragraph">
+<p>Delete a note from the notes list.<br>
+Format: <code>note delete [INDEX]</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>[INDEX]</code> - The note index as shown in the User Interface. The topmost note has index 1, followed by 2 and so on.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>note delete 1</code><br>
+Deletes the first note in the list.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Feature-Note-List"><a class="link" href="#Feature-Note-List">4.8.4. Listing notes</a></h4>
+<div class="paragraph">
+<p>Display the list of notes in the command result box.<br>
+Format: <code>note list</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The note is rendered on the User Interface on load. However, note lengths that exceed the size of allocated panel might have their content truncated. Using the list function is useful in this case to see the full content of the notes.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:<br>
+<strong><em>-This command does not support any additional options-</em></strong></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>note list</code><br>
+Lists the notes.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="statistics-code-statistics-code"><a class="link" href="#statistics-code-statistics-code">4.9. Statistics - <code>statistics</code></a></h3>
+<div class="sect3">
+<h4 id="generating-a-statistics-report"><a class="link" href="#generating-a-statistics-report">4.9.1. Generating a Statistics report</a></h4>
+<div class="paragraph">
+<p>Create statistics reports of student scores using excel data files. The statistics generated is based
+on the calculated weighted score of the input data.<br>
+Format: <code>statistics file/&#8230;&#8203; print/&#8230;&#8203;(optional)</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>file</code> - The absolute/relative file path of the data file.</p>
+</li>
+<li>
+<p><code>print(optional)</code> - The filename of the printable report you wish to generate.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The statistics feature only supports file type in the ‘Excel’ format. Data files are to end with the <em>’.xlsx’</em> extension.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>print</code> option allows the generation of a <em>'.png'</em> file containing a snapshot of the statistics report generated. Regardless of the print specifications, a new window is opened with the statistics report.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The statistics report is stored in the same place as where the JAR file is installed. The report can be found under a newly created <code>printable</code> directory. If the directory exists beforehand, no new directory is created.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Filenames without <em>`.png`</em> extension will automatically have the extension appended to the end of the file name.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the file name specified already exists in the printable directory, it will overwrite the existing file.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>View Statistics Report (without saving)</strong>: <code>statistics file/C:\Users\SampleUser\Desktop\6B Prelim Scores.xlsx</code><br>
+Shows the statistics report for excel file named <em>’6B Prelim Scores’</em>.</p>
+</li>
+<li>
+<p><strong>View and Save Statistics Report</strong>: <code>statistics file/C:\Users\SampleUser\Desktop\6B Prelim Scores.xlsx print/6B Prelim Performance Report</code><br>
+Shows the statistics report for excel file named <em>’6B Prelim Scores’</em>. It also saves an image file containing a snapshot of the statistics report in the <em>’printable’</em> directory with name <em>’6B Prelim Performance Report’</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Data File Specifications</strong></p>
+</div>
+<div class="paragraph">
+<p>The data file needs to be specified in the following format to ensure that the statistics report is successfully generated.<br></p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Failure to adhere to the following specifications might result in either the excel file being rejected or erroneous statistics.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Data starts at cell A1.</strong></p>
+</li>
+<li>
+<p><strong>First row begins with the cell <code>Students</code>, followed by their names. (e.g. row 1 of 4 cells having <code>Students</code>, <code>Jason</code>, <code>Mike</code> and <code>Peter</code>)</strong></p>
+</li>
+<li>
+<p><strong>First column states the different subjects starting from the second topmost cell. (e.g column 1 of 4 cells having <code>Students</code>, <code>Math</code>, <code>Science</code> and <code>English</code>.)</strong></p>
+</li>
+<li>
+<p><strong>All student names have unique identifiers. (e.g. two students named Jason should be identified as <code>Jason 1</code> and <code>Jason 2</code>)</strong></p>
+</li>
+<li>
+<p><strong>All students have a corresponding score for all subjects</strong></p>
+</li>
+<li>
+<p><strong>All scores are numeric characters (integer or decimals)</strong></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Failure to adhere to the following specifications might result in some of the statistical data generated not being useful to the user.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>All scores should be in percentage terms. (0 ~ 100)</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The statistics report generated uses weighted average scores across the different subjects to perform analysis. All scores carry equal weight. The statistics generated
+allow you to see some of the common descriptive statistics and their relative distributions both in terms of frequency and percentile terms.</p>
+</div>
+<div class="paragraph">
+<p>The figure below illustrates a sample data set that fulfills all of the above specifications.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ExcelFormat.png" alt="ExcelFormat">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="help-code-help-code"><a class="link" href="#help-code-help-code">4.10. Help ​-​ <code>help</code></a></h3>
 <div class="paragraph">
 <p>Opens up the help window.<br>
 Format: <code>help</code></p>
@@ -1060,7 +1437,28 @@ Note that all fields all mandatory unless stated otherwise.​</p>
 <li>
 <p><strong>Showing only Answers of a Quiz</strong> : <code>quiz showAnswers quizID/&#8230;&#8203;</code></p>
 </li>
+<li>
+<p><strong>Creating a Note</strong> : <code>note note/&#8230;&#8203; desc/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Creating a Note with Priority</strong> : <code>note note/&#8230;&#8203; desc/&#8230;&#8203; priority/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Editing a Note</strong> : <code>note [INDEX] note/&#8230;&#8203; desc/&#8230;&#8203; priority/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Deleting a Note</strong> : <code>note delete [INDEX]</code></p>
+</li>
+<li>
+<p><strong>Listing Notes</strong> : <code>note list</code></p>
+</li>
+<li>
+<p><strong>Generating Statistics</strong> : <code>statistics file/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Generating Statistics and Saving</strong> : <code>statistics file/&#8230;&#8203; print/&#8230;&#8203;</code></p>
+</li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-29 14:08:43 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-29 14:44:17 UTC</div></div></div></body></html>
