@@ -18,16 +18,18 @@
 </li>
 <li><a href="#commands">4. Commands</a>
 <ul class="sectlevel2">
-<li><a href="#student-code-student-code">4.1. Student ​- <code>/student</code></a></li>
-<li><a href="#class-code-class-code">4.2. Class​ - <code>​/class</code></a></li>
-<li><a href="#timetable-code-timetable-code">4.3. Timetable​ - <code>​/timetable</code></a></li>
-<li><a href="#attendance-code-attendance-code">4.4. Attendance ​-​ <code>/attendance</code></a></li>
-<li><a href="#questions-code-question-code">4.5. Questions ​-​ <code>question</code></a></li>
-<li><a href="#quizzes-code-quiz-code">4.6. Quizzes ​-​ <code>quiz</code></a></li>
-<li><a href="#events-code-event-code">4.7. Events ​-​ <code>event</code></a></li>
-<li><a href="#notes-code-notes-code">4.8. Notes - <code>notes</code></a></li>
-<li><a href="#statistics-code-statistics-code">4.9. Statistics - <code>statistics</code></a></li>
-<li><a href="#help-code-help-code">4.10. Help ​-​ <code>help</code></a></li>
+<li><a href="#students-code-student-code">4.1. Students - <code>student</code></a></li>
+<li><a href="#tags-code-tag-code">4.2. Tags ​-​ <code>tag</code></a></li>
+<li><a href="#mark-code-mark-code">4.3. Mark ​-​ <code>mark</code></a></li>
+<li><a href="#groups-code-group-code">4.4. Groups ​-​ <code>group</code></a></li>
+<li><a href="#timetable-code-timetable-code">4.5. Timetable​ - <code>​/timetable</code></a></li>
+<li><a href="#attendance-code-attendance-code">4.6. Attendance ​-​ <code>/attendance</code></a></li>
+<li><a href="#questions-code-question-code">4.7. Questions ​-​ <code>question</code></a></li>
+<li><a href="#quizzes-code-quiz-code">4.8. Quizzes ​-​ <code>quiz</code></a></li>
+<li><a href="#events-code-event-code">4.9. Events ​-​ <code>event</code></a></li>
+<li><a href="#notes-code-notes-code">4.10. Notes - <code>notes</code></a></li>
+<li><a href="#statistics-code-statistics-code">4.11. Statistics - <code>statistics</code></a></li>
+<li><a href="#help-code-help-code">4.12. Help ​-​ <code>help</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">5. FAQ</a></li>
@@ -204,66 +206,429 @@ e.g. typing <code>help</code> and pressing <kbd>Enter</kbd> will open the help w
 </div>
 </div>
 <div class="sect2">
-<h3 id="student-code-student-code"><a class="link" href="#student-code-student-code">4.1. Student ​- <code>/student</code></a></h3>
+<h3 id="students-code-student-code"><a class="link" href="#students-code-student-code">4.1. Students - <code>student</code></a></h3>
+<div class="sect3">
+<h4 id="adding-a-student"><a class="link" href="#adding-a-student">4.1.1. Adding a student</a></h4>
 <div class="paragraph">
-<p>Create and edit students.</p>
+<p>Adds a student<br>
+Format: <code>student name/&#8230;&#8203; tag/&#8230;&#8203;(optional)</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>Create student</strong> - <code>/student create [name] [birthdate in DD/MM/YYYY format]​(optional)</code><br>
-e.g. <code>/student create “John” “20/09/2006”</code><br>
-<strong>Return</strong>: student no.</p>
+<p><code>name</code> - The name of the student.</p>
 </li>
 <li>
-<p><strong>Edit student</strong> ​- <code>/student edit [student no.]</code><br>
-e.g. <code>/student edit 1</code><br>
-<strong>Return</strong>:​ Options to edit name or birthdate</p>
-</li>
-<li>
-<p><strong>Delete student</strong> ​- <code>/student delete [student no.]</code> <br>
-e.g. <code>/student delete 1</code></p>
-</li>
-<li>
-<p><strong>Find student</strong> ​- <code>/student find [name]</code><br>
-e.g. <code>/student find “John”</code><br>
-<strong>Return</strong>:​ student no.</p>
+<p><code>tag</code>(optional) - The weak subjects of the student.</p>
 </li>
 </ol>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>tag</code> fields of a student represent the weak subjects of a particular student, and is an optional field which can be added later under the <code>Tag</code> feature
+</td>
+</tr>
+</table>
 </div>
-<div class="sect2">
-<h3 id="class-code-class-code"><a class="link" href="#class-code-class-code">4.2. Class​ - <code>​/class</code></a></h3>
 <div class="paragraph">
-<p>Manage classes and manage students within the class.</p>
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Untagged student</strong>: <code>student name/John Doe</code><br>
+Adds an untagged student named John Doe</p>
+</li>
+<li>
+<p><strong>Student with one tag</strong>: <code>student name/John Doe tag/Chemistry</code><br>
+Adds a student named John Doe with one tag Chemistry</p>
+</li>
+<li>
+<p><strong>Student with multiple tags</strong>: <code>student name/John Doe tag/Chemistry tag/Physics</code><br>
+Adds a student named John Doe with tags Chemistry and Physics</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-student"><a class="link" href="#editing-a-student">4.1.2. Editing a student</a></h4>
+<div class="paragraph">
+<p>Edit a student currently stored.<br>
+Format: <code>student [index number] name/&#8230;&#8203;</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All tags and mark of the student to be edited will be transferred over to the new student.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>Create class</strong>​ - <code>/class create [class id] [description]​(optional)</code><br>
-e.g. <code>/class create unity “My First Class”</code></p>
+<p><code>[index number]</code> - Index number of the student to be edited in the student list</p>
 </li>
 <li>
-<p><strong>Edit class description</strong> ​- <code>/class edit [class id] [description]​(optional)</code><br>
-e.g. <code>/class edit unity “My Second Class”</code></p>
-</li>
-<li>
-<p><strong>Delete class</strong> ​- <code>/class delete [class id]</code><br>
-e.g. <code>/class delete unity</code></p>
-</li>
-<li>
-<p><strong>Add student to class</strong> ​ - <code>/class add [class id] [student no.]</code><br>
-e.g. <code>/class add unity 1</code></p>
-</li>
-<li>
-<p><strong>Remove student from class</strong> ​ - <code>/class remove [class id] [student no.]</code><br>
-e.g. <code>/class remove unity 1</code></p>
+<p><code>name</code> - New name of the student to be edited.</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>student 1 name/Jane Doe</code><br>
+Changes the name of the student with index number 1 in the student list to Jane Doe</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-student"><a class="link" href="#deleting-a-student">4.1.3. Deleting a student</a></h4>
+<div class="paragraph">
+<p>Delete a student from the student list.<br>
+Format: <code>student delete [INDEX]</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>[INDEX]</code> - Index number oif the student to be deleted in the student list</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>student delete 1</code><br>
+Deletes the first student in the student list.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Feature-Student-List"><a class="link" href="#Feature-Student-List">4.1.4. Listing students</a></h4>
+<div class="paragraph">
+<p>Display the list of students in the Main Window, and also displays the list in the Command Result Box+
+Format: <code>student list</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:<br>
+<strong><em>-This command does not support any additional options-</em></strong></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>student list</code><br>
+Lists the students.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="timetable-code-timetable-code"><a class="link" href="#timetable-code-timetable-code">4.3. Timetable​ - <code>​/timetable</code></a></h3>
+<h3 id="tags-code-tag-code"><a class="link" href="#tags-code-tag-code">4.2. Tags ​-​ <code>tag</code></a></h3>
+<div class="paragraph">
+<p>Represents the weak subjects of a student, allowing users to focus on the specified weak subject of the student.</p>
+</div>
+<div class="sect3">
+<h4 id="adds-a-tag-to-a-student-code-tag-code"><a class="link" href="#adds-a-tag-to-a-student-code-tag-code">4.2.1. Adds a tag to a student: <code>tag</code></a></h4>
+<div class="paragraph">
+<p>Allows a user to add a tag to an already added student.<br>
+Format: <code>tag index/&#8230;&#8203; tag/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>index</code> (The index number of the student you want to add the tag to)</p>
+</li>
+<li>
+<p><code>tag</code> (The name of the tag you want to add to the student)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Add one tag</strong>: <code>tag index/1 tag/Chemistry</code><br>
+Adds tag Chemistry to student with index number 1</p>
+</li>
+<li>
+<p><strong>Add multiple tags to a student</strong>: <code>tag index/1 tag/Chemistry tag/Physics</code><br>
+Adds tag Chemistry and tag Physics to student with index number 1</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The screenshot below shows a representation of a student with tags</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/tagged-student-example.png" alt="tagged student example">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mark-code-mark-code"><a class="link" href="#mark-code-mark-code">4.3. Mark ​-​ <code>mark</code></a></h3>
+<div class="paragraph">
+<p>Marks academically weak students, allowing users to pay extra attention to the marked students.</p>
+</div>
+<div class="sect3">
+<h4 id="marks-a-student-code-mark-code"><a class="link" href="#marks-a-student-code-mark-code">4.3.1. Marks a student: <code>mark</code></a></h4>
+<div class="paragraph">
+<p>Allows a user to mark an already created student.<br>
+Format: <code>mark index/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>index</code> (The index number of the student you want to mark)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>mark index/1</code><br>
+Marks the student with index number 1</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="remove-mark-from-a-student-code-unmark-code"><a class="link" href="#remove-mark-from-a-student-code-unmark-code">4.3.2. Remove mark from a student: <code>unmark</code></a></h4>
+<div class="paragraph">
+<p>Allows a user to remove mark from an already created student who has been previously marked.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>mark unmark index/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>index</code> (The index number of the student you want to unmark)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>mark unmark index/1</code><br>
+Unmarks the student with index number 1</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/marked-student-example.png" alt="marked student example">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="groups-code-group-code"><a class="link" href="#groups-code-group-code">4.4. Groups ​-​ <code>group</code></a></h3>
+<div class="sect3">
+<h4 id="creating-a-group-manually-code-manual-code"><a class="link" href="#creating-a-group-manually-code-manual-code">4.4.1. Creating a Group manually: <code>manual</code></a></h4>
+<div class="paragraph">
+<p>Allows a user to create a group manually.<br>
+Format: <code>group manual groupID/&#8230;&#8203; studentNumber/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>groupID</code> (The name of the group)</p>
+</li>
+<li>
+<p><code>studentNumber</code> (The index numbers of the students you want to add to the group)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>group manual groupID/G03 studentNumber/1 2 3</code><br>
+Adds student index numbers 1, 2 and 3 to the group named G03.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adding-a-student-to-a-group-code-add-code"><a class="link" href="#adding-a-student-to-a-group-code-add-code">4.4.2. Adding a Student to a Group: <code>add</code></a></h4>
+<div class="paragraph">
+<p>Allows a user to add a Student to a Group.<br>
+Format: <code>group add groupID/&#8230;&#8203; studentNumber/&#8230;&#8203; groupIndexNumber/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>groupID</code> (The name of the group)</p>
+</li>
+<li>
+<p><code>studentNumber</code> (The index number of the student you want to add to the group)</p>
+</li>
+<li>
+<p><code>groupIndexNumber</code> (The index number within the group that you want to add the student to)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>group add groupID/G01 studentNumber/2 groupIndexNumber/3</code><br>
+Adds student 2 to the group index number 3 for the group named G01.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="removing-a-student-from-a-group-code-delete-code"><a class="link" href="#removing-a-student-from-a-group-code-delete-code">4.4.3. Removing a Student from a Group: <code>delete</code></a></h4>
+<div class="paragraph">
+<p>Allows a user to remove a student from a group.<br>
+Format: <code>group delete groupID/&#8230;&#8203; groupIndexNumber/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>groupID</code> (The name of the group)</p>
+</li>
+<li>
+<p><code>groupIndexNumber</code> (The group index number of the student in the group to be deleted)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>group delete groupID/G01 groupIndexNumber/1</code><br>
+Removes the student with group index number 1 for the group named G01.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="exporting-a-group-to-a-word-document-code-export-code"><a class="link" href="#exporting-a-group-to-a-word-document-code-export-code">4.4.4. Exporting a Group to a Word Document: <code>export</code></a></h4>
+<div class="paragraph">
+<p>Allows a user to export a group to a Word Document.<br>
+Format: <code>group export groupID/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>groupID</code> (The name of the group)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>quiz export groupID/G01</code><br>
+Exports the group named G01 to a word document named <code>G01.docx</code>, found under the exports folder.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="showing-students-from-a-group"><a class="link" href="#showing-students-from-a-group">4.4.5. Showing students from a group:</a></h4>
+<div class="paragraph">
+<p>Allows a user to see all students from a group.+</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>group groupID/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>groupID</code> (The name of the group)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>group groupID/G01</code><br>
+Shows all the students that belong to group with groupID <code>G01</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="timetable-code-timetable-code"><a class="link" href="#timetable-code-timetable-code">4.5. Timetable​ - <code>​/timetable</code></a></h3>
 <div class="paragraph">
 <p>Manage timetable and schedule class timings</p>
 </div>
@@ -292,7 +657,7 @@ e.g. <code>/timetable delete 1</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="attendance-code-attendance-code"><a class="link" href="#attendance-code-attendance-code">4.4. Attendance ​-​ <code>/attendance</code></a></h3>
+<h3 id="attendance-code-attendance-code"><a class="link" href="#attendance-code-attendance-code">4.6. Attendance ​-​ <code>/attendance</code></a></h3>
 <div class="paragraph">
 <p>View and mark student’s attendance.</p>
 </div>
@@ -310,9 +675,9 @@ e.g. <code>/attendance check unity 1</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="questions-code-question-code"><a class="link" href="#questions-code-question-code">4.5. Questions ​-​ <code>question</code></a></h3>
+<h3 id="questions-code-question-code"><a class="link" href="#questions-code-question-code">4.7. Questions ​-​ <code>question</code></a></h3>
 <div class="sect3">
-<h4 id="creating-a-question"><a class="link" href="#creating-a-question">4.5.1. Creating a question</a></h4>
+<h4 id="creating-a-question"><a class="link" href="#creating-a-question">4.7.1. Creating a question</a></h4>
 <div class="paragraph">
 <p>Create and store questions according to the type specified.<br>
 Format: <code>question question/&#8230;&#8203; answer/&#8230;&#8203; type/&#8230;&#8203; (MCQ OPTIONS IF APPLICABLE)</code></p>
@@ -375,7 +740,7 @@ choices <em>'1965', '1963', '1968', '1970'</em>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-question"><a class="link" href="#editing-a-question">4.5.2. Editing a question</a></h4>
+<h4 id="editing-a-question"><a class="link" href="#editing-a-question">4.7.2. Editing a question</a></h4>
 <div class="paragraph">
 <p>Edit a question currently stored. All fields are <strong>optional</strong>.<br>
 Format: <code>question [INDEX] question/&#8230;&#8203; answer/&#8230;&#8203; type/&#8230;&#8203; (MCQ OPTIONS IF APPLICABLE)</code></p>
@@ -440,7 +805,7 @@ Edits the type of the first question in the list from open ended question to mcq
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-question"><a class="link" href="#deleting-a-question">4.5.3. Deleting a question</a></h4>
+<h4 id="deleting-a-question"><a class="link" href="#deleting-a-question">4.7.3. Deleting a question</a></h4>
 <div class="paragraph">
 <p>Delete a question from the question list.<br>
 Format: <code>question delete [INDEX]</code></p>
@@ -468,7 +833,7 @@ Deletes the first question in the list.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Feature-Question-List"><a class="link" href="#Feature-Question-List">4.5.4. Listing your saved questions</a></h4>
+<h4 id="Feature-Question-List"><a class="link" href="#Feature-Question-List">4.7.4. Listing your saved questions</a></h4>
 <div class="paragraph">
 <p>Display the stored questions and list them in ascending order according to the time created.<br>
 Format: <code>question list</code></p>
@@ -490,7 +855,7 @@ Lists the question list.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Feature-Question-Find"><a class="link" href="#Feature-Question-Find">4.5.5. Searching for a question</a></h4>
+<h4 id="Feature-Question-Find"><a class="link" href="#Feature-Question-Find">4.7.5. Searching for a question</a></h4>
 <div class="paragraph">
 <p>Search and display questions with similar terms.</p>
 </div>
@@ -533,7 +898,7 @@ Searches through the question list to find questions close to the search term <e
 </div>
 </div>
 <div class="sect3">
-<h4 id="starting-a-slideshow"><a class="link" href="#starting-a-slideshow">4.5.6. Starting a Slideshow</a></h4>
+<h4 id="starting-a-slideshow"><a class="link" href="#starting-a-slideshow">4.7.6. Starting a Slideshow</a></h4>
 <div class="paragraph">
 <p>Start a slideshow based on the questions selected.<br>
 Format: <code>question slideshow [QUESTIONS INDEX]</code></p>
@@ -563,9 +928,9 @@ Starts a slideshow with questions containing index <em>'1'</em>, <em>'2'</em> an
 </div>
 </div>
 <div class="sect2">
-<h3 id="quizzes-code-quiz-code"><a class="link" href="#quizzes-code-quiz-code">4.6. Quizzes ​-​ <code>quiz</code></a></h3>
+<h3 id="quizzes-code-quiz-code"><a class="link" href="#quizzes-code-quiz-code">4.8. Quizzes ​-​ <code>quiz</code></a></h3>
 <div class="sect3">
-<h4 id="creating-a-quiz-manually-code-manual-code"><a class="link" href="#creating-a-quiz-manually-code-manual-code">4.6.1. Creating a Quiz manually: <code>manual</code></a></h4>
+<h4 id="creating-a-quiz-manually-code-manual-code"><a class="link" href="#creating-a-quiz-manually-code-manual-code">4.8.1. Creating a Quiz manually: <code>manual</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to create a quiz manually.<br>
 Format: <code>quiz manual quizID/&#8230;&#8203; questionNumber/&#8230;&#8203;</code></p>
@@ -596,7 +961,7 @@ Adds question numbers 1, 2 and 3 to the quiz named CS2103T.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="creating-a-quiz-automatically-code-auto-code"><a class="link" href="#creating-a-quiz-automatically-code-auto-code">4.6.2. Creating a Quiz automatically: <code>auto</code></a></h4>
+<h4 id="creating-a-quiz-automatically-code-auto-code"><a class="link" href="#creating-a-quiz-automatically-code-auto-code">4.8.2. Creating a Quiz automatically: <code>auto</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to create a quiz automatically.<br>
 Format: <code>quiz auto quizID/&#8230;&#8203; numQuestions/&#8230;&#8203; type/&#8230;&#8203;</code></p>
@@ -630,7 +995,7 @@ Adds 2 questions of type mcq to the quiz named CS2103T.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="adding-a-question-to-a-quiz-code-add-code"><a class="link" href="#adding-a-question-to-a-quiz-code-add-code">4.6.3. Adding a Question to a Quiz: <code>add</code></a></h4>
+<h4 id="adding-a-question-to-a-quiz-code-add-code"><a class="link" href="#adding-a-question-to-a-quiz-code-add-code">4.8.3. Adding a Question to a Quiz: <code>add</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to add a question to a quiz.<br>
 Format: <code>quiz add quizID/&#8230;&#8203; questionNumber/&#8230;&#8203; quizQuestionNumber/&#8230;&#8203;</code></p>
@@ -664,7 +1029,7 @@ Adds question 2 to the quiz question number 3 for the quiz named CS2103T.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-question-from-a-quiz-code-delete-code"><a class="link" href="#deleting-a-question-from-a-quiz-code-delete-code">4.6.4. Deleting a Question from a Quiz: <code>delete</code></a></h4>
+<h4 id="deleting-a-question-from-a-quiz-code-delete-code"><a class="link" href="#deleting-a-question-from-a-quiz-code-delete-code">4.8.4. Deleting a Question from a Quiz: <code>delete</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to delete a question from a quiz.<br>
 Format: <code>quiz delete quizID/&#8230;&#8203; quizQuestionNumber/&#8230;&#8203;</code></p>
@@ -695,7 +1060,7 @@ Deletes the quiz question number 3 for the quiz named CS2103T.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="exporting-a-quiz-to-html-code-export-code"><a class="link" href="#exporting-a-quiz-to-html-code-export-code">4.6.5. Exporting a Quiz to HTML: <code>export</code></a></h4>
+<h4 id="exporting-a-quiz-to-html-code-export-code"><a class="link" href="#exporting-a-quiz-to-html-code-export-code">4.8.5. Exporting a Quiz to HTML: <code>export</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to export a quiz to a HTML file.<br>
 Format: <code>quiz export quizID/&#8230;&#8203;</code></p>
@@ -723,7 +1088,7 @@ Exports the quiz named CS2103T to a HTML file.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-a-quiz-code-list-code"><a class="link" href="#listing-a-quiz-code-list-code">4.6.6. Listing a Quiz: <code>list</code></a></h4>
+<h4 id="listing-a-quiz-code-list-code"><a class="link" href="#listing-a-quiz-code-list-code">4.8.6. Listing a Quiz: <code>list</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to list a quiz&#8217;s questions and answers.<br>
 Format: <code>quiz list quizID/&#8230;&#8203;</code></p>
@@ -751,7 +1116,7 @@ Lists the questions and answers for the quiz named CS2103T.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="showing-only-a-quiz-s-questions-code-showquestions-code"><a class="link" href="#showing-only-a-quiz-s-questions-code-showquestions-code">4.6.7. Showing only a Quiz&#8217;s Questions: <code>showQuestions</code></a></h4>
+<h4 id="showing-only-a-quiz-s-questions-code-showquestions-code"><a class="link" href="#showing-only-a-quiz-s-questions-code-showquestions-code">4.8.7. Showing only a Quiz&#8217;s Questions: <code>showQuestions</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to show only a quiz&#8217;s questions.<br>
 Format: <code>quiz showQuestions quizID/&#8230;&#8203;</code></p>
@@ -779,7 +1144,7 @@ Shows only the questions for the quiz named CS2103T.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="showing-only-a-quiz-s-answers-code-showanswers-code"><a class="link" href="#showing-only-a-quiz-s-answers-code-showanswers-code">4.6.8. Showing only a Quiz&#8217;s Answers: <code>showAnswers</code></a></h4>
+<h4 id="showing-only-a-quiz-s-answers-code-showanswers-code"><a class="link" href="#showing-only-a-quiz-s-answers-code-showanswers-code">4.8.8. Showing only a Quiz&#8217;s Answers: <code>showAnswers</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to show only a quiz&#8217;s answers.<br>
 Format: <code>quiz showAnswers quizID/&#8230;&#8203;</code></p>
@@ -808,9 +1173,9 @@ Shows only the answers for the quiz named CS2103T.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="events-code-event-code"><a class="link" href="#events-code-event-code">4.7. Events ​-​ <code>event</code></a></h3>
+<h3 id="events-code-event-code"><a class="link" href="#events-code-event-code">4.9. Events ​-​ <code>event</code></a></h3>
 <div class="sect3">
-<h4 id="creating-a-event"><a class="link" href="#creating-a-event">4.7.1. Creating a event</a></h4>
+<h4 id="creating-a-event"><a class="link" href="#creating-a-event">4.9.1. Creating a event</a></h4>
 <div class="paragraph">
 <p>Create, store and render a event<br>
 Format: <code>event eventName/&#8230;&#8203; startDateTime/&#8230;&#8203; endDateTime/&#8230;&#8203; recur/&#8230;&#8203; color/&#8230;&#8203;</code></p>
@@ -865,7 +1230,7 @@ date and time <em>'21st Oct 2019, 1600'</em> and a color grouping of <em>'1'</em
 </div>
 </div>
 <div class="sect3">
-<h4 id="Feature-Event-Index"><a class="link" href="#Feature-Event-Index">4.7.2. Indexing a event</a></h4>
+<h4 id="Feature-Event-Index"><a class="link" href="#Feature-Event-Index">4.9.2. Indexing a event</a></h4>
 <div class="paragraph">
 <p>Gets the index a event based on its event name. If the event name is not found, it shows the event which has the most
 similar event name +s
@@ -894,7 +1259,7 @@ Returns the index of the event in the calendar</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-event"><a class="link" href="#editing-a-event">4.7.3. Editing a event</a></h4>
+<h4 id="editing-a-event"><a class="link" href="#editing-a-event">4.9.3. Editing a event</a></h4>
 <div class="paragraph">
 <p>Edit a event currently stored. All fields are <strong>optional</strong>.<br>
 Format: <code>event [INDEX] eventName/&#8230;&#8203; startDateTime/&#8230;&#8203; endDateTime/&#8230;&#8203; recur/&#8230;&#8203; color/&#8230;&#8203;</code></p>
@@ -937,7 +1302,7 @@ Edits the first event in the list changing existing event name to <em>'CS2103T L
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-event"><a class="link" href="#deleting-a-event">4.7.4. Deleting a event</a></h4>
+<h4 id="deleting-a-event"><a class="link" href="#deleting-a-event">4.9.4. Deleting a event</a></h4>
 <div class="paragraph">
 <p>Delete a event from the calendar.<br>
 Format: <code>event delete [INDEX]</code></p>
@@ -974,7 +1339,7 @@ Deletes the event with index 1</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-all-events"><a class="link" href="#viewing-all-events">4.7.5. Viewing all events</a></h4>
+<h4 id="viewing-all-events"><a class="link" href="#viewing-all-events">4.9.5. Viewing all events</a></h4>
 <div class="paragraph">
 <p>Show all your events in the calendar<br>
 Format: <code>event view</code></p>
@@ -992,7 +1357,7 @@ Opens the calendar view consisting of all your events</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="export-all-events"><a class="link" href="#export-all-events">4.7.6. Export all events</a></h4>
+<h4 id="export-all-events"><a class="link" href="#export-all-events">4.9.6. Export all events</a></h4>
 <div class="paragraph">
 <p>Exports stored events into a .ics file. This file type can easily be imported into Google Calendar and other
 mainstream calendar applications<br>
@@ -1022,9 +1387,9 @@ Exports your events into your Desktop with the file name: <code>nJoy_Event_Sched
 </div>
 </div>
 <div class="sect2">
-<h3 id="notes-code-notes-code"><a class="link" href="#notes-code-notes-code">4.8. Notes - <code>notes</code></a></h3>
+<h3 id="notes-code-notes-code"><a class="link" href="#notes-code-notes-code">4.10. Notes - <code>notes</code></a></h3>
 <div class="sect3">
-<h4 id="creating-a-note"><a class="link" href="#creating-a-note">4.8.1. Creating a note</a></h4>
+<h4 id="creating-a-note"><a class="link" href="#creating-a-note">4.10.1. Creating a note</a></h4>
 <div class="paragraph">
 <p>Create lightweight, digital notes and reminders quickly and easily as specified.<br>
 Format: <code>note note/&#8230;&#8203; desc/&#8230;&#8203; priority/&#8230;&#8203; (optional)</code></p>
@@ -1098,7 +1463,7 @@ Creates a high priority note with title <em>'Tuesday 1pm'</em> with description 
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-note"><a class="link" href="#editing-a-note">4.8.2. Editing a note</a></h4>
+<h4 id="editing-a-note"><a class="link" href="#editing-a-note">4.10.2. Editing a note</a></h4>
 <div class="paragraph">
 <p>Edit a note currently stored. All fields are <strong>optional</strong>.<br>
 Format: <code>note [INDEX] note/&#8230;&#8203; desc/&#8230;&#8203; priority/&#8230;&#8203;</code></p>
@@ -1151,7 +1516,7 @@ Edits the description of the second note in the list to <em>’give speech’</e
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-note"><a class="link" href="#deleting-a-note">4.8.3. Deleting a note</a></h4>
+<h4 id="deleting-a-note"><a class="link" href="#deleting-a-note">4.10.3. Deleting a note</a></h4>
 <div class="paragraph">
 <p>Delete a note from the notes list.<br>
 Format: <code>note delete [INDEX]</code></p>
@@ -1179,7 +1544,7 @@ Deletes the first note in the list.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Feature-Note-List"><a class="link" href="#Feature-Note-List">4.8.4. Listing notes</a></h4>
+<h4 id="Feature-Note-List"><a class="link" href="#Feature-Note-List">4.10.4. Listing notes</a></h4>
 <div class="paragraph">
 <p>Display the list of notes in the command result box.<br>
 Format: <code>note list</code></p>
@@ -1214,9 +1579,9 @@ Lists the notes.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="statistics-code-statistics-code"><a class="link" href="#statistics-code-statistics-code">4.9. Statistics - <code>statistics</code></a></h3>
+<h3 id="statistics-code-statistics-code"><a class="link" href="#statistics-code-statistics-code">4.11. Statistics - <code>statistics</code></a></h3>
 <div class="sect3">
-<h4 id="generating-a-statistics-report"><a class="link" href="#generating-a-statistics-report">4.9.1. Generating a Statistics report</a></h4>
+<h4 id="generating-a-statistics-report"><a class="link" href="#generating-a-statistics-report">4.11.1. Generating a Statistics report</a></h4>
 <div class="paragraph">
 <p>Create statistics reports of student scores using excel data files. The statistics generated is based
 on the calculated weighted score of the input data.<br>
@@ -1384,7 +1749,7 @@ allow you to see some of the common descriptive statistics and their relative di
 </div>
 </div>
 <div class="sect2">
-<h3 id="help-code-help-code"><a class="link" href="#help-code-help-code">4.10. Help ​-​ <code>help</code></a></h3>
+<h3 id="help-code-help-code"><a class="link" href="#help-code-help-code">4.12. Help ​-​ <code>help</code></a></h3>
 <div class="paragraph">
 <p>Opens up the help window.<br>
 Format: <code>help</code></p>
@@ -1415,6 +1780,42 @@ Note that all fields all mandatory unless stated otherwise.​</p>
 <ul>
 <li>
 <p><strong>Help</strong> : <code>help</code></p>
+</li>
+<li>
+<p><strong>Adding a student</strong>: <code>student name/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Removing a student</strong>: <code>student delete index/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Editing a student</strong>: <code>student [index] name/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Listing all students</strong>: <code>student list</code></p>
+</li>
+<li>
+<p><strong>Tagging student</strong>: <code>tag index/&#8230;&#8203; tag/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Marking a student</strong>: <code>mark index/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Unmarking a student</strong>: <code>mark unmark index/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Creating a group</strong>: <code>group manual groupID/&#8230;&#8203; studentNumber/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Adding student to a group</strong>: <code>group groupID/&#8230;&#8203; studentNumber/&#8230;&#8203; groupIndexNumber/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Removing student from a group</strong>: <code>group delete groupID/&#8230;&#8203; groupIndexNumber/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Showing students from a group</strong>: <code>group groupID/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Exporting a group</strong>: <code>group export groupID/&#8230;&#8203;</code></p>
 </li>
 <li>
 <p><strong>Creating a Quiz Manually</strong> : <code>quiz manual quizID/&#8230;&#8203; questionNumber/&#8230;&#8203;</code></p>
@@ -1461,4 +1862,4 @@ Note that all fields all mandatory unless stated otherwise.​</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 15:19:15 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-31 10:28:25 UTC</div></div></div></body></html>
