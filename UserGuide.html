@@ -1329,7 +1329,7 @@ Deleting a event which is recurring (daily or weeekly) will delete all instances
 <div class="ulist">
 <ul>
 <li>
-<p><code>question delete 1</code><br>
+<p><code>event delete 1</code><br>
 Deletes the event with index 1</p>
 </li>
 </ul>
@@ -1339,10 +1339,74 @@ Deletes the event with index 1</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-all-events"><a class="link" href="#viewing-all-events">4.9.5. Viewing all events</a></h4>
+<h4 id="taking-screenshot-of-schedule"><a class="link" href="#taking-screenshot-of-schedule">4.9.5. Taking screenshot of schedule</a></h4>
 <div class="paragraph">
-<p>Show all your events in the calendar<br>
-Format: <code>event view</code></p>
+<p>Takes a screen shot of the calendar as PNG file<br>
+Format: <code>event screenshot directory/[DIRECTORY]</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>[DIRECTORY]</code> - The target directory to save the screenshot to</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Scroll to which portion of the calendar is to be taken, and the application will then open a separate
+full screen window to maximise the content captured of the screenshot.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>event screenshot directory/Users/John/Desktop</code><br>
+Takes a screenshot of the current calendar and saves it to John&#8217;s desktop.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="viewing-all-events"><a class="link" href="#viewing-all-events">4.9.6. Viewing all events</a></h4>
+<div class="paragraph">
+<p>Show all your events in the calendar. All fields are optional
+Format: <code>event view scheduleMode/&#8230;&#8203; targetDate/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>scheduleMode</code> - Schedule viewing mode of the calendar. Either weekly or daily.</p>
+</li>
+<li>
+<p><code>targetDate</code> - The target date to show for the week. If in daily mode, simply show the events in the date.
+If in weekly mode, show the week which includes the specified date</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The target date option must be specified in the following format: yyyy-mm-dd. E.g. 2019-11-23
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -1350,14 +1414,14 @@ Format: <code>event view</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>question view</code><br>
-Opens the calendar view consisting of all your events</p>
+<p><code>event view scheduleMode/weekly targetDate/2019-11-23</code><br>
+Opens the calendar view in weekly mode with the target date 23 November 2019.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="export-all-events"><a class="link" href="#export-all-events">4.9.6. Export all events</a></h4>
+<h4 id="export-all-events"><a class="link" href="#export-all-events">4.9.7. Export all events</a></h4>
 <div class="paragraph">
 <p>Exports stored events into a .ics file. This file type can easily be imported into Google Calendar and other
 mainstream calendar applications<br>
@@ -1839,6 +1903,24 @@ Note that all fields all mandatory unless stated otherwise.​</p>
 <p><strong>Showing only Answers of a Quiz</strong> : <code>quiz showAnswers quizID/&#8230;&#8203;</code></p>
 </li>
 <li>
+<p><strong>Adding an Event</strong> : <code>event eventName/&#8230;&#8203; startDateTime/&#8230;&#8203; endDateTime/&#8230;&#8203; recur/&#8230;&#8203; color/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Editing an Event</strong> : <code>event [INDEX] eventName/&#8230;&#8203; startDateTime/&#8230;&#8203; endDateTime/&#8230;&#8203; recur/&#8230;&#8203; color/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Deleting an Event</strong> : <code>event delete [INDEX]</code></p>
+</li>
+<li>
+<p><strong>Viewing all Event</strong> : <code>event view scheduleMode/&#8230;&#8203; targetDate/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Exporting Events</strong> : <code>event export directory/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><strong>Screenshot Calendar</strong> : <code>event screenshot directory/&#8230;&#8203;</code></p>
+</li>
+<li>
 <p><strong>Creating a Note</strong> : <code>note note/&#8230;&#8203; desc/&#8230;&#8203;</code></p>
 </li>
 <li>
@@ -1862,4 +1944,4 @@ Note that all fields all mandatory unless stated otherwise.​</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-31 10:28:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-31 12:19:20 UTC</div></div></div></body></html>
