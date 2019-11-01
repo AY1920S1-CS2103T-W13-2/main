@@ -2369,6 +2369,36 @@ from one another</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">locate details of students without having to go through the entire list</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deal with possible changes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep notes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have reminders for pending tasks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prioritize my notes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see the notes that are urgent to me</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code>  [Epic]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">generate score statistics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">easily view class performance and identify weaker students</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">print my statistics reports</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep a log of individual student performance over the year</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view the teacher&#8217;s schedule</p></td>
@@ -2966,6 +2996,220 @@ appropriate slots when I am free</p></td>
 </li>
 </ul>
 </div>
+<h3 id="use-case-make-notes-uc14" class="discrete">Use case: Make notes (UC14)</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Teacher requests to make a note.</p>
+</li>
+<li>
+<p>Teacher enters specifications of the note.</p>
+</li>
+<li>
+<p>NJoy saves the item and displays the new record.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. Njoy detects missing or invalid specifications.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a1. NJoy shows error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-edit-notes-uc15" class="discrete">Use case: Edit notes (UC15)</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Teacher requests to edit a note.</p>
+</li>
+<li>
+<p>Teacher enters specifications of the edited note.</p>
+</li>
+<li>
+<p>NJoy saves the item and displays the new record.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. NJoy detects missing or invalid specifications.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a1. NJoy shows error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-delete-notes-uc16" class="discrete">Use case: Delete notes (UC16)</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Teacher requests to delete a note.</p>
+</li>
+<li>
+<p>Teacher enters specifications of the note to delete.</p>
+</li>
+<li>
+<p>NJoy removes the item and displays the new record.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. NJoy detects invalid specifications.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a1. NJoy shows error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-list-notes-uc17" class="discrete">Use case: List notes (UC17)</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Teacher requests to list notes to view.</p>
+</li>
+<li>
+<p>NJoy displays the list of notes record.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<h3 id="use-case-sort-notes-uc18" class="discrete">Use case: Sort notes (UC18)</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Teacher requests to sort the notes by priority.</p>
+</li>
+<li>
+<p>NJoy displays the list of sorted notes record.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<h3 id="use-case-generate-statistics-uc19" class="discrete">Use case: Generate Statistics (UC19)</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Teacher requests to generate statistics report.</p>
+</li>
+<li>
+<p>Teacher enters specifications of the data file.</p>
+</li>
+<li>
+<p>NJoy reads the data file and generates statistics to show.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. NJoy detects invalid specifications of the data file or request.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a1. NJoy shows error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-save-statistics-report-uc20" class="discrete">Use case: Save Statistics Report (UC20)</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Teacher generates a statistics report (UC19).</p>
+</li>
+<li>
+<p>Teacher goes to the directory where report is saved.</p>
+</li>
+<li>
+<p>Teacher sees the saved statistics report.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -3189,4 +3433,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-01 06:23:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-01 06:47:01 UTC</div></div></div></body></html>

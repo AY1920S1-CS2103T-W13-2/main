@@ -1750,7 +1750,7 @@ Failure to adhere to the following specifications might result in either the exc
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Data starts at cell A1.</strong></p>
+<p><strong>Entries starts at cell A1 with the cell <code>Students</code>, regardless of whether there is score data.</strong></p>
 </li>
 <li>
 <p><strong>First row begins with the cell <code>Students</code>, followed by their names. (e.g. row 1 of 4 cells having <code>Students</code>, <code>Jason</code>, <code>Mike</code> and <code>Peter</code>)</strong></p>
@@ -1766,6 +1766,15 @@ Failure to adhere to the following specifications might result in either the exc
 </li>
 <li>
 <p><strong>All scores are numeric characters (integer or decimals)</strong></p>
+</li>
+<li>
+<p><strong>There are no gaps between rows and columns.</strong></p>
+</li>
+<li>
+<p><strong>All cells within the row and column range have at least one non-whitespace characters.</strong></p>
+</li>
+<li>
+<p><strong>All cells outside the row and column range are empty.</strong></p>
 </li>
 </ul>
 </div>
@@ -1787,6 +1796,18 @@ Failure to adhere to the following specifications might result in some of the st
 <p><strong>All scores should be in percentage terms. (0 ~ 100)</strong></p>
 </li>
 </ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The general rule for the file format is to ensure all entries in the file are as compact to the top left as possible; the entries should form a rectangular shape on the top left corner of the excel sheet. The rectangle should have no empty entries while all cells outside the rectangle are empty entries.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The statistics report generated uses weighted average scores across the different subjects to perform analysis. All scores carry equal weight. The statistics generated
@@ -1955,4 +1976,4 @@ Note that all fields all mandatory unless stated otherwise.​</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-01 06:23:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-01 06:47:01 UTC</div></div></div></body></html>
