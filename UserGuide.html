@@ -927,15 +927,15 @@ Format: <code>quiz manual quizID/&#8230;&#8203; questionNumber/&#8230;&#8203;</c
 <div class="paragraph">
 <p>The format supported by this feature includes:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><code>Quiz ID</code> (The name of the quiz)</p>
+<p><code>Quiz ID</code> (The label of the quiz)</p>
 </li>
 <li>
 <p><code>Question Numbers</code> (The question numbers you want to add to the quiz)</p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -944,7 +944,7 @@ Format: <code>quiz manual quizID/&#8230;&#8203; questionNumber/&#8230;&#8203;</c
 <ul>
 <li>
 <p><code>quiz manual quizID/CS2103T questionNumber/1 2 3</code><br>
-Adds question numbers 1, 2 and 3 to the quiz named CS2103T.</p>
+Adds question numbers 1, 2 and 3 to the quiz labelled CS2103T.</p>
 </li>
 </ul>
 </div>
@@ -953,15 +953,16 @@ Adds question numbers 1, 2 and 3 to the quiz named CS2103T.</p>
 <h4 id="creating-a-quiz-automatically-code-auto-code"><a class="link" href="#creating-a-quiz-automatically-code-auto-code">4.6.2. Creating a Quiz automatically: <code>auto</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to create a quiz automatically.<br>
+[NOTE] The questions chosen are randomised from the questions that you have previously added. As such, the user has to ensure enough questions are available in storage for quiz creation.
 Format: <code>quiz auto quizID/&#8230;&#8203; numQuestions/&#8230;&#8203; type/&#8230;&#8203;</code></p>
 </div>
 <div class="paragraph">
 <p>The format supported by this feature includes:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><code>Quiz ID</code> (The name of the quiz)</p>
+<p><code>Quiz ID</code> (The label of the quiz)</p>
 </li>
 <li>
 <p><code>Number of Questions</code> (The number of questions you want added to the quiz)</p>
@@ -969,7 +970,7 @@ Format: <code>quiz auto quizID/&#8230;&#8203; numQuestions/&#8230;&#8203; type/&
 <li>
 <p><code>Question Type</code> (mcq, open, all)</p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -978,7 +979,7 @@ Format: <code>quiz auto quizID/&#8230;&#8203; numQuestions/&#8230;&#8203; type/&
 <ul>
 <li>
 <p><code>quiz auto quizID/CS2103T numQuestions/2 type/mcq</code><br>
-Adds 2 questions of type mcq to the quiz named CS2103T.</p>
+Adds 2 questions of type mcq to the quiz labelled CS2103T.</p>
 </li>
 </ul>
 </div>
@@ -992,10 +993,10 @@ Format: <code>quiz add quizID/&#8230;&#8203; questionNumber/&#8230;&#8203; quizQ
 <div class="paragraph">
 <p>The format supported by this feature includes:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><code>Quiz ID</code> (The name of your quiz)</p>
+<p><code>Quiz ID</code> (The label of your quiz)</p>
 </li>
 <li>
 <p><code>Question Number</code> (The question number you want to add to the quiz)</p>
@@ -1003,7 +1004,7 @@ Format: <code>quiz add quizID/&#8230;&#8203; questionNumber/&#8230;&#8203; quizQ
 <li>
 <p><code>Quiz Question Number</code> (The question number in the quiz you want to add the question to)</p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -1012,7 +1013,7 @@ Format: <code>quiz add quizID/&#8230;&#8203; questionNumber/&#8230;&#8203; quizQ
 <ul>
 <li>
 <p><code>quiz add quizID/CS2103T questionNumber/2 quizQuestionNumber/3</code><br>
-Adds question 2 to the quiz question number 3 for the quiz named CS2103T.</p>
+Adds question 2 to the quiz question number 3 for the quiz labelled CS2103T.</p>
 </li>
 </ul>
 </div>
@@ -1026,15 +1027,15 @@ Format: <code>quiz delete quizID/&#8230;&#8203; quizQuestionNumber/&#8230;&#8203
 <div class="paragraph">
 <p>The format supported by this feature includes:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><code>Quiz ID</code> (The name of the quiz)</p>
+<p><code>Quiz ID</code> (The label of the quiz)</p>
 </li>
 <li>
 <p><code>Quiz Question Number</code> (The question number of the question in the quiz to be deleted)</p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -1043,7 +1044,7 @@ Format: <code>quiz delete quizID/&#8230;&#8203; quizQuestionNumber/&#8230;&#8203
 <ul>
 <li>
 <p><code>quiz delete quizID/CS2103T quizQuestionNumber/3</code><br>
-Deletes the quiz question number 3 for the quiz named CS2103T.</p>
+Deletes the quiz question number 3 for the quiz labelled CS2103T.</p>
 </li>
 </ul>
 </div>
@@ -1051,18 +1052,18 @@ Deletes the quiz question number 3 for the quiz named CS2103T.</p>
 <div class="sect3">
 <h4 id="exporting-a-quiz-to-html-code-export-code"><a class="link" href="#exporting-a-quiz-to-html-code-export-code">4.6.5. Exporting a Quiz to HTML: <code>export</code></a></h4>
 <div class="paragraph">
-<p>Allows a user to export a quiz to a HTML file.<br>
+<p>Allows a user to export a quiz to a formatted HTML file.<br>
 Format: <code>quiz export quizID/&#8230;&#8203;</code></p>
 </div>
 <div class="paragraph">
 <p>The format supported by this feature includes:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><code>Quiz ID</code> (The name of the quiz)</p>
+<p><code>Quiz ID</code> (The label of the quiz)</p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -1071,7 +1072,7 @@ Format: <code>quiz export quizID/&#8230;&#8203;</code></p>
 <ul>
 <li>
 <p><code>quiz export quizID/CS2103T</code><br>
-Exports the quiz named CS2103T to a HTML file.</p>
+Exports the quiz labelled CS2103T to a formatted HTML file.</p>
 </li>
 </ul>
 </div>
@@ -1085,12 +1086,12 @@ Format: <code>quiz list quizID/&#8230;&#8203;</code></p>
 <div class="paragraph">
 <p>The format supported by this feature includes:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><code>Quiz ID</code> (The name of the quiz)</p>
+<p><code>Quiz ID</code> (The label of the quiz)</p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -1099,7 +1100,7 @@ Format: <code>quiz list quizID/&#8230;&#8203;</code></p>
 <ul>
 <li>
 <p><code>quiz list quizID/CS2103T</code><br>
-Lists the questions and answers for the quiz named CS2103T.</p>
+Lists the questions and answers for the quiz labelled CS2103T.</p>
 </li>
 </ul>
 </div>
@@ -1113,12 +1114,12 @@ Format: <code>quiz showQuestions quizID/&#8230;&#8203;</code></p>
 <div class="paragraph">
 <p>The format supported by this feature includes:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><code>Quiz ID</code> (The name of the quiz)</p>
+<p><code>Quiz ID</code> (The label of the quiz)</p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -1127,7 +1128,7 @@ Format: <code>quiz showQuestions quizID/&#8230;&#8203;</code></p>
 <ul>
 <li>
 <p><code>quiz showQuestions quizID/CS2103T</code><br>
-Shows only the questions for the quiz named CS2103T.</p>
+Shows only the questions for the quiz labelled CS2103T.</p>
 </li>
 </ul>
 </div>
@@ -1141,12 +1142,12 @@ Format: <code>quiz showAnswers quizID/&#8230;&#8203;</code></p>
 <div class="paragraph">
 <p>The format supported by this feature includes:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><code>Quiz ID</code> (The name of the quiz)</p>
+<p><code>Quiz ID</code> (The label of the quiz)</p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -1155,7 +1156,7 @@ Format: <code>quiz showAnswers quizID/&#8230;&#8203;</code></p>
 <ul>
 <li>
 <p><code>quiz showAnswers quizID/CS2103T</code><br>
-Shows only the answers for the quiz named CS2103T.</p>
+Shows only the answers for the quiz labelled CS2103T.</p>
 </li>
 </ul>
 </div>
@@ -1954,4 +1955,4 @@ Note that all fields all mandatory unless stated otherwise.​</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-31 17:46:17 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-01 06:23:37 UTC</div></div></div></body></html>
