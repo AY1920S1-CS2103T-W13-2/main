@@ -921,8 +921,19 @@ Starts a slideshow with questions containing index <em>'1'</em>, <em>'2'</em> an
 <div class="sect3">
 <h4 id="creating-a-quiz-manually-code-manual-code"><a class="link" href="#creating-a-quiz-manually-code-manual-code">4.6.1. Creating a Quiz manually: <code>manual</code></a></h4>
 <div class="paragraph">
-<p>Allows a user to create a quiz manually.<br>
-Format: <code>quiz manual quizID/&#8230;&#8203; questionNumber/&#8230;&#8203;</code></p>
+<p>Allows a user to create a quiz manually.<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format: <code>quiz manual quizID/&#8230;&#8203; questionNumber/&#8230;&#8203;</code>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The format supported by this feature includes:</p>
@@ -952,9 +963,31 @@ Adds question numbers 1, 2 and 3 to the quiz labelled CS2103T.</p>
 <div class="sect3">
 <h4 id="creating-a-quiz-automatically-code-auto-code"><a class="link" href="#creating-a-quiz-automatically-code-auto-code">4.6.2. Creating a Quiz automatically: <code>auto</code></a></h4>
 <div class="paragraph">
-<p>Allows a user to create a quiz automatically.<br>
-[NOTE] The questions chosen are randomised from the questions that you have previously added. As such, the user has to ensure enough questions are available in storage for quiz creation.
-Format: <code>quiz auto quizID/&#8230;&#8203; numQuestions/&#8230;&#8203; type/&#8230;&#8203;</code></p>
+<p>Allows a user to create a quiz automatically.<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The questions chosen are randomised from the questions that you have previously added. As such, the user has to ensure enough questions are available in storage for quiz creation.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format: <code>quiz auto quizID/&#8230;&#8203; numQuestions/&#8230;&#8203; type/&#8230;&#8203;</code>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The format supported by this feature includes:</p>
@@ -987,8 +1020,19 @@ Adds 2 questions of type mcq to the quiz labelled CS2103T.</p>
 <div class="sect3">
 <h4 id="adding-a-question-to-a-quiz-code-add-code"><a class="link" href="#adding-a-question-to-a-quiz-code-add-code">4.6.3. Adding a Question to a Quiz: <code>add</code></a></h4>
 <div class="paragraph">
-<p>Allows a user to add a question to a quiz.<br>
-Format: <code>quiz add quizID/&#8230;&#8203; questionNumber/&#8230;&#8203; quizQuestionNumber/&#8230;&#8203;</code></p>
+<p>Allows a user to add a question to a quiz.<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format: <code>quiz add quizID/&#8230;&#8203; questionNumber/&#8230;&#8203; quizQuestionNumber/&#8230;&#8203;</code>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The format supported by this feature includes:</p>
@@ -1021,8 +1065,19 @@ Adds question 2 to the quiz question number 3 for the quiz labelled CS2103T.</p>
 <div class="sect3">
 <h4 id="deleting-a-question-from-a-quiz-code-delete-code"><a class="link" href="#deleting-a-question-from-a-quiz-code-delete-code">4.6.4. Deleting a Question from a Quiz: <code>delete</code></a></h4>
 <div class="paragraph">
-<p>Allows a user to delete a question from a quiz.<br>
-Format: <code>quiz delete quizID/&#8230;&#8203; quizQuestionNumber/&#8230;&#8203;</code></p>
+<p>Allows a user to delete a question from a quiz.<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format: <code>quiz delete quizID/&#8230;&#8203; quizQuestionNumber/&#8230;&#8203;</code>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The format supported by this feature includes:</p>
@@ -1052,8 +1107,19 @@ Deletes the quiz question number 3 for the quiz labelled CS2103T.</p>
 <div class="sect3">
 <h4 id="exporting-a-quiz-to-html-code-export-code"><a class="link" href="#exporting-a-quiz-to-html-code-export-code">4.6.5. Exporting a Quiz to HTML: <code>export</code></a></h4>
 <div class="paragraph">
-<p>Allows a user to export a quiz to a formatted HTML file.<br>
-Format: <code>quiz export quizID/&#8230;&#8203;</code></p>
+<p>Allows a user to export a quiz to a formatted HTML file.<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format: <code>quiz export quizID/&#8230;&#8203;</code>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The format supported by this feature includes:</p>
@@ -1080,8 +1146,19 @@ Exports the quiz labelled CS2103T to a formatted HTML file.</p>
 <div class="sect3">
 <h4 id="listing-a-quiz-code-list-code"><a class="link" href="#listing-a-quiz-code-list-code">4.6.6. Listing a Quiz: <code>list</code></a></h4>
 <div class="paragraph">
-<p>Allows a user to list a quiz&#8217;s questions and answers.<br>
-Format: <code>quiz list quizID/&#8230;&#8203;</code></p>
+<p>Allows a user to list a quiz&#8217;s questions and answers.<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format: <code>quiz list quizID/&#8230;&#8203;</code>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The format supported by this feature includes:</p>
@@ -1108,8 +1185,19 @@ Lists the questions and answers for the quiz labelled CS2103T.</p>
 <div class="sect3">
 <h4 id="showing-only-a-quiz-s-questions-code-showquestions-code"><a class="link" href="#showing-only-a-quiz-s-questions-code-showquestions-code">4.6.7. Showing only a Quiz&#8217;s Questions: <code>showQuestions</code></a></h4>
 <div class="paragraph">
-<p>Allows a user to show only a quiz&#8217;s questions.<br>
-Format: <code>quiz showQuestions quizID/&#8230;&#8203;</code></p>
+<p>Allows a user to show only a quiz&#8217;s questions.<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format: <code>quiz showQuestions quizID/&#8230;&#8203;</code>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The format supported by this feature includes:</p>
@@ -1136,8 +1224,19 @@ Shows only the questions for the quiz labelled CS2103T.</p>
 <div class="sect3">
 <h4 id="showing-only-a-quiz-s-answers-code-showanswers-code"><a class="link" href="#showing-only-a-quiz-s-answers-code-showanswers-code">4.6.8. Showing only a Quiz&#8217;s Answers: <code>showAnswers</code></a></h4>
 <div class="paragraph">
-<p>Allows a user to show only a quiz&#8217;s answers.<br>
-Format: <code>quiz showAnswers quizID/&#8230;&#8203;</code></p>
+<p>Allows a user to show only a quiz&#8217;s answers.<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Format: <code>quiz showAnswers quizID/&#8230;&#8203;</code>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The format supported by this feature includes:</p>
@@ -1222,9 +1321,11 @@ date and time <em>'21st Oct 2019, 1600'</em> and a color grouping of <em>'1'</em
 <div class="sect3">
 <h4 id="Feature-Event-Index"><a class="link" href="#Feature-Event-Index">4.7.2. Indexing a event</a></h4>
 <div class="paragraph">
-<p>Gets the index a event based on its event name. If the event name is not found, it shows the event which has the most
-similar event name +s
-Format: <code>event indexOf/&#8230;&#8203;</code></p>
+<p>Gets the index a event based on its event name. If more than one event has the same name, the command will return all of them.
+Else if the event name is not found, it shows the event which has the most similar event name.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>event indexOf/&#8230;&#8203;</code></p>
 </div>
 <div class="paragraph">
 <p>The options supported by this feature includes:</p>
@@ -1976,4 +2077,4 @@ Note that all fields all mandatory unless stated otherwise.​</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-01 06:47:01 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-03 05:59:31 UTC</div></div></div></body></html>
