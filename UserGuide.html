@@ -16,22 +16,27 @@
 <li><a href="#running-jar-file">3.1. Running .jar file</a></li>
 </ul>
 </li>
-<li><a href="#commands">4. Commands</a>
+<li><a href="#sample-data">4. Sample Data</a>
 <ul class="sectlevel2">
-<li><a href="#students-code-student-code">4.1. Students - <code>student</code></a></li>
-<li><a href="#tags-code-tag-code">4.2. Tags ​-​ <code>tag</code></a></li>
-<li><a href="#mark-code-mark-code">4.3. Mark ​-​ <code>mark</code></a></li>
-<li><a href="#groups-code-group-code">4.4. Groups ​-​ <code>group</code></a></li>
-<li><a href="#questions-code-question-code">4.5. Questions ​-​ <code>question</code></a></li>
-<li><a href="#quizzes-code-quiz-code">4.6. Quizzes ​-​ <code>quiz</code></a></li>
-<li><a href="#events-code-event-code">4.7. Events ​-​ <code>event</code></a></li>
-<li><a href="#notes-code-notes-code">4.8. Notes - <code>notes</code></a></li>
-<li><a href="#statistics-code-statistics-code">4.9. Statistics - <code>statistics</code></a></li>
-<li><a href="#help-code-help-code">4.10. Help ​-​ <code>help</code></a></li>
+<li><a href="#Differences">4.1. Differences in Sample Data Deletion</a></li>
 </ul>
 </li>
-<li><a href="#faq">5. FAQ</a></li>
-<li><a href="#command-summary">6. Command Summary</a></li>
+<li><a href="#commands">5. Commands</a>
+<ul class="sectlevel2">
+<li><a href="#students-code-student-code">5.1. Students - <code>student</code></a></li>
+<li><a href="#tags-code-tag-code">5.2. Tags ​-​ <code>tag</code></a></li>
+<li><a href="#mark-code-mark-code">5.3. Mark ​-​ <code>mark</code></a></li>
+<li><a href="#groups-code-group-code">5.4. Groups ​-​ <code>group</code></a></li>
+<li><a href="#questions-code-question-code">5.5. Questions ​-​ <code>question</code></a></li>
+<li><a href="#quizzes-code-quiz-code">5.6. Quizzes ​-​ <code>quiz</code></a></li>
+<li><a href="#events-code-event-code">5.7. Events ​-​ <code>event</code></a></li>
+<li><a href="#notes-code-notes-code">5.8. Notes - <code>notes</code></a></li>
+<li><a href="#statistics-code-statistics-code">5.9. Statistics - <code>statistics</code></a></li>
+<li><a href="#help-code-help-code">5.10. Help ​-​ <code>help</code></a></li>
+</ul>
+</li>
+<li><a href="#faq">6. FAQ</a></li>
+<li><a href="#command-summary">7. Command Summary</a></li>
 </ul>
 </div>
 </div>
@@ -191,7 +196,82 @@ e.g. typing <code>help</code> and pressing <kbd>Enter</kbd> will open the help w
 </div>
 </div>
 <div class="sect1">
-<h2 id="commands"><a class="link" href="#commands">4. Commands</a></h2>
+<h2 id="sample-data"><a class="link" href="#sample-data">4. Sample Data</a></h2>
+<div class="sectionbody">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The NJoy Assistant starts with some data as examples. Upon the first startup, the <strong>students</strong>, <strong>questions</strong>,
+<strong>events</strong> and <strong>notes</strong> storage are loaded with sample data. The user should clear these if they are not of importance,
+as they merely serve as examples.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following steps provide an example of how to clear the sample user data for questions. The same steps can
+be applied to clear the storage for students, events and notes albeit slight <a href="#Differences"><code>differences</code></a>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1.</strong> To see the list of questions, type in the following command: <code>question list</code>. The sample question is
+circled in purple.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/QuestionListSample.jpg" alt="QuestionListSample">
+</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br>
+<strong>Step 2.</strong> To delete the sample question, type in the following command: <code>question delete 1</code>. This deletes the
+first question in the question list, which in this case is the sample question!<br>
+&#160;<br>
+After which, you should see the message circled in red indicating the success of the deletion.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/QuestionDeleteSample.jpg" alt="QuestionDeleteSample">
+</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br>
+<strong>Step 3.</strong> You&#8217;re already done! To confirm that the question has been deleted, once again type in the following
+command: <code>question list</code>. You should see that there are no more sample questions!<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/QuestionListBlank.jpg" alt="QuestionListBlank">
+</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="sect2">
+<h3 id="Differences"><a class="link" href="#Differences">4.1. Differences in Sample Data Deletion</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Students</strong>: The steps for deletion are the same as for the sample question.<br></p>
+</li>
+<li>
+<p><strong>Notes</strong>: The steps for deletion are the same as for the sample question, except that the notes are displayed
+on the right hand side of the User Interface.<br></p>
+</li>
+<li>
+<p><strong>Events</strong>: The steps for deletion are the same as for the sample question, except that to view the event, a
+different command: <code>event view</code> has to be keyed into the command line.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="commands"><a class="link" href="#commands">5. Commands</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Command Format</strong></p>
@@ -204,9 +284,9 @@ e.g. typing <code>help</code> and pressing <kbd>Enter</kbd> will open the help w
 </div>
 </div>
 <div class="sect2">
-<h3 id="students-code-student-code"><a class="link" href="#students-code-student-code">4.1. Students - <code>student</code></a></h3>
+<h3 id="students-code-student-code"><a class="link" href="#students-code-student-code">5.1. Students - <code>student</code></a></h3>
 <div class="sect3">
-<h4 id="adding-a-student"><a class="link" href="#adding-a-student">4.1.1. Adding a student</a></h4>
+<h4 id="adding-a-student"><a class="link" href="#adding-a-student">5.1.1. Adding a student</a></h4>
 <div class="paragraph">
 <p>Adds a student<br>
 Format: <code>student name/&#8230;&#8203; tag/&#8230;&#8203;(optional)</code></p>
@@ -257,7 +337,7 @@ Adds a student named John Doe with tags Chemistry and Physics</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-student"><a class="link" href="#editing-a-student">4.1.2. Editing a student</a></h4>
+<h4 id="editing-a-student"><a class="link" href="#editing-a-student">5.1.2. Editing a student</a></h4>
 <div class="paragraph">
 <p>Edit a student currently stored.<br>
 Format: <code>student [index number] name/&#8230;&#8203;</code></p>
@@ -300,7 +380,7 @@ Changes the name of the student with index number 1 in the student list to Jane 
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-student"><a class="link" href="#deleting-a-student">4.1.3. Deleting a student</a></h4>
+<h4 id="deleting-a-student"><a class="link" href="#deleting-a-student">5.1.3. Deleting a student</a></h4>
 <div class="paragraph">
 <p>Delete a student from the student list.<br>
 Format: <code>student delete [INDEX]</code></p>
@@ -328,7 +408,7 @@ Deletes the first student in the student list.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Feature-Student-List"><a class="link" href="#Feature-Student-List">4.1.4. Listing students</a></h4>
+<h4 id="Feature-Student-List"><a class="link" href="#Feature-Student-List">5.1.4. Listing students</a></h4>
 <div class="paragraph">
 <p>Display the list of students in the Main Window, and also displays the list in the Command Result Box+
 Format: <code>student list</code></p>
@@ -351,12 +431,12 @@ Lists the students.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="tags-code-tag-code"><a class="link" href="#tags-code-tag-code">4.2. Tags ​-​ <code>tag</code></a></h3>
+<h3 id="tags-code-tag-code"><a class="link" href="#tags-code-tag-code">5.2. Tags ​-​ <code>tag</code></a></h3>
 <div class="paragraph">
 <p>Represents the weak subjects of a student, allowing users to focus on the specified weak subject of the student.</p>
 </div>
 <div class="sect3">
-<h4 id="adds-a-tag-to-a-student-code-tag-code"><a class="link" href="#adds-a-tag-to-a-student-code-tag-code">4.2.1. Adds a tag to a student: <code>tag</code></a></h4>
+<h4 id="adds-a-tag-to-a-student-code-tag-code"><a class="link" href="#adds-a-tag-to-a-student-code-tag-code">5.2.1. Adds a tag to a student: <code>tag</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to add a tag to an already added student.<br>
 Format: <code>tag index/&#8230;&#8203; tag/&#8230;&#8203;</code></p>
@@ -412,12 +492,12 @@ Adds tag Chemistry and tag Physics to student with index number 1</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="mark-code-mark-code"><a class="link" href="#mark-code-mark-code">4.3. Mark ​-​ <code>mark</code></a></h3>
+<h3 id="mark-code-mark-code"><a class="link" href="#mark-code-mark-code">5.3. Mark ​-​ <code>mark</code></a></h3>
 <div class="paragraph">
 <p>Marks academically weak students, allowing users to pay extra attention to the marked students.</p>
 </div>
 <div class="sect3">
-<h4 id="marks-a-student-code-mark-code"><a class="link" href="#marks-a-student-code-mark-code">4.3.1. Marks a student: <code>mark</code></a></h4>
+<h4 id="marks-a-student-code-mark-code"><a class="link" href="#marks-a-student-code-mark-code">5.3.1. Marks a student: <code>mark</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to mark an already created student.<br>
 Format: <code>mark index/&#8230;&#8203;</code></p>
@@ -445,7 +525,7 @@ Marks the student with index number 1</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="remove-mark-from-a-student-code-unmark-code"><a class="link" href="#remove-mark-from-a-student-code-unmark-code">4.3.2. Remove mark from a student: <code>unmark</code></a></h4>
+<h4 id="remove-mark-from-a-student-code-unmark-code"><a class="link" href="#remove-mark-from-a-student-code-unmark-code">5.3.2. Remove mark from a student: <code>unmark</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to remove mark from an already created student who has been previously marked.<br></p>
 </div>
@@ -481,9 +561,9 @@ Unmarks the student with index number 1</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="groups-code-group-code"><a class="link" href="#groups-code-group-code">4.4. Groups ​-​ <code>group</code></a></h3>
+<h3 id="groups-code-group-code"><a class="link" href="#groups-code-group-code">5.4. Groups ​-​ <code>group</code></a></h3>
 <div class="sect3">
-<h4 id="creating-a-group-manually-code-manual-code"><a class="link" href="#creating-a-group-manually-code-manual-code">4.4.1. Creating a Group manually: <code>manual</code></a></h4>
+<h4 id="creating-a-group-manually-code-manual-code"><a class="link" href="#creating-a-group-manually-code-manual-code">5.4.1. Creating a Group manually: <code>manual</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to create a group manually.<br>
 Format: <code>group manual groupID/&#8230;&#8203; studentNumber/&#8230;&#8203;</code></p>
@@ -527,7 +607,7 @@ Adds student index numbers 1, 2 and 3 to the group named G03.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="adding-a-student-to-a-group-code-add-code"><a class="link" href="#adding-a-student-to-a-group-code-add-code">4.4.2. Adding a Student to a Group: <code>add</code></a></h4>
+<h4 id="adding-a-student-to-a-group-code-add-code"><a class="link" href="#adding-a-student-to-a-group-code-add-code">5.4.2. Adding a Student to a Group: <code>add</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to add a Student to a Group.<br>
 Format: <code>group add groupID/&#8230;&#8203; studentNumber/&#8230;&#8203; groupIndexNumber/&#8230;&#8203;</code></p>
@@ -575,7 +655,7 @@ Adds student 2 to the group index number 3 for the group named G01.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="removing-a-student-from-a-group-code-delete-code"><a class="link" href="#removing-a-student-from-a-group-code-delete-code">4.4.3. Removing a Student from a Group: <code>delete</code></a></h4>
+<h4 id="removing-a-student-from-a-group-code-delete-code"><a class="link" href="#removing-a-student-from-a-group-code-delete-code">5.4.3. Removing a Student from a Group: <code>delete</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to remove a student from a group.<br>
 Format: <code>group delete groupID/&#8230;&#8203; groupIndexNumber/&#8230;&#8203;</code></p>
@@ -606,7 +686,7 @@ Removes the student with group index number 1 for the group named G01.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="exporting-a-group-to-a-word-document-code-export-code"><a class="link" href="#exporting-a-group-to-a-word-document-code-export-code">4.4.4. Exporting a Group to a Word Document: <code>export</code></a></h4>
+<h4 id="exporting-a-group-to-a-word-document-code-export-code"><a class="link" href="#exporting-a-group-to-a-word-document-code-export-code">5.4.4. Exporting a Group to a Word Document: <code>export</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to export a group to a Word Document.<br>
 Format: <code>group export groupID/&#8230;&#8203;</code></p>
@@ -634,7 +714,7 @@ Exports the group named G01 to a word document named <code>G01.docx</code>, foun
 </div>
 </div>
 <div class="sect3">
-<h4 id="showing-students-from-a-group"><a class="link" href="#showing-students-from-a-group">4.4.5. Showing students from a group:</a></h4>
+<h4 id="showing-students-from-a-group"><a class="link" href="#showing-students-from-a-group">5.4.5. Showing students from a group:</a></h4>
 <div class="paragraph">
 <p>Allows a user to see all students from a group.+</p>
 </div>
@@ -665,9 +745,9 @@ Shows all the students that belong to group with groupID <code>G01</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="questions-code-question-code"><a class="link" href="#questions-code-question-code">4.5. Questions ​-​ <code>question</code></a></h3>
+<h3 id="questions-code-question-code"><a class="link" href="#questions-code-question-code">5.5. Questions ​-​ <code>question</code></a></h3>
 <div class="sect3">
-<h4 id="creating-a-question"><a class="link" href="#creating-a-question">4.5.1. Creating a question</a></h4>
+<h4 id="creating-a-question"><a class="link" href="#creating-a-question">5.5.1. Creating a question</a></h4>
 <div class="paragraph">
 <p>Create and store questions according to the type specified.<br>
 Format: <code>question question/&#8230;&#8203; answer/&#8230;&#8203; type/&#8230;&#8203; (MCQ OPTIONS IF APPLICABLE)</code></p>
@@ -730,7 +810,7 @@ choices <em>'1965', '1963', '1968', '1970'</em>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-question"><a class="link" href="#editing-a-question">4.5.2. Editing a question</a></h4>
+<h4 id="editing-a-question"><a class="link" href="#editing-a-question">5.5.2. Editing a question</a></h4>
 <div class="paragraph">
 <p>Edit a question currently stored. All fields are <strong>optional</strong>.<br>
 Format: <code>question [INDEX] question/&#8230;&#8203; answer/&#8230;&#8203; type/&#8230;&#8203; (MCQ OPTIONS IF APPLICABLE)</code></p>
@@ -795,7 +875,7 @@ Edits the type of the first question in the list from open ended question to mcq
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-question"><a class="link" href="#deleting-a-question">4.5.3. Deleting a question</a></h4>
+<h4 id="deleting-a-question"><a class="link" href="#deleting-a-question">5.5.3. Deleting a question</a></h4>
 <div class="paragraph">
 <p>Delete a question from the question list.<br>
 Format: <code>question delete [INDEX]</code></p>
@@ -823,7 +903,7 @@ Deletes the first question in the list.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Feature-Question-List"><a class="link" href="#Feature-Question-List">4.5.4. Listing your saved questions</a></h4>
+<h4 id="Feature-Question-List"><a class="link" href="#Feature-Question-List">5.5.4. Listing your saved questions</a></h4>
 <div class="paragraph">
 <p>Display the stored questions and list them in ascending order according to the time created.<br>
 Format: <code>question list</code></p>
@@ -845,7 +925,7 @@ Lists the question list.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Feature-Question-Find"><a class="link" href="#Feature-Question-Find">4.5.5. Searching for a question</a></h4>
+<h4 id="Feature-Question-Find"><a class="link" href="#Feature-Question-Find">5.5.5. Searching for a question</a></h4>
 <div class="paragraph">
 <p>Search and display questions using keywords and similar terms.</p>
 </div>
@@ -888,7 +968,7 @@ Searches through the question list to find questions close to the search term <e
 </div>
 </div>
 <div class="sect3">
-<h4 id="starting-a-slideshow"><a class="link" href="#starting-a-slideshow">4.5.6. Starting a Slideshow</a></h4>
+<h4 id="starting-a-slideshow"><a class="link" href="#starting-a-slideshow">5.5.6. Starting a Slideshow</a></h4>
 <div class="paragraph">
 <p>Start a slideshow based on the questions selected. The sequence of the questions displayed will follow the ordering of input.<br>
 Format: <code>question slideshow [QUESTIONS INDEX]</code></p>
@@ -956,7 +1036,7 @@ Starts a slideshow with questions containing index <em>'1'</em>, <em>'2'</em> an
 </div>
 </div>
 <div class="sect2">
-<h3 id="quizzes-code-quiz-code"><a class="link" href="#quizzes-code-quiz-code">4.6. Quizzes ​-​ <code>quiz</code></a></h3>
+<h3 id="quizzes-code-quiz-code"><a class="link" href="#quizzes-code-quiz-code">5.6. Quizzes ​-​ <code>quiz</code></a></h3>
 <div class="paragraph">
 <p>After taking the effort to record different questions, a teacher might be wondering what other features could the NJoy Teaching
 Assistant actually provide? What better way to make use of your predefined questions to create quizzes for homework, revision
@@ -991,7 +1071,8 @@ it be? And also, is it an mcq or open-ended question? The image below gives an o
 <p><em>`question question/How many sheeps? answer/5 type/mcq a/1 b/2 c/4 d/5` - creates a sample mcq question.</em></p>
 </div>
 <div class="paragraph">
-<p><strong>Step 2.</strong> The user can create as many questions as he wishes. If the user wishes to view the question indexes at any point of time - the image below gives a reminder of
+<p>&#160;<br>
+<strong>Step 2.</strong> The user can create as many questions as he wishes. If the user wishes to view the question indexes at any point of time - the image below gives a reminder of
 how one can view the question list:<br></p>
 </div>
 <div class="imageblock">
@@ -1002,8 +1083,11 @@ how one can view the question list:<br></p>
 <div class="paragraph">
 <p><em>`question list` - displays the question list.</em></p>
 </div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
 <div class="sect3">
-<h4 id="creating-a-quiz-manually-code-manual-code"><a class="link" href="#creating-a-quiz-manually-code-manual-code">4.6.1. Creating a Quiz manually: <code>manual</code></a></h4>
+<h4 id="creating-a-quiz-manually-code-manual-code"><a class="link" href="#creating-a-quiz-manually-code-manual-code">5.6.1. Creating a Quiz manually: <code>manual</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to create a quiz manually.<br></p>
 </div>
@@ -1061,7 +1145,7 @@ Adds question number 5 to the quiz labelled CS2103T.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="creating-a-quiz-automatically-code-auto-code"><a class="link" href="#creating-a-quiz-automatically-code-auto-code">4.6.2. Creating a Quiz automatically: <code>auto</code></a></h4>
+<h4 id="creating-a-quiz-automatically-code-auto-code"><a class="link" href="#creating-a-quiz-automatically-code-auto-code">5.6.2. Creating a Quiz automatically: <code>auto</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to create a quiz automatically.<br></p>
 </div>
@@ -1139,7 +1223,7 @@ Adds 3 questions of any type to the quiz labelled CS2103T.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="adding-a-question-to-a-quiz-code-add-code"><a class="link" href="#adding-a-question-to-a-quiz-code-add-code">4.6.3. Adding a Question to a Quiz: <code>add</code></a></h4>
+<h4 id="adding-a-question-to-a-quiz-code-add-code"><a class="link" href="#adding-a-question-to-a-quiz-code-add-code">5.6.3. Adding a Question to a Quiz: <code>add</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to add a question to a quiz.<br></p>
 </div>
@@ -1201,7 +1285,7 @@ Adds question 4 to the quiz question number 1 for the quiz labelled CS2103T.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-question-from-a-quiz-code-delete-code"><a class="link" href="#deleting-a-question-from-a-quiz-code-delete-code">4.6.4. Deleting a Question from a Quiz: <code>delete</code></a></h4>
+<h4 id="deleting-a-question-from-a-quiz-code-delete-code"><a class="link" href="#deleting-a-question-from-a-quiz-code-delete-code">5.6.4. Deleting a Question from a Quiz: <code>delete</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to delete a question from a quiz.<br></p>
 </div>
@@ -1267,7 +1351,7 @@ Deletes the quiz question number 3 for the quiz labelled CS2103T.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="exporting-a-quiz-to-html-code-export-code"><a class="link" href="#exporting-a-quiz-to-html-code-export-code">4.6.5. Exporting a Quiz to HTML: <code>export</code></a></h4>
+<h4 id="exporting-a-quiz-to-html-code-export-code"><a class="link" href="#exporting-a-quiz-to-html-code-export-code">5.6.5. Exporting a Quiz to HTML: <code>export</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to export a quiz to a formatted HTML file. This file is saved in a folder "currentDirectory/exports/".<br></p>
 </div>
@@ -1328,7 +1412,8 @@ navigate to their current directory. An exports folder as shown in the image bel
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Step 2.</strong> Open the folder and double click the html file labelled with the file name CS2103T.</p>
+<p>&#160;<br>
+<strong>Step 2.</strong> Open the folder and double click the html file labelled with the file name CS2103T.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1336,7 +1421,8 @@ navigate to their current directory. An exports folder as shown in the image bel
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Step 3.</strong> Now you can send the custom quiz file to your students!
+<p>&#160;<br>
+<strong>Step 3.</strong> Now you can send the custom quiz file to your students!
 The quiz should be in a similar format as displayed below.</p>
 </div>
 <div class="imageblock">
@@ -1344,9 +1430,12 @@ The quiz should be in a similar format as displayed below.</p>
 <img src="images/QuizExported.PNG" alt="QuizExported">
 </div>
 </div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="listing-a-quiz-code-list-code"><a class="link" href="#listing-a-quiz-code-list-code">4.6.6. Listing a Quiz: <code>list</code></a></h4>
+<h4 id="listing-a-quiz-code-list-code"><a class="link" href="#listing-a-quiz-code-list-code">5.6.6. Listing a Quiz: <code>list</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to list a quiz&#8217;s questions and answers.<br></p>
 </div>
@@ -1396,7 +1485,7 @@ Lists the questions and answers for the quiz labelled CS2103T.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="showing-only-a-quiz-s-questions-code-showquestions-code"><a class="link" href="#showing-only-a-quiz-s-questions-code-showquestions-code">4.6.7. Showing only a Quiz&#8217;s Questions: <code>showQuestions</code></a></h4>
+<h4 id="showing-only-a-quiz-s-questions-code-showquestions-code"><a class="link" href="#showing-only-a-quiz-s-questions-code-showquestions-code">5.6.7. Showing only a Quiz&#8217;s Questions: <code>showQuestions</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to show only a quiz&#8217;s questions.<br></p>
 </div>
@@ -1446,7 +1535,7 @@ Shows only the questions for the quiz labelled CS2103T.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="showing-only-a-quiz-s-answers-code-showanswers-code"><a class="link" href="#showing-only-a-quiz-s-answers-code-showanswers-code">4.6.8. Showing only a Quiz&#8217;s Answers: <code>showAnswers</code></a></h4>
+<h4 id="showing-only-a-quiz-s-answers-code-showanswers-code"><a class="link" href="#showing-only-a-quiz-s-answers-code-showanswers-code">5.6.8. Showing only a Quiz&#8217;s Answers: <code>showAnswers</code></a></h4>
 <div class="paragraph">
 <p>Allows a user to show only a quiz&#8217;s answers.<br></p>
 </div>
@@ -1497,9 +1586,9 @@ Shows only the answers for the quiz labelled CS2103T.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="events-code-event-code"><a class="link" href="#events-code-event-code">4.7. Events ​-​ <code>event</code></a></h3>
+<h3 id="events-code-event-code"><a class="link" href="#events-code-event-code">5.7. Events ​-​ <code>event</code></a></h3>
 <div class="sect3">
-<h4 id="creating-a-event"><a class="link" href="#creating-a-event">4.7.1. Creating a event</a></h4>
+<h4 id="creating-a-event"><a class="link" href="#creating-a-event">5.7.1. Creating a event</a></h4>
 <div class="paragraph">
 <p>Create, store and render a event<br>
 Format: <code>event eventName/&#8230;&#8203; startDateTime/&#8230;&#8203; endDateTime/&#8230;&#8203; recur/&#8230;&#8203; color/&#8230;&#8203;</code></p>
@@ -1554,7 +1643,7 @@ date and time <em>'21st Oct 2019, 1600'</em> and a color grouping of <em>'1'</em
 </div>
 </div>
 <div class="sect3">
-<h4 id="Feature-Event-Index"><a class="link" href="#Feature-Event-Index">4.7.2. Indexing a event</a></h4>
+<h4 id="Feature-Event-Index"><a class="link" href="#Feature-Event-Index">5.7.2. Indexing a event</a></h4>
 <div class="paragraph">
 <p>Gets the index a event based on its event name. If more than one event has the same name, the command will return all of them.
 Else if the event name is not found, it shows the event which has the most similar event name.</p>
@@ -1585,7 +1674,7 @@ Returns the index of the event in the calendar</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-event"><a class="link" href="#editing-a-event">4.7.3. Editing a event</a></h4>
+<h4 id="editing-a-event"><a class="link" href="#editing-a-event">5.7.3. Editing a event</a></h4>
 <div class="paragraph">
 <p>Edit a event currently stored. All fields are <strong>optional</strong>.<br>
 Format: <code>event [INDEX] eventName/&#8230;&#8203; startDateTime/&#8230;&#8203; endDateTime/&#8230;&#8203; recur/&#8230;&#8203; color/&#8230;&#8203;</code></p>
@@ -1628,7 +1717,7 @@ Edits the first event in the list changing existing event name to <em>'CS2103T L
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-event"><a class="link" href="#deleting-a-event">4.7.4. Deleting a event</a></h4>
+<h4 id="deleting-a-event"><a class="link" href="#deleting-a-event">5.7.4. Deleting a event</a></h4>
 <div class="paragraph">
 <p>Delete a event from the calendar.<br>
 Format: <code>event delete [INDEX]</code></p>
@@ -1665,7 +1754,7 @@ Deletes the event with index 1</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="taking-screenshot-of-schedule"><a class="link" href="#taking-screenshot-of-schedule">4.7.5. Taking screenshot of schedule</a></h4>
+<h4 id="taking-screenshot-of-schedule"><a class="link" href="#taking-screenshot-of-schedule">5.7.5. Taking screenshot of schedule</a></h4>
 <div class="paragraph">
 <p>Takes a screen shot of the calendar as PNG file<br>
 Format: <code>event screenshot directory/[DIRECTORY]</code></p>
@@ -1703,7 +1792,7 @@ Takes a screenshot of the current calendar and saves it to John&#8217;s desktop.
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-all-events"><a class="link" href="#viewing-all-events">4.7.6. Viewing all events</a></h4>
+<h4 id="viewing-all-events"><a class="link" href="#viewing-all-events">5.7.6. Viewing all events</a></h4>
 <div class="paragraph">
 <p>Show all your events in the calendar. All fields are optional
 Format: <code>event view scheduleMode/&#8230;&#8203; targetDate/&#8230;&#8203;</code></p>
@@ -1747,7 +1836,7 @@ Opens the calendar view in weekly mode with the target date 23 November 2019.</p
 </div>
 </div>
 <div class="sect3">
-<h4 id="export-all-events"><a class="link" href="#export-all-events">4.7.7. Export all events</a></h4>
+<h4 id="export-all-events"><a class="link" href="#export-all-events">5.7.7. Export all events</a></h4>
 <div class="paragraph">
 <p>Exports stored events into a .ics file. This file type can easily be imported into Google Calendar and other
 mainstream calendar applications<br>
@@ -1777,9 +1866,9 @@ Exports your events into your Desktop with the file name: <code>nJoy_Event_Sched
 </div>
 </div>
 <div class="sect2">
-<h3 id="notes-code-notes-code"><a class="link" href="#notes-code-notes-code">4.8. Notes - <code>notes</code></a></h3>
+<h3 id="notes-code-notes-code"><a class="link" href="#notes-code-notes-code">5.8. Notes - <code>notes</code></a></h3>
 <div class="sect3">
-<h4 id="creating-a-note"><a class="link" href="#creating-a-note">4.8.1. Creating a note</a></h4>
+<h4 id="creating-a-note"><a class="link" href="#creating-a-note">5.8.1. Creating a note</a></h4>
 <div class="paragraph">
 <p>Create lightweight, digital notes and reminders quickly and easily as specified.<br>
 Format: <code>note note/&#8230;&#8203; desc/&#8230;&#8203; priority/&#8230;&#8203; (optional)</code></p>
@@ -1853,7 +1942,7 @@ Creates a high priority note with title <em>'Tuesday 1pm'</em> with description 
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-note"><a class="link" href="#editing-a-note">4.8.2. Editing a note</a></h4>
+<h4 id="editing-a-note"><a class="link" href="#editing-a-note">5.8.2. Editing a note</a></h4>
 <div class="paragraph">
 <p>Edit a note currently stored. All fields are <strong>optional</strong>.<br>
 Format: <code>note [INDEX] note/&#8230;&#8203; desc/&#8230;&#8203; priority/&#8230;&#8203;</code></p>
@@ -1906,7 +1995,7 @@ Edits the description of the second note in the list to <em>’give speech’</e
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-note"><a class="link" href="#deleting-a-note">4.8.3. Deleting a note</a></h4>
+<h4 id="deleting-a-note"><a class="link" href="#deleting-a-note">5.8.3. Deleting a note</a></h4>
 <div class="paragraph">
 <p>Delete a note from the notes list.<br>
 Format: <code>note delete [INDEX]</code></p>
@@ -1934,7 +2023,7 @@ Deletes the first note in the list.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Feature-Note-List"><a class="link" href="#Feature-Note-List">4.8.4. Listing notes</a></h4>
+<h4 id="Feature-Note-List"><a class="link" href="#Feature-Note-List">5.8.4. Listing notes</a></h4>
 <div class="paragraph">
 <p>Display the list of notes in the command result box.<br>
 Format: <code>note list</code></p>
@@ -1969,9 +2058,9 @@ Lists the notes.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="statistics-code-statistics-code"><a class="link" href="#statistics-code-statistics-code">4.9. Statistics - <code>statistics</code></a></h3>
+<h3 id="statistics-code-statistics-code"><a class="link" href="#statistics-code-statistics-code">5.9. Statistics - <code>statistics</code></a></h3>
 <div class="sect3">
-<h4 id="generating-a-statistics-report"><a class="link" href="#generating-a-statistics-report">4.9.1. Generating a Statistics report</a></h4>
+<h4 id="generating-a-statistics-report"><a class="link" href="#generating-a-statistics-report">5.9.1. Generating a Statistics report</a></h4>
 <div class="paragraph">
 <p>Create statistics reports of student scores using excel data files. The statistics generated is based
 on the calculated weighted score of the input data.<br>
@@ -2160,7 +2249,7 @@ allow you to see some of the common descriptive statistics and their relative di
 </div>
 </div>
 <div class="sect2">
-<h3 id="help-code-help-code"><a class="link" href="#help-code-help-code">4.10. Help ​-​ <code>help</code></a></h3>
+<h3 id="help-code-help-code"><a class="link" href="#help-code-help-code">5.10. Help ​-​ <code>help</code></a></h3>
 <div class="paragraph">
 <p>Opens up the help window.<br>
 Format: <code>help</code></p>
@@ -2175,7 +2264,7 @@ Format: <code>help</code></p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="faq"><a class="link" href="#faq">5. FAQ</a></h2>
+<h2 id="faq"><a class="link" href="#faq">6. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: Typing a command result in “Invalid command entered.”<br>
@@ -2185,7 +2274,7 @@ Note that all fields all mandatory unless stated otherwise.​</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">6. Command Summary</a></h2>
+<h2 id="command-summary"><a class="link" href="#command-summary">7. Command Summary</a></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -2312,4 +2401,4 @@ Note that all fields all mandatory unless stated otherwise.​</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-03 11:53:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-03 13:14:28 UTC</div></div></div></body></html>
