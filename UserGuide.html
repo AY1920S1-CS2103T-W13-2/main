@@ -1896,6 +1896,18 @@ Format: <code>note note/&#8230;&#8203; desc/&#8230;&#8203; priority/&#8230;&#820
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
+All non-optional fields are required and also cannot consist exclusively of whitespace characters. All leading and trailing whitespaces of the fields will be ignored.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 All priority fields can be in either lowercase or UPPERCASE. (e.g. <code>note note/sample title desc/sample desc priority/low</code> is the same as e.g. <code>note note/sample title desc/sample desc priority/LOW</code>).
 </td>
 </tr>
@@ -1920,7 +1932,7 @@ All priority fields can be in either lowercase or UPPERCASE. (e.g. <code>note no
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The notes panel on the User Interface only supports title and description of limited length. Notes that exceed this length will be truncated. For information on how to view these notes, see <a href="#Feature-Note-List">notes list</a> command.
+The notes panel is not responsive. The User Interface only supports title and description of limited length. Notes that exceed this length will be truncated. For information on how to view these notes, see <a href="#Feature-Note-List">notes list</a> command.
 </td>
 </tr>
 </table>
@@ -1944,7 +1956,7 @@ Creates a high priority note with title <em>'Tuesday 1pm'</em> with description 
 <div class="sect3">
 <h4 id="editing-a-note"><a class="link" href="#editing-a-note">5.8.2. Editing a note</a></h4>
 <div class="paragraph">
-<p>Edit a note currently stored. All fields are <strong>optional</strong>.<br>
+<p>Edit a note currently stored. All fields are <strong>optional</strong> but at least one field has to be provided for editing.<br>
 Format: <code>note [INDEX] note/&#8230;&#8203; desc/&#8230;&#8203; priority/&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock note">
@@ -2056,6 +2068,28 @@ Lists the notes.</p>
 </ul>
 </div>
 </div>
+<div class="sect3">
+<h4 id="Feature-Note-Sort"><a class="link" href="#Feature-Note-Sort">5.8.5. Sorting notes</a></h4>
+<div class="paragraph">
+<p>Sorts the list of notes by priority in descending order of the Priorities <code>HIGH</code>, <code>MEDIUM</code>, <code>LOW</code> and <code>UNMARKED</code>.<br>
+Format: <code>note sort</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:<br>
+<strong><em>-This command does not support any additional options-</em></strong></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>note sort</code><br>
+Sorts the notes by priority.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="statistics-code-statistics-code"><a class="link" href="#statistics-code-statistics-code">5.9. Statistics - <code>statistics</code></a></h3>
@@ -2160,14 +2194,15 @@ Shows the statistics report for excel file named <em>’6B Prelim Scores’</em>
 <div class="paragraph">
 <p>The data file needs to be specified in the following format to ensure that the statistics report is successfully generated.<br></p>
 </div>
-<div class="admonitionblock warning">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 Failure to adhere to the following specifications might result in either the excel file being rejected or erroneous statistics.
+If the report is generated, it might be correct but the behavior is not guaranteed should the specifications mentioned below be violated or overlooked.
 </td>
 </tr>
 </table>
@@ -2184,7 +2219,16 @@ Failure to adhere to the following specifications might result in either the exc
 <p><strong>First column states the different subjects starting from the second topmost cell. (e.g column 1 of 4 cells having <code>Students</code>, <code>Math</code>, <code>Science</code> and <code>English</code>.)</strong></p>
 </li>
 <li>
-<p><strong>All student names have unique identifiers. (e.g. two students named Jason should be identified as <code>Jason 1</code> and <code>Jason 2</code>)</strong></p>
+<p><strong>There is at least one student.</strong></p>
+</li>
+<li>
+<p><strong>There is at least one subject.</strong></p>
+</li>
+<li>
+<p><strong>All student names have unique identifiers. (e.g. two students named Jason could be identified as <code>Jason 1</code> and <code>Jason 2</code>)</strong></p>
+</li>
+<li>
+<p><strong>All subject names have unique identifiers. (e.g. two subjects named Math could be identified as <code>Advanced Math</code> and <code>Elementary Math</code>)</strong></p>
 </li>
 <li>
 <p><strong>All students have a corresponding score for all subjects</strong></p>
@@ -2203,11 +2247,11 @@ Failure to adhere to the following specifications might result in either the exc
 </li>
 </ul>
 </div>
-<div class="admonitionblock warning">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 Failure to adhere to the following specifications might result in some of the statistical data generated not being useful to the user.
@@ -2393,6 +2437,9 @@ Note that all fields all mandatory unless stated otherwise.​</p>
 <p><strong>Listing Notes</strong> : <code>note list</code></p>
 </li>
 <li>
+<p><strong>Sorting Notes</strong> : <code>note sort</code></p>
+</li>
+<li>
 <p><strong>Generating Statistics</strong> : <code>statistics file/&#8230;&#8203;</code></p>
 </li>
 <li>
@@ -2401,4 +2448,4 @@ Note that all fields all mandatory unless stated otherwise.​</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-03 15:45:42 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-04 10:55:52 UTC</div></div></div></body></html>
