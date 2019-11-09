@@ -1,0 +1,672 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Fabian Chia - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Fabian Chia - Project Portfolio</h1></div><div id="content"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>My team and I were tasked with enhancing AddressBook3 - a given CLI (Command Line Interface) application into a better product.
+Through the ideation phase, we decided to morph the application into the Njoy Teaching Assistant.
+We aim to improve the quality of life for teachers by assisting them with daily administrative tasks
+that have been traditionally resolved for years. In particular, the Njoy Teaching Assistant enables
+teachers to maintain student records; set questions and quizzes for revision; while keeping track of
+their schedules with an interactive timetable.</p>
+</div>
+<div class="paragraph">
+<p>This is what our project looks like:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Ui.png" alt="Ui">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 1. The graphical user interface for Njoy.</em></p>
+</div>
+<div class="paragraph">
+<p>My role was to design and write code for the quiz features. The rest of the sections will cover the
+summary of my quiz specific contributions to the codebase, the user guide and the developer guide.</p>
+</div>
+<div class="paragraph">
+<p>The following are icons and symbols that I will be using for the Project Portfolio:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This symbol indicates a note to the user.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+This symbol indicates a user friendly tip.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+This symbol indicates something important.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>This indicates a component, class or object in the architecture of the application.</code></p>
+</div>
+<div class="paragraph">
+<p><strong>This indicates important text.</strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section entails a summary of my specific enhancements, code contributions and other helpful increments towards the Njoy Teaching Assistant.</p>
+</div>
+<div class="paragraph">
+<p>I implemented the quiz specific commands which include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Creating a quiz automatically</strong></p>
+</li>
+<li>
+<p><strong>Creating a quiz manually</strong></p>
+</li>
+<li>
+<p><strong>Adding a question to a quiz</strong></p>
+</li>
+<li>
+<p><strong>Deleting a question from a quiz</strong></p>
+</li>
+<li>
+<p><strong>Listing the questions and answers for a quiz</strong></p>
+</li>
+<li>
+<p><strong>Showing only the questions or answers for a quiz</strong></p>
+</li>
+<li>
+<p><strong>Exporting a quiz to a formatted HTML file</strong></p>
+</li>
+</ul>
+</div>
+<div id="Grouping" class="paragraph">
+<p>I&#8217;ll be sectioning the functionality into the following format:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Creation</strong></p>
+</li>
+<li>
+<p><strong>Editing</strong></p>
+</li>
+<li>
+<p><strong>Display</strong></p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="enhancements"><a class="link" href="#enhancements">Enhancements</a></h3>
+<div class="sect3">
+<h4 id="quiz-creation"><a class="link" href="#quiz-creation">Quiz Creation</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong> Users can either create quizzes automatically or manually. Regardless of either option,
+users will also have to specify a quiz identifier for further storage and future operations.
+Automatic-wise, users have to input the number of questions they want to be added to the quiz and
+also, the type of questions to be added to the quiz. Users can choose to add mcq, open ended or
+both types of questions to their quiz. Manual-wise, users have to input the specific question
+indexes of questions in the question bank that they want to be added to the quiz.</p>
+</li>
+<li>
+<p><strong>Justification:</strong> Teachers have an inherent need to prepare homework, revision papers and exam papers for
+their students. As such, the NJoy Assistant provides a way for them to continuously store questions in a
+database and generate quizzes based off that. They can either automate and randomise the process by specifying
+the number of questions, or even create tailored quizzes by specifying the question number indexes.</p>
+</li>
+<li>
+<p><strong>Highlights:</strong> This enhancement works with existing as well as future commands. The implementation for this
+feature was relatively challenging because of the automation option when creating quizzes. Users have to specify
+the number of questions they want to be included in a quiz and if the question bank does not contain enough
+questions then the command would not go through and would prompt the user with an error stating that there are
+insufficient questions in the question bank for the number that was specified. The hardest part was to make sure
+that no repeated questions were added to the quiz which involved keeping track of what questions have already been
+added.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="quiz-editing"><a class="link" href="#quiz-editing">Quiz Editing</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong> Users can choose to edit their quizzes after creation. This includes the addition of specific questions
+in the question bank, or even the deletion of specific questions from the quiz. All the user has to do is to
+specify the correct indexes of the questions to add or remove and the application will handle the rest. For the adding
+of questions, users can also choose to specify the quiz question index that the question should be added to. For example,
+if I had a quiz with question 1, 2 and 3, and I want to add a question to question 2 - I can specify just that. Question
+1 would remain in the same index, question 2 would be the new question that was added, and the old question 2 and 3 would
+then be shifted down to the new question 3 and 4 indexes.</p>
+</li>
+<li>
+<p><strong>Justification:</strong> Even after creating a quiz, teachers might still want to add new questions or even delete questions
+that they later realise were incorrect or were not supposed to be in the quiz. This is because though the
+NJoy Assistant already accounts for repeated questions or wrongful answers (an mcq answer not being present in
+the options), it does not ensure the correctness of questions and answers. For example, a question could be: What is
+1 + 1? And the answer specified by the teacher could be 3. The Njoy Assistant would have no measures to
+prevent the question from being created and hence from being added to the quiz. As such, upon the detection
+of such errors, the teacher might then choose to delete the question from the quiz, then deleting it from the
+question bank itself.</p>
+</li>
+<li>
+<p><strong>Highlights:</strong> This enhancement works with existing as well as future commands. The implementation for this
+feature was relatively challenging because of the adding questions feature. This is because we ensure that
+no repeated questions can be present in a quiz - that makes no sense. A quiz should not have a repeated question,
+because that would attribute to more marks given or lost depending on whether the student could have answered
+the question. Before adding a question to a quiz, we make sure that it does not match any existing question in
+the quiz. This ensures that the question will not be added to the quiz if it was indeed a repeat.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="quiz-display"><a class="link" href="#quiz-display">Quiz Display</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong> Users can choose to display their quizzes on the user interface after creation. There are several
+display options provided: showing both questions and answers, showing only the questions and showing only
+the answers. Beyond that, there is a defining feature whereby teachers can choose to display their quizzes
+in an exported HTML file. Of course, the answers will not be shown on the quiz because this HTML file is
+meant as a quiz for students. The questions will be formatted properly for display - mcq questions will have
+radio buttons for the 4 different options, and open ended questions will have blanks for the students to fill in.
+Just by specifying the quiz identifier, the user will be able to display their quizzes appropriately.</p>
+</li>
+<li>
+<p><strong>Justification:</strong> The display functions serve as a confirmation of what the teacher currently has in
+their quizzes. Teachers can ensure that the correct questions and answers have been allocated to their specific
+quizzes before exporting them. As mentioned earlier, teachers are no stranger to the preparation of homework, assignments
+and revision papers. After confirming the quiz is set up correctly, the key feature of the quiz component -
+the export feature creates a HTML file in an appropriate format for their students to fill in.</p>
+</li>
+<li>
+<p><strong>Highlights:</strong> This enhancement works with existing as well as future commands. The implementation for this
+feature was relatively challenging because of the export quiz feature. In particular, the formatting of text
+for HTML was foreign to me which is why I spent a fair bit of time understanding how to write the correct
+syntax for HTML files.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="code-contributed"><a class="link" href="#code-contributed">Code contributed</a></h3>
+<div class="paragraph">
+<p>Please click these links to see a sample of my code.</p>
+</div>
+<div class="paragraph">
+<p>[<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/blob/master/src/main/java/seedu/address/model/quiz/QuizManager.java">Functional code</a>] [<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/blob/master/src/test/java/seedu/address/logic/commands/quiz/QuizAddQuestionCommandTest.java">Test code</a>] <em>{Links to samples of my code.}</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">Other contributions</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Managed releases v1.3.1 on GitHub, out of the 3 releases.</p>
+</li>
+<li>
+<p>Resolved the issues found by others related to my feature on Github.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Updated README aka the main page, user guide and developer with NJoy Assistant related pictures: <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/177">#177</a></p>
+</li>
+<li>
+<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/177">#177</a>,
+<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/184">#184</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Made cosmetic tweaks to the existing contents of the User Guide: <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/80">#80</a>,
+<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/103">#103</a>, <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/177">#177</a>,
+<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/179">#179</a></p>
+</li>
+<li>
+<p>Made relevant changes for the Developer Guide: <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/80">#80</a>,
+<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/103">#103</a>, <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/177">#177</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Reviewed Pull Requests: <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/18">#18</a>, <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/20">#20</a>,
+<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/33">#33</a>, <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/79">#79</a>, <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/91">#91</a>,
+<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/106">#106</a>, <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/121">#121</a>,
+<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/175">#175</a>, <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/178">#178</a>,
+<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/182">#182</a>, <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/183">#183</a>,
+<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/188">#188</a>, <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/189">#189</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tools:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Set up an online continuous integration tool (<code>Travis</code>) for the team&#8217;s repository on Github.</p>
+</li>
+<li>
+<p>Integrated <code>coveralls.io</code> with the team&#8217;s repository on Github for coverage updates.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.
+The following are specific portions of the NJoy Assistant&#8217;s User Guide that I have selected. This is because some features are
+repetitive, and as mentioned <a href="#Grouping"><code>above</code></a> I will be grouping them into Creation, Editing and Display once again. Therefore,
+I&#8217;ll only show one example for each of the main features that I have written about in the user guide.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The following is an example of <strong>Quiz Editing</strong>:
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="adding-a-question-to-a-quiz-code-add-code"><a class="link" href="#adding-a-question-to-a-quiz-code-add-code">Adding a Question to a Quiz: <code>add</code></a></h4>
+<div class="paragraph">
+<p>Allows a user to add a question to a quiz.<br></p>
+</div>
+<div class="paragraph">
+<p><strong class="big">Format:</strong> <code>quiz add quizID/&#8230;&#8203; questionNumber/&#8230;&#8203; quizQuestionNumber/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Keyword</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quiz ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The label of the quiz.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Question Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The question number you want to add to the quiz.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quiz Question Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The question number in the quiz you want to add the question to.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>quiz add quizID/CS2103T questionNumber/2 quizQuestionNumber/3</code><br>
+Adds question 2 to the quiz question number 3 for the quiz labelled CS2103T.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/QuizAdd1.PNG" alt="QuizAdd1">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Results of the add question to quiz command.</em></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The following is an example of <strong>Quiz Display</strong>:
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="exporting-a-quiz-to-html-code-export-code"><a class="link" href="#exporting-a-quiz-to-html-code-export-code">Exporting a Quiz to HTML: <code>export</code></a></h4>
+<div class="paragraph">
+<p>Allows a user to export a quiz to a formatted HTML file. This file is saved in a folder "currentDirectory/exports/".<br></p>
+</div>
+<div class="paragraph">
+<p><strong class="big">Format:</strong> <code>quiz export quizID/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Keyword</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quiz ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The label of the quiz.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>quiz export quizID/CS2103T</code><br>
+Exports the quiz labelled CS2103T to a formatted HTML file.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following example demonstrates how to find the export file:</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1.</strong> After executing the quiz export command on the quiz labelled CS2103T, the user should
+navigate to their current directory. An exports folder as shown in the image below should be created!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/QuizExportsFolder.jpg" alt="QuizExportsFolder">
+</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br>
+<strong>Step 2.</strong> Open the folder and double click the html file labelled with the file name CS2103T.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/QuizHtml.PNG" alt="QuizHtml">
+</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br>
+<strong>Step 3.</strong> Now you can send the custom quiz file to your students!
+The quiz should be in a similar format as displayed below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/QuizExported.PNG" alt="QuizExported">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.
+Again, I&#8217;m only going to include the most relevant portions of the guide as mentioned in the <a href="#Grouping"><code>above</code></a> citing. Also, some of
+the command hyperlinks will obviously not work because I have omitted them for brevity.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The commands when executed, will interface with the methods exposed by the <code>Model</code> interface to perform the related operations
+(See <a href="#Design-Logic">logic component</a> for the general overview).</p>
+</div>
+<div class="paragraph">
+<p>The quiz creation processes share similar paths and is further illustrated in the following sequence diagram:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/quizSequence.PNG" alt="quizSequence">
+</div>
+<div class="title">Figure 1. Sequence Diagram for <code>quiz manual</code> and <code>quiz auto</code> Commands</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The following is an example of <strong>Quiz Creation</strong>:
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="Feature-Quiz-Create-Automatically"><a class="link" href="#Feature-Quiz-Create-Automatically">Creating Quiz Automatically</a></h4>
+<div class="paragraph">
+<p>The create quiz automatically feature allows the user to create a quiz in Njoy.
+This feature is facilitated by <code>CreateQuizAutomaticallyCommand</code>, <code>QuizCommandParser</code>, <code>NjoyParser</code>, <code>SavedQuizzes</code>, <code>QuizBank</code> and <code>QuizManager</code>.
+The arguments supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Quiz ID</code></p>
+</li>
+<li>
+<p><code>Number of Questions</code> (1&#8230;&#8203;*)</p>
+</li>
+<li>
+<p><code>Question Type</code> (Mcq, Open ended, All)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example of a possible command: <code>quiz auto quizID/CS2103T numQuestions/2 type/mcq</code>
+This randomly adds 2 mcq questions to the quiz named CS2103T.</p>
+</div>
+<div class="sect4">
+<h5 id="implementation"><a class="link" href="#implementation">Implementation</a></h5>
+<div class="paragraph">
+<p>When the user inputs the <code>quiz auto</code> command in the command line, the following chain of operations occur:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>NjoyParser</code> will delegate the parsing of the command to <code>QuizCommandParser</code>.</p>
+</li>
+<li>
+<p><code>QuizCommandParser#parse()</code> will take in a <code>String</code> input consisting of the arguments.</p>
+</li>
+<li>
+<p>The arguments will be tokenized and the respective models for each argument are created.</p>
+</li>
+<li>
+<p>If the parsing of all arguments are successful, a new <code>QuizCreateAutomaticallyCommand</code> is returned back to <code>LogicManager</code>.</p>
+</li>
+<li>
+<p>The <code>LogicManager</code> executes <code>QuizCreateAutomaticallyCommand#execute()</code>. This in turn executes <code>model#createQuizAutomatically()</code>.</p>
+</li>
+<li>
+<p>The <code>ModelManager</code> defers the operations to <code>SavedQuizzes#createQuizAutomatically()</code>.</p>
+</li>
+<li>
+<p>Finally, this delegates the actual operations to <code>QuizManager#createQuizAutomatically()</code>.</p>
+</li>
+<li>
+<p>The newly created <code>Quiz</code> object is added to the <code>QuizBank</code> in <code>SavedQuizzes</code> for storage and further use.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The following is an example of <strong>Quiz Display</strong>:
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Feature-Quiz-Export"><a class="link" href="#Feature-Quiz-Export">Exporting a Quiz to HTML</a></h4>
+<div class="paragraph">
+<p>The quiz export feature allows the user to export a quiz to HTML in Njoy.
+This feature is facilitated by <code>QuizExportCommand</code>, <code>QuizCommandParser</code>, <code>NjoyParser</code>, <code>SavedQuizzes</code>, <code>QuizBank</code> and <code>QuizManager</code>.
+The arguments supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Quiz ID</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example of a possible command: <code>quiz export quizID/CS2103T</code>
+This exports the quiz named CS2103T to a HTML file in the user&#8217;s directory.</p>
+</div>
+<div class="sect4">
+<h5 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h5>
+<div class="paragraph">
+<p>When the user inputs the <code>quiz export</code> command in the command line, the following chain of operations occur:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>NjoyParser</code> will delegate the parsing of the command to <code>QuizCommandParser</code>.</p>
+</li>
+<li>
+<p><code>QuizCommandParser#parse()</code> will take in a <code>String</code> input consisting of the arguments.</p>
+</li>
+<li>
+<p>The arguments will be tokenized and the respective models for each argument are created.</p>
+</li>
+<li>
+<p>If the parsing of all arguments are successful, a new <code>QuizExportCommand</code> is returned back to <code>LogicManager</code>.</p>
+</li>
+<li>
+<p>The <code>LogicManager</code> executes <code>QuizExportCommand#execute()</code>. This in turn executes <code>model#exportQuiz()</code>.</p>
+</li>
+<li>
+<p>The <code>ModelManager</code> defers the operations to <code>SavedQuizzes#exportQuiz()</code>.</p>
+</li>
+<li>
+<p>Finally, this delegates the actual operations to <code>QuizManager#exportQuiz()</code>.</p>
+</li>
+<li>
+<p>The <code>Quiz</code> object is exported to a HTML file in the user&#8217;s directory for further use.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/QuizExportActivity.png" alt="QuizExportActivity">
+</div>
+<div class="title">Figure 2. Activity Diagram for <code>quiz export</code> command</div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/CreateQuizHtml.png" alt="CreateQuizHtml">
+</div>
+<div class="title">Figure 3. Follow up Rake Reference Activity Diagram for <code>quiz export</code> command</div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-09 13:22:44 UTC</div></div></div></body></html>
