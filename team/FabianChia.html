@@ -343,6 +343,113 @@ The following is an example of <strong>Quiz Editing</strong>:
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>You may refer to <a href="#Feature-Question-Add">creating a question</a> for examples on how to add questions and <a href="#Feature-Question-List">listing the questions</a> on how to view the current list of questions in the databank.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For the following examples, we will be operating under the assumption that these sample
+questions are in the question bank.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/QuizQuestionList.PNG" alt="QuizQuestionList">
+</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="sect3">
+<h4 id="creating-a-quiz-manually-code-manual-code"><a class="link" href="#creating-a-quiz-manually-code-manual-code">Creating a Quiz manually: <code>manual</code></a></h4>
+<div class="paragraph">
+<p>Allows a user to create a quiz manually.<br></p>
+</div>
+<div class="paragraph">
+<p><strong class="big">Format:</strong> <code>quiz manual quizID/&#8230;&#8203; questionNumber/&#8230;&#8203; (One or more question numbers can be added)</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Keyword</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quiz ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The label of the quiz.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Question Numbers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The question numbers you want to add to the quiz.</p>
+<p class="tableblock">[NOTE]
+The following is an example of <strong>Quiz Display</strong>:</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Question Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of questions you want added to the quiz: mcq, open, all.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>quiz auto quizID/CS2103T numQuestions/2 type/mcq</code><br>
+Adds 2 questions of type mcq to the quiz labelled CS2103T.</p>
+</li>
+<li>
+<p><code>quiz auto quizID/CS2103T numQuestions/1 type/open</code><br>
+Adds 1 question of type open-ended to the quiz labelled CS2103T.</p>
+</li>
+<li>
+<p><code>quiz auto quizID/CS2103T numQuestions/3 type/all</code><br>
+Adds 3 questions of any type to the quiz labelled CS2103T.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/QuizAuto1.PNG" alt="QuizAuto1">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Results of the first create quiz automatically command.</em></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/QuizAuto2.PNG" alt="QuizAuto2">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Results of the second create quiz automatically command.</em></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/QuizAuto3.PNG" alt="QuizAuto3">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Results of the third create quiz automatically command.</em></p>
+</div>
+</div>
 <div class="sect3">
 <h4 id="adding-a-question-to-a-quiz-code-add-code"><a class="link" href="#adding-a-question-to-a-quiz-code-add-code">Adding a Question to a Quiz: <code>add</code></a></h4>
 <div class="paragraph">
@@ -380,109 +487,6 @@ The following is an example of <strong>Quiz Editing</strong>:
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>quiz add quizID/CS2103T questionNumber/2 quizQuestionNumber/3</code><br>
-Adds question 2 to the quiz question number 3 for the quiz labelled CS2103T.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/QuizAdd1.PNG" alt="QuizAdd1">
-</div>
-</div>
-<div class="paragraph">
-<p><em>Results of the add question to quiz command.</em></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The following is an example of <strong>Quiz Display</strong>:
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="exporting-a-quiz-to-html-code-export-code"><a class="link" href="#exporting-a-quiz-to-html-code-export-code">Exporting a Quiz to HTML: <code>export</code></a></h4>
-<div class="paragraph">
-<p>Allows a user to export a quiz to a formatted HTML file. This file is saved in a folder "currentDirectory/exports/".<br></p>
-</div>
-<div class="paragraph">
-<p><strong class="big">Format:</strong> <code>quiz export quizID/&#8230;&#8203;</code></p>
-</div>
-<div class="paragraph">
-<p>The format supported by this feature includes:</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Keyword</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Quiz ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The label of the quiz.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>quiz export quizID/CS2103T</code><br>
-Exports the quiz labelled CS2103T to a formatted HTML file.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The following example demonstrates how to find the export file:</p>
-</div>
-<div class="paragraph">
-<p><strong>Step 1.</strong> After executing the quiz export command on the quiz labelled CS2103T, the user should
-navigate to their current directory. An exports folder as shown in the image below should be created!</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/QuizExportsFolder.jpg" alt="QuizExportsFolder">
-</div>
-</div>
-<div class="paragraph">
-<p>&#160;<br>
-<strong>Step 2.</strong> Open the folder and double click the html file labelled with the file name CS2103T.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/QuizHtml.PNG" alt="QuizHtml">
-</div>
-</div>
-<div class="paragraph">
-<p>&#160;<br>
-<strong>Step 3.</strong> Now you can send the custom quiz file to your students!
-The quiz should be in a similar format as displayed below.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/QuizExported.PNG" alt="QuizExported">
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -669,4 +673,4 @@ This exports the quiz named CS2103T to a HTML file in the user&#8217;s directory
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-09 13:22:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-09 17:20:19 UTC</div></div></div></body></html>

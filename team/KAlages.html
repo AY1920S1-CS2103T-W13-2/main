@@ -1,0 +1,684 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>K Alages - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>K Alages - Project Portfolio</h1></div><div id="content"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>My team and I were tasked with enhancing AddressBook3 - a given CLI (Command Line Interface) application into a better product.
+Through the ideation phase, we decided to morph the application into the Njoy Teaching Assistant.
+We aim to improve the quality of life for teachers by assisting them with daily administrative tasks
+that have been traditionally resolved for years. In particular, the Njoy Teaching Assistant enables
+teachers to maintain student records to manage students better
+; set questions and quizzes to enhance students learning; and keep track of
+their schedules with an interactive timetable.</p>
+</div>
+<div class="paragraph">
+<p>This is what our project looks like:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Ui.png" alt="Ui">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 1. The graphical user interface for Njoy.</em></p>
+</div>
+<div class="paragraph">
+<p>My role was to design and write code for the <code>student</code>, <code>group</code>, <code>tag</code> and <code>mark</code> features. The rest of the sections will cover the
+summary of my contributions to the codebase, the user guide and the developer guide.</p>
+</div>
+<div class="paragraph">
+<p>The following are icons and symbols that I will be using for the Project Portfolio:</p>
+</div>
+<div class="paragraph">
+<p><code>This indicates a component, class or object in the architecture of the application.</code></p>
+</div>
+<div class="paragraph">
+<p><strong>This indicates important text.</strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section entails a summary of my specific enhancements, code contributions and other helpful increments towards the Njoy Teaching Assistant.</p>
+</div>
+<div class="paragraph">
+<p>I implemented the commands related to <code>student</code>, <code>group</code>, <code>mark</code> and <code>tag</code>, which include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Adding a student to the student record</strong></p>
+</li>
+<li>
+<p><strong>Removing a student from the student record</strong></p>
+</li>
+<li>
+<p><strong>Editing a student in the student record</strong></p>
+</li>
+<li>
+<p><strong>Listing all students in the student record</strong></p>
+</li>
+<li>
+<p><strong>Adding a tag to a student</strong></p>
+</li>
+<li>
+<p><strong>Adding a mark to a student</strong></p>
+</li>
+<li>
+<p><strong>Removing a mark from a student</strong></p>
+</li>
+<li>
+<p><strong>Creating a group of students</strong></p>
+</li>
+<li>
+<p><strong>Adding a student to a group</strong></p>
+</li>
+<li>
+<p><strong>Removing a student from a group</strong></p>
+</li>
+<li>
+<p><strong>Listing all students in a group</strong></p>
+</li>
+<li>
+<p><strong>Exporting a group of students to a word document</strong></p>
+</li>
+</ul>
+</div>
+<div id="Grouping" class="paragraph">
+<p>I&#8217;ll be sectioning the functionality into the following format (where applicable for the features):</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Creation</strong></p>
+</li>
+<li>
+<p><strong>Deletion</strong></p>
+</li>
+<li>
+<p><strong>Editing</strong></p>
+</li>
+<li>
+<p><strong>Display</strong></p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="enhancements"><a class="link" href="#enhancements">Enhancements</a></h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="student"><a class="link" href="#student">Student</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="student-creation-and-deletion"><a class="link" href="#student-creation-and-deletion">Student Creation and Deletion</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong> Users can create students that represents the students that they teach. Students are created by
+specifying their full names at the point of creation, and students can be tagged with the <code>tag/</code> command at the point of
+creation, which will be discussed under the <code>tag</code> feature. Users can also remove students that they no longer teach
+from their list of students.</p>
+</li>
+<li>
+<p><strong>Justification:</strong> Teachers usually have many students under their control, and having a physical copy of the student list
+to manage their students can be a hassle. Thus, with nJoyAssistant, teachers can now have a digital copy of the list of
+students that they teach, so that they can manage them easily.There is also a possibility that teachers may no longer teach a particular student, and thus nJoyAssistant
+provides the functionality for a user to remove students that users are no longer teaching.</p>
+</li>
+<li>
+<p><strong>Highlights:</strong> This enhancement works with existing as well as future commands. The hardest part was to make sure
+that no repeated students were added to the student list which involved keeping track of what questions have already been
+added.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="student-editing"><a class="link" href="#student-editing">Student Editing</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong> Users can edit students that are currently in their student list.</p>
+</li>
+<li>
+<p><strong>Justification:</strong> There is a possibility that teachers key in the names of their students wrongly when using nJoyAssistant.
+Thus, instead of removing the student and adding a new student into the student list, nJoyAssistant provides the functionality
+to edit the name of a student within the student list.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tag"><a class="link" href="#tag">Tag</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="tag-creation"><a class="link" href="#tag-creation">Tag Creation</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong> Users can <code>tag</code> their students, with the tag keyword specified after <code>tag/</code>.</p>
+</li>
+<li>
+<p><strong>Justification:</strong> Different students usually have different subjects that they are weak at, and it is often hard for teachers
+to keep track of which students are struggling with which subjects. Thus, nJoyAssistant provides the functionality to tag
+students according to the subjects that they are weak in, allowing teachers to quickly and easily identify the weak subjects
+of the students that they teach.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mark"><a class="link" href="#mark">Mark</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="mark-creation-and-deletion"><a class="link" href="#mark-creation-and-deletion">Mark Creation and Deletion</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong> Users can <code>mark</code> their students and remove <code>mark</code> from their students.</p>
+</li>
+<li>
+<p><strong>Justification:</strong> Teachers usually have a handful of students that are struggling overall academically, and are in urgent
+need of academic help. Thus, nJoyAssistant provides the functionality of marking students, which highlights the students'
+name with a red marking on the user interface. This will once again allow teachers to easily identify these students, and
+provide academic help accordingly. Also, it is possible for students to improve academically, and thus nJoyAssistant provides users
+an option to remove marks from students.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="group"><a class="link" href="#group">Group</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="group-creation"><a class="link" href="#group-creation">Group Creation</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong> Users can create groups with students.</p>
+</li>
+<li>
+<p><strong>Justification:</strong> Teachers usually teach more than one class, and thus need a way to group their students according to the
+classes that the students are in. nJoyAssistant thus provides users the functionality to group students and name the group.
+Groups are also not limited to classes, and users may choose to group students however they like, for example grouping all
+students who are weak in Chemistry, and naming the group "Chemistry Supplementary Lessons"</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-student-to-a-group-and-removing-students-from-a-group"><a class="link" href="#adding-a-student-to-a-group-and-removing-students-from-a-group">Adding a student to a group and removing students from a group</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong> Users can add students to a group after the group has been created, and remove students from the group as well.</p>
+</li>
+<li>
+<p><strong>Justification:</strong> There is a possibility that users may want to add students to a group after it has been created, and thus
+nJoyAssistant provides that functionality to teachers. Example would be if the student newly joined the particular class.
+There is also a possibility that users may want to remove students from a group after it has been created, and thus
+nJoyAssistant provides that functionality to teachers. Example would be if the student left the particular class.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-students-from-a-group"><a class="link" href="#viewing-students-from-a-group">Viewing students from a group</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong> Users can view all students in a group that they created.</p>
+</li>
+<li>
+<p><strong>Justification:</strong> Users would want to know which students are in which group, and thus nJoyAssistant provides the functionality
+to view all the students in a particular group.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exporting-students-from-a-group-to-a-word-document"><a class="link" href="#exporting-students-from-a-group-to-a-word-document">Exporting students from a group to a word document</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong> Users can export all the students from a group into a word document.</p>
+</li>
+<li>
+<p><strong>Justification:</strong> Users may not have access to their computers at all times, and thus nJoyAssistant provides users an opportunity
+to export students from a group into a word document, which can then be printed and used at the times when users have no access
+to their computers.</p>
+</li>
+<li>
+<p><strong>Highlights:</strong> Students retain their tag and mark information when they are exported into the word document, which was hard
+to implement.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="code-contributed"><a class="link" href="#code-contributed">Code contributed</a></h3>
+<div class="paragraph">
+<p>Please click these links to see a sample of my code.</p>
+</div>
+<div class="sect3">
+<h4 id="student-2"><a class="link" href="#student-2">Student</a></h4>
+<div class="paragraph">
+<p>[<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/blob/master/src/main/java/seedu/address/logic/commands/student/StudentAddCommand.java">Functional code</a>] [<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/blob/master/src/test/java/seedu/address/logic/commands/student/StudentAddCommandTest.java">Test code</a>] <em>{Links to samples of my code.}</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tag-2"><a class="link" href="#tag-2">Tag</a></h4>
+<div class="paragraph">
+<p>[<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/blob/master/src/main/java/seedu/address/logic/commands/tag/TagCommand.java">Functional code</a>] [<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/blob/master/src/test/java/seedu/address/logic/commands/tag/TagCommandTest.java">Test code</a>] <em>{Links to samples of my code.}</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mark-2"><a class="link" href="#mark-2">Mark</a></h4>
+<div class="paragraph">
+<p>[<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/blob/master/src/main/java/seedu/address/logic/commands/mark/AddMarkCommand.java">Functional code</a>] [<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/blob/master/src/test/java/seedu/address/logic/commands/mark/AddMarkCommandTest.java">Test code</a>] <em>{Links to samples of my code.}</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="group-2"><a class="link" href="#group-2">Group</a></h4>
+<div class="paragraph">
+<p>[<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/blob/master/src/main/java/seedu/address/logic/commands/group/GroupCreateManuallyCommand.java">Functional code</a>] [<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/blob/master/src/test/java/seedu/address/logic/commands/group/GroupCreateManuallyCommandTest.java">Test code</a>] <em>{Links to samples of my code.}</em></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">Other contributions</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Managed releases v1.2.1 on GitHub, out of the 3 releases.</p>
+</li>
+<li>
+<p>Resolved the issues found by others related to my feature on Github.</p>
+</li>
+<li>
+<p>Updated the AboutUs page in GitHub for my team&#8217;s repository.</p>
+</li>
+<li>
+<p>Updated the ReadMe description.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Wrote additional tests for existing features to increase coverage from 34% to 45% : <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/182">#182</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Made cosmetic tweaks to the existing contents of the User Guide: <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/183">#183</a>,
+<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/187">#187</a></p>
+</li>
+<li>
+<p>Made relevant changes for the Developer Guide: <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/187">#187</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Reviewed Pull Requests: <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/191">#191</a>,
+<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/184">#184</a>, <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/177">#177</a>,
+<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/123">#123</a>, <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/119">#119</a>,
+<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/99">#99</a>, <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/94">#94</a>,
+<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/35">#35</a>,</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.
+The following are specific portions of the NJoy Assistant&#8217;s User Guide that I have selected. I&#8217;ll only show one example
+of creation, editing and display for the features that I have created, as they are repetitive.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>The following is an example of <code>tag</code> creation section the User Guide:</strong></p>
+</div>
+<div class="sect2">
+<h3 id="tags-code-tag-code"><a class="link" href="#tags-code-tag-code">Tags ​-​ <code>tag</code></a></h3>
+<div class="paragraph">
+<p>Represents the weak subjects of a student, allowing users to focus on the specified weak subject of the student.</p>
+</div>
+<div class="sect3">
+<h4 id="adds-a-tag-to-a-student-code-tag-code"><a class="link" href="#adds-a-tag-to-a-student-code-tag-code">Adds a tag to a student: <code>tag</code></a></h4>
+<div class="paragraph">
+<p>Allows a user to add a tag to an already tagged student.<br>
+Format: <code>tag index/&#8230;&#8203; tag/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The keywords supported by this feature includes:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Keyword</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>index</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The index number of the student you want to add the tag to</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tag</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the tag you want to add to the student</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Tags cannot be multiple-worded, and cannot contain special characters.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Add one tag</strong>: <code>tag index/1 tag/Chemistry</code><br>
+Adds tag Chemistry to student with index number 1</p>
+</li>
+<li>
+<p><strong>Add multiple tags to a student</strong>: <code>tag index/1 tag/Chemistry tag/Physics</code><br>
+Adds tag Chemistry and tag Physics to student with index number 1</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The screenshot below shows a representation of a student with tags</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/tagged-student-example.png" alt="tagged student example">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>The following is an example of the <code>student</code> editing section in the User Guide:</strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-student"><a class="link" href="#editing-a-student">Editing a student</a></h4>
+<div class="paragraph">
+<p>Edit a student currently stored.<br>
+Format: <code>student [index number] name/&#8230;&#8203;</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All tags and mark of the student to be edited will be transferred over to the new student.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The keywords supported by this feature includes:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Keyword</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[index number]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Index number of the student to be edited in the student list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New name of the student to be edited.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock">
+<div class="content">
+<img src="../images/editStudent1.png" alt="editStudent1">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Original list of students.</em></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/editStudent2.png" alt="editStudent2">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Type in the command to change name of student in index 1 to John Doe.</em></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/editStudent3.png" alt="editStudent3">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Successfully change the name of student in index 1 to John Doe.</em></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>student 1 name/John Doe</code><br>
+Changes the name of the student with index number 1 in the student list to John Doe</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>The following is an example of the <code>group</code> display section in the User Guide:</strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="showing-students-from-a-group"><a class="link" href="#showing-students-from-a-group">Showing students from a group:</a></h4>
+<div class="paragraph">
+<p>Allows a user to see all students from a group.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>group groupID/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The keywords supported by this feature includes:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Keyword</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>groupID</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the group</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>group groupID/G01</code><br>
+Shows all the students that belong to group with groupID <code>G01</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/groupView3.png" alt="groupView3">
+</div>
+</div>
+<div class="paragraph">
+<p><em>View of G02.</em></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical
+documentation and the technical depth of my contributions to the project.
+Again, I&#8217;m only going to include the most relevant portions of the guide, especially the UML diagrams that I
+have created. Also, some of the command hyperlinks will obviously not work because I have omitted them for brevity.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>The following is the add <code>student</code> section of the Developer Guide:</strong></p>
+</div>
+<div class="paragraph">
+<p>The Student Commands share similar paths, and is further illustrated in the following sequence diagram, which shows the
+sequence diagram for the StudentAddCommand.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StudentAddSequence.png" alt="StudentAddSequence">
+</div>
+<div class="title">Figure 1. Sequence Diagram for <code>StudentAddCommand</code></div>
+</div>
+<div class="sect4">
+<h5 id="implementation"><a class="link" href="#implementation">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>StudentAddCommand</code> performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If the parsing is successful, <code>StudentAddCommand#execute(Model model)</code> method is executed and it validates the student defined.
+Since student names are unique, if a duplicate student is input, and exception is thrown and the duplicate student is not added.</p>
+</li>
+<li>
+<p>If tags are present in the input, <code>Tags</code> are created and added to the <code>Student</code> in the
+<code>StudentCommandParser#addCommand(ArgumentMultimap argMultimap)</code> method.</p>
+</li>
+<li>
+<p>The method <code>Model#addStudent(Student student)</code> will then be called to add the created student and a success message will
+be generated by the <code>StudentAddCommand#generateSuccessMessage(Student student)</code> method and a new <code>CommandResult</code> will be
+returned with the generated success message.</p>
+</li>
+<li>
+<p>The newly created student is added to the <code>StudentRecord</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>The following is the add <code>mark</code> section of the Developer Guide:</strong></p>
+</div>
+<div class="paragraph">
+<p>The logic flow for both the <code>mark</code> and <code>unmark</code> commands are quite similar, and can be seen by the following activity
+diagram that depicts the execution of the <code>AddMarkCommand</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/MarkActivityDiagram.png" alt="MarkActivityDiagram">
+</div>
+<div class="title">Figure 2. Activity Diagram for <code>AddMarkCommand</code></div>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="paragraph">
+<p><strong>The following shows the relationship of <code>Student</code>, <code>Group</code>, <code>Mark</code> and <code>Tag</code> via a class diagram in the Developer Guide:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/GroupStudentClassDiagram.png" alt="GroupStudentClassDiagram">
+</div>
+<div class="title">Figure 3. Class Diagram depicting relationships between Student/Group/Mark and Tag features.</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-09 17:20:19 UTC</div></div></div></body></html>
