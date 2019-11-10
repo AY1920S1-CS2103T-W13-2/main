@@ -2632,7 +2632,23 @@ At the model level, VEvents are mapped to Event objects for saving and vice vers
 (See <a href="#Design-Logic">logic component</a> for the general overview).</p>
 </div>
 <div class="sect3">
-<h4 id="Feature-Event-Add"><a class="link" href="#Feature-Event-Add">4.10.1. Add Event Command</a></h4>
+<h4 id="class-overview"><a class="link" href="#class-overview">4.10.1. Class Overview</a></h4>
+<div class="paragraph">
+<p>The figure below describes the interactions between event-related classes in the <code>Model</code>. Note how the <code>EventRecord</code>
+class has a dependency on <code>Event</code> object in its constructor, but only has a <code>VEvent</code> attribute: <code>vEvents</code>. This
+highlights a mapping between the Event and VEvent object within the <code>EventRecord</code> class. Althought the methods
+of the <code>EventRecord</code> class are omitted for brevity, they are mostly <code>VEvent</code> based, which again highlights that
+interactions with the <code>Logic</code> and <code>UI</code> layers will mostly be done in <code>VEvent</code> type.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeveloperGuideResources/EventClassDiagram.png" alt="EventClassDiagram">
+</div>
+<div class="title">Figure 20. Class Diagram for EventRecord</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Feature-Event-Add"><a class="link" href="#Feature-Event-Add">4.10.2. Add Event Command</a></h4>
 <div class="sect4">
 <h5 id="implementation-27"><a class="link" href="#implementation-27">Implementation</a></h5>
 <div class="paragraph">
@@ -2669,19 +2685,10 @@ The <code>ReadOnlyVEventRecord</code> and <code>ReadOnlyEventRecord</code> hides
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>The following is a sample sequence diagram of the <code>EventDeleteCommand</code>. Other commands under the notes feature follow a similar program flow; their diagrams have been omitted for brevity.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DeveloperGuideResources/EventDeleteSequenceDiagram.png" alt="EventDeleteSequenceDiagram">
-</div>
-<div class="title">Figure 20. Sequence Diagram for Deleting Events</div>
-</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Feature-Event-Index"><a class="link" href="#Feature-Event-Index">4.10.2. Index command</a></h4>
+<h4 id="Feature-Event-Index"><a class="link" href="#Feature-Event-Index">4.10.3. Index command</a></h4>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>EventIndexCommand</code> performs.
 The purpose of this command is to return the index of the vEvent(s) with event name that equals to the <code>desiredEventName</code> which is input from the user.
@@ -2740,7 +2747,7 @@ is then called through the <code>Model#findMostSimilarVEvent(String desiredEvent
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-VEvent objects used a <code>summary</code> object to represent the name of an event.
+VEvent objects use a <code>summary</code> object to represent the name of an event.
 </td>
 </tr>
 </table>
@@ -2748,7 +2755,7 @@ VEvent objects used a <code>summary</code> object to represent the name of an ev
 </div>
 </div>
 <div class="sect3">
-<h4 id="Feature-Event-Edit"><a class="link" href="#Feature-Event-Edit">4.10.3. Edit Event Command</a></h4>
+<h4 id="Feature-Event-Edit"><a class="link" href="#Feature-Event-Edit">4.10.4. Edit Event Command</a></h4>
 <div class="sect4">
 <h5 id="implementation-29"><a class="link" href="#implementation-29">Implementation</a></h5>
 <div class="paragraph">
@@ -2781,7 +2788,7 @@ This will replace the target VEvent with the new <code>editedVEvent</code>. A su
 </div>
 </div>
 <div class="sect3">
-<h4 id="Feature-Event-Delete"><a class="link" href="#Feature-Event-Delete">4.10.4. Delete event command</a></h4>
+<h4 id="Feature-Event-Delete"><a class="link" href="#Feature-Event-Delete">4.10.5. Delete event command</a></h4>
 <div class="sect4">
 <h5 id="implementation-30"><a class="link" href="#implementation-30">Implementation</a></h5>
 <div class="paragraph">
@@ -2803,10 +2810,19 @@ This will replace the target VEvent with the new <code>editedVEvent</code>. A su
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>The following is a sample sequence diagram of the <code>EventDeleteCommand</code>. Other commands under the notes feature follow a similar program flow; their diagrams have been omitted for brevity.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeveloperGuideResources/EventDeleteSequenceDiagram.png" alt="EventDeleteSequenceDiagram">
+</div>
+<div class="title">Figure 22. Sequence Diagram for Deleting Events</div>
+</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Feature-Event-View"><a class="link" href="#Feature-Event-View">4.10.5. View event command</a></h4>
+<h4 id="Feature-Event-View"><a class="link" href="#Feature-Event-View">4.10.6. View event command</a></h4>
 <div class="paragraph">
 <p>This command changes the mode which the <code>EventSchedulePanel</code> is in. The command has 2 optional parameters being <code>targetViewDateTime</code>
 and <code>eventScheduleViewMode</code>. The <code>EventScheduleViewMode</code> enum is used to represent the the skins of the iCalendarAgenda: weekly and daily.
@@ -2853,7 +2869,7 @@ Specifically the skin mode and the displayed date time
 </div>
 </div>
 <div class="sect3">
-<h4 id="Feature-Event-Screenshot"><a class="link" href="#Feature-Event-Screenshot">4.10.6. Screenshot event command</a></h4>
+<h4 id="Feature-Event-Screenshot"><a class="link" href="#Feature-Event-Screenshot">4.10.7. Screenshot event command</a></h4>
 <div class="paragraph">
 <p>This command allows the user to take a screenshot of the current state of the <code>EventSchedulePanel</code> and save it to a .png file.</p>
 </div>
@@ -2910,7 +2926,7 @@ The <code>NjoyPrintable</code> object is used to encapsulate the <code>WritableI
 </div>
 </div>
 <div class="sect3">
-<h4 id="Feature-Event-Export"><a class="link" href="#Feature-Event-Export">4.10.7. Export event command</a></h4>
+<h4 id="Feature-Event-Export"><a class="link" href="#Feature-Event-Export">4.10.8. Export event command</a></h4>
 <div class="paragraph">
 <p>This command allows the user to export all the events into a .ics file.</p>
 </div>
@@ -4310,4 +4326,4 @@ Expected: Shows appropriate error messages of why the command failed.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 07:16:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 08:06:37 UTC</div></div></div></body></html>
