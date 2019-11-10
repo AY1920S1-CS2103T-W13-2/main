@@ -391,14 +391,6 @@ of creation, editing and display for the features that I have created, as they a
 <div class="paragraph">
 <p><strong>The following is an example of <code>tag</code> creation section the User Guide:</strong></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>student list</code><br>
-Lists the students.</p>
-</li>
-</ul>
-</div>
 <div class="sect2">
 <h3 id="tags-code-tag-code"><a class="link" href="#tags-code-tag-code">Tags ​-​ <code>tag</code></a></h3>
 <div class="paragraph">
@@ -465,13 +457,14 @@ Adds tag Chemistry and tag Physics to student with index number 1</p>
 <div class="paragraph">
 <p>The screenshot below shows a representation of a student with tags</p>
 </div>
-<div class="paragraph">
-<p><strong>The following is an example of the <code>student</code> editing section in the User Guide:</strong></p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/tagged-student-example.png" alt="tagged student example">
+</div>
+<div class="title">Figure 1. Example of tagged student</div>
 </div>
 <div class="paragraph">
-<p>Adds a student named John Doe with one tag Chemistry
-* <strong>Student with multiple tags</strong>: <code>student name/John Doe tag/Chemistry tag/Physics</code><br>
-Adds a student named John Doe with tags Chemistry and Physics</p>
+<p><strong>The following is an example of the <code>student</code> editing section in the User Guide:</strong></p>
 </div>
 </div>
 <div class="sect3">
@@ -532,27 +525,22 @@ Changes the name of the student with index number 1 in the student list to John 
 <div class="content">
 <img src="../images/EditStudent1.png" alt="EditStudent1">
 </div>
-<div class="title">Figure 1. Original list of students.</div>
+<div class="title">Figure 2. Original list of students.</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/EditStudent2.png" alt="EditStudent2">
 </div>
-<div class="title">Figure 2. Type in the command to change name of student in index 1 to John Doe.</div>
+<div class="title">Figure 3. Type in the command to change name of student in index 1 to John Doe.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/EditStudent3.png" alt="EditStudent3">
+</div>
+<div class="title">Figure 4. Successfully change the name of student in index 1 to John Doe.</div>
 </div>
 <div class="paragraph">
 <p><strong>The following is an example of the <code>group</code> display section in the User Guide:</strong></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>group export groupID/G01</code><br>
-Exports the group named G01 to a word document named <code>G01.docx</code>, found under the exports folder.</p>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect3">
@@ -584,11 +572,22 @@ Exports the group named G01 to a word document named <code>G01.docx</code>, foun
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>group groupID/G01</code><br>
+Shows all the students that belong to group with groupID <code>G01</code></p>
+</li>
+</ul>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/GroupView1.png" alt="GroupView1">
+<img src="../images/GroupView3.png" alt="GroupView3">
 </div>
-<div class="title">Figure 3. Create a group G02 with students John Doe, Jane Doe and Ben Tan.</div>
+<div class="title">Figure 5. View of G02.</div>
 </div>
 </div>
 </div>
@@ -598,7 +597,6 @@ Exports the group named G01 to a word document named <code>G01.docx</code>, foun
 <h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 1. Type in the command to display group G02.</caption>
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
@@ -622,7 +620,7 @@ sequence diagram for the StudentAddCommand.</p>
 <div class="content">
 <img src="../images/StudentAddSequence.png" alt="StudentAddSequence">
 </div>
-<div class="title">Figure 4. Sequence Diagram for <code>StudentAddCommand</code></div>
+<div class="title">Figure 6. Sequence Diagram for <code>StudentAddCommand</code></div>
 </div>
 <div class="sect4">
 <h5 id="implementation"><a class="link" href="#implementation">Implementation</a></h5>
@@ -660,7 +658,7 @@ diagram that depicts the execution of the <code>AddMarkCommand</code>.</p>
 <div class="content">
 <img src="../images/MarkActivityDiagram.png" alt="MarkActivityDiagram">
 </div>
-<div class="title">Figure 5. Activity Diagram for <code>AddMarkCommand</code></div>
+<div class="title">Figure 7. Activity Diagram for <code>AddMarkCommand</code></div>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
@@ -672,8 +670,8 @@ diagram that depicts the execution of the <code>AddMarkCommand</code>.</p>
 <div class="content">
 <img src="../images/GroupStudentClassDiagram.png" alt="GroupStudentClassDiagram">
 </div>
-<div class="title">Figure 6. Class Diagram depicting relationships between Student/Group/Mark and Tag features.</div>
+<div class="title">Figure 8. Class Diagram depicting relationships between Student/Group/Mark and Tag features.</div>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 09:42:19 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 10:34:52 UTC</div></div></div></body></html>
