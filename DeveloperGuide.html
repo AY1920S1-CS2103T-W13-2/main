@@ -50,7 +50,11 @@
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
 <li><a href="#notes">G.2. Notes</a></li>
-<li><a href="#saving-data">G.3. Saving data</a></li>
+<li><a href="#student">G.3. Student</a></li>
+<li><a href="#tag">G.4. Tag</a></li>
+<li><a href="#mark">G.5. Mark</a></li>
+<li><a href="#group">G.6. Group</a></li>
+<li><a href="#saving-data">G.7. Saving data</a></li>
 </ul>
 </li>
 </ul>
@@ -4306,7 +4310,333 @@ Expected: Shows appropriate error messages of why the command failed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.3. Saving data</a></h3>
+<h3 id="student"><a class="link" href="#student">G.3. Student</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a student to the student list.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The student list already already contains one student "Test Student".</p>
+</li>
+<li>
+<p>Test case: <code>student name/New Student</code><br>
+Expected: Adds student "New Student" to the list of students.</p>
+</li>
+<li>
+<p>Test case: <code>student name/Test Student</code><br>
+Expected: Shows error message that a student with the same name already exists in the student list.</p>
+</li>
+<li>
+<p>Test case: <code>student name/2231</code><br>
+Expected: Shows error message that student names can only contain alphabets and spaces.</p>
+</li>
+<li>
+<p>Test case: <code>student name/Test Student tag/Tag</code><br>
+Expected: Adds student "Test Student" with tag "Tag"</p>
+</li>
+<li>
+<p>Other incorrect add commands to try: <code>student name/new student tag/</code>, <code>student name/new student tag/tag with space</code><br>
+Expected: Shows error message regarding reason for command failure or the correct command syntax.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Editing an existing student in the student list.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The student list contains two students. "Test One" at index one and "Test Two" at index two.</p>
+</li>
+<li>
+<p>Test case: `student 1 name/changed name `<br>
+Expected: First Student in the student list is edited to "Test One"</p>
+</li>
+<li>
+<p>Test case: <code>student 1 name/Test Two</code><br>
+Expected: Error message stating that "Test Two" already exists in the student list is shown.</p>
+</li>
+<li>
+<p>Test case: <code>student 0 name/Test Zero</code><br>
+Expected: Shows error message that index provided is not valid.</p>
+</li>
+<li>
+<p>Test case: <code>student 5 name/Test Five</code><br>
+Expected: Shows error message that index provided is out of bounds.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Deleting a student from the student list.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The student list has one student at index 1.</p>
+</li>
+<li>
+<p>Test case: <code>student delete 1</code><br>
+Expected: First student is deleted from the list.</p>
+</li>
+<li>
+<p>Test case: <code>student delete 0</code><br>
+Expected: Error message stating that index is invalid is shown</p>
+</li>
+<li>
+<p>Test case: <code>student delete 5</code><br>
+Expected: Error message stating that index is out of bounds is shown.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Listing students in the student panel.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The student list is populated with some students.</p>
+</li>
+<li>
+<p>Test case: <code>student list</code><br>
+Expected: A string representation of the student list is shown in the status result.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tag"><a class="link" href="#tag">G.4. Tag</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a tag to a student in the student list.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The student list already already contains one student "Test Student".</p>
+</li>
+<li>
+<p>Test case: <code>tag index/1 tag/Tag</code><br>
+Expected: Adds tag "Tag" to the student in the student list.</p>
+</li>
+<li>
+<p>Test case: <code>tag index/0 tag/Tag</code><br>
+Expected: Shows error message that the index is not valid.</p>
+</li>
+<li>
+<p>Test case: <code>tag index/5 tag/Tag</code><br>
+Expected: Shows error message that the index is out of bounds.</p>
+</li>
+<li>
+<p>Test case: <code>tag index/1 tag/Tag@</code><br>
+Expected: Shows error message that tags can only contain alphanumeric characters</p>
+</li>
+<li>
+<p>Other incorrect add commands to try: <code>tag index/1 tag/</code>, <code>tag index/ tag/</code> , <code>tag index/1 tag/tag space</code><br>
+Expected: Shows error message regarding reason for command failure or the correct command syntax.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mark"><a class="link" href="#mark">G.5. Mark</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a mark to a student in the student list.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The student list already already contains two students, "Marked Student" at index 1, who is already marked,
+and "Unmarked Student" at index 2, who is not marked.</p>
+</li>
+<li>
+<p>Test case: <code>mark index/2</code><br>
+Expected: Marks "Unmarked Student" at index 2.</p>
+</li>
+<li>
+<p>Test case: <code>mark index/1</code><br>
+Expected: Shows error message that the student is already marked.</p>
+</li>
+<li>
+<p>Test case: <code>mark index/5</code><br>
+Expected: Shows error message that the index is out of bounds.</p>
+</li>
+<li>
+<p>Test case: <code>mark index/0</code><br>
+Expected: Shows error message that the index is invalid.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Removing a mark from a marked student in the student list.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The student list already already contains two students, "Marked Student" at index 1, who is already marked,
+and "Unmarked Student" at index 2, who is not marked.</p>
+</li>
+<li>
+<p>Test case: <code>mark unmark index/1</code><br>
+Expected: Removes mark from "Marked Student" at index 1.</p>
+</li>
+<li>
+<p>Test case: <code>mark unmark index/2</code><br>
+Expected: Shows error message that the student is not previously marked.</p>
+</li>
+<li>
+<p>Test case: <code>mark unmark index/5</code><br>
+Expected: Shows error message that the index is out of bounds.</p>
+</li>
+<li>
+<p>Test case: <code>mark unmark index/0</code><br>
+Expected: Shows error message that the index is invalid.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="group"><a class="link" href="#group">G.6. Group</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Creating a group with students in the student list.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The student list already already contains 3 students, and there is already a group with GroupId "G02" present.</p>
+</li>
+<li>
+<p>Test case: <code>group manual/ groupID/G01 studentNumber/1 2 3</code><br>
+Expected: Creates group "G01" with students 1,2 and 3.</p>
+</li>
+<li>
+<p>Test case: <code>group manual/ groupID/G02 studentNumber/1 2 3</code><br>
+Expected: Shows error message that a group with the same name already exists in the group list.</p>
+</li>
+<li>
+<p>Test case: <code>group manual/ groupID/ studentNumber/1 2 3</code><br>
+Expected: Shows error message that groupID is left empty.</p>
+</li>
+<li>
+<p>Test case: <code>group manual/ groupID/G01 studentNumber/1 2 5</code><br>
+Expected: Shows error message that one or more of the student numbers is out of bounds.</p>
+</li>
+<li>
+<p>Other incorrect add commands to try: <code>group manual/ groupID/G01 studentNumber/</code>, <code>group manual/ groupID/ studentNumber/</code><br>
+Expected: Shows error message regarding reason for command failure or the correct command syntax.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Adding a student to an already created group.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The student list contains 3 students, and there is already a group with groupID G01, with students 1 and 2.</p>
+</li>
+<li>
+<p>Test case: <code>group add groupID/G01 studentNumber/3 groupIndexNumber/2</code><br>
+Expected: Third student in student list is added to group "G01", with group index number of 2.</p>
+</li>
+<li>
+<p>Test case: <code>group add groupID/G03 studentNumber/1 groupIndexNumber/2</code><br>
+Expected: Error message stating that group with the groupID does not exist.</p>
+</li>
+<li>
+<p>Test case: <code>group add groupID/G01 studentNumber/5 groupIndexNumber/2</code><br>
+Expected: Shows error message that index provided for the student number is out of bounds.</p>
+</li>
+<li>
+<p>Test case: <code>group add groupID/ studentNumber/ groupIndexNumber/</code><br>
+Expected: Shows error message that one or more fields are left empty.</p>
+</li>
+<li>
+<p>Test case: <code>group add groupID/G01 studentNumber/2 groupIndexNumber/10</code><br>
+Expected: Shows error message that index provided for the group index number is out of bounds.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Deleting a student from an already created group</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The student list contains 3 students, and there is already a group with groupID G01, with students 1 and 2.</p>
+</li>
+<li>
+<p>Test case: <code>group delete groupID/G01 groupIndexNumber/1</code><br>
+Expected: First student in "G01" is removed from the group</p>
+</li>
+<li>
+<p>Test case: <code>group delete groupID/G03 groupIndexNumber/1</code><br>
+Expected: Error message stating that the group with the groupID does not exist.</p>
+</li>
+<li>
+<p>Test case: <code>group delete groupID/G01 groupIndexNumber/5</code><br>
+Expected: Error message stating that group index number is out of bounds is shown.</p>
+</li>
+<li>
+<p>Test case: <code>group delete groupID/ groupIndexNumber/</code><br>
+Expected: Shows error message that one or more fields are left empty.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Showing the students from a specific group in the group window.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The student list contains 3 students, and there is already a group with groupID G01, with students 1 and 2.</p>
+</li>
+<li>
+<p>Test case: <code>group groupID/G01</code><br>
+Expected: A window showing the students in group "G01" pops up.</p>
+</li>
+<li>
+<p>Test case: <code>group groupID/G02</code><br>
+Expected: Error message stating that the group with the groupID does not exist.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Exporting a group to a word document.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The student list contains 3 students, and there is already a group with groupID G01, with students 1 and 2.</p>
+</li>
+<li>
+<p>Test case: <code>group export groupID/G01</code><br>
+Expected: A message stating that the group was successfully exported to G01.docx is shown.</p>
+</li>
+<li>
+<p>Test case: <code>group export groupID/G02</code><br>
+Expected: Error message stating that the group with the groupID does not exist.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">G.7. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4326,4 +4656,4 @@ Expected: Shows appropriate error messages of why the command failed.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 08:06:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 09:01:37 UTC</div></div></div></body></html>
