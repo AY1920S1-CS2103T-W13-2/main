@@ -1,0 +1,700 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Jeong Yu Han - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Jeong Yu Han - Project Portfolio</h1></div><div id="content"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction-and-overview"><a class="link" href="#introduction-and-overview">Introduction and Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The purpose of this document is to display the author&#8217;s (Jeong Yu Han) contribution to the software engineering module project and his technical skills.</p>
+</div>
+<div class="paragraph">
+<p>My team and I were tasked with enhancing a command line, desktop application for our Software Engineering project.
+We chose to morph it into a teaching assistant called the Njoy Teaching Assistant, targeted at tech-savvy teachers who wish to improve
+the efficiency of their daily tasks such as creating quizzes, schedules, notes and tracking student performances.</p>
+</div>
+<div class="paragraph">
+<p>This is what our project looks like:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Ui.png" alt="Ui">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 1. The graphical user interface for Njoy.</em></p>
+</div>
+<div class="paragraph">
+<p>My role was to design and write code for the notes and statistics features. The rest of the sections covers the
+summary of my contributions to the codebase, user guide and developer guide.</p>
+</div>
+<div class="paragraph">
+<p>The following are icons and symbols that I will be using for the Project Portfolio:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This symbol indicates a note to the user.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>This indicates a component, class or object of Njoy or other external softwares.</code></p>
+</div>
+<div class="paragraph">
+<p><strong>This indicates important text.</strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section details a summary of my enhancements, code contributions and other tasks.</p>
+</div>
+<div class="paragraph">
+<p>I implemented the note commands which include: <strong>Creating</strong>, <strong>Editing</strong>, <strong>Deleting</strong>, <strong>Listing</strong> and <strong>Sorting</strong> notes.<br>
+Another feature I implemented was the ability to <strong>generate and store Statistics reports</strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="enhancements"><a class="link" href="#enhancements">Enhancements</a></h3>
+<div class="sect3">
+<h4 id="creating-editing-and-deleting-notes-major-enhancement"><a class="link" href="#creating-editing-and-deleting-notes-major-enhancement">Creating, Editing and Deleting Notes (Major Enhancement)</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong> Users can add notes with a title, description and an optional priority.
+The default priority is unmarked and different priorities are color coded. The features can be edited/deleted by specifying their index and the fields to edit.</p>
+</li>
+<li>
+<p><strong>Justification:</strong> Teachers often have a dizzying array of tasks to handle. The notes feature allows teachers to deal with work and other worries, allowing them to handle the most pressing issues. Editing and deleting
+gives the flexibility of shifting priorities, typing errors and task completion.</p>
+</li>
+<li>
+<p><strong>Highlights:</strong> The implementation for this feature required contemplation in terms of UX. While additional features such as re/un-doing was considered, the main principle of the notes UX is to be
+lightweight and easy to use. I decided to give the simplest set of commands while making prioritising optional. Validation for the input command
+was also challenging, in particular for the edit command.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sorting-notes"><a class="link" href="#sorting-notes">Sorting Notes</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong> Users can sort the notes in the list in descending order of priority.</p>
+</li>
+<li>
+<p><strong>Justification:</strong> Users should be easily able to identify more pressing tasks.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-notes"><a class="link" href="#listing-notes">Listing Notes</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong> Users can show the list of notes in the command result box. This feature is an alternative solution to the issue of notes having
+content length that exceed its allocated space in the User Interface.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="generating-and-storing-statistics-major-enhancement"><a class="link" href="#generating-and-storing-statistics-major-enhancement">Generating and Storing Statistics (Major Enhancement)</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong> Users can pass student score data from an excel file for processing to generate some descriptive statistics on performance. Store as optionally specified image file.</p>
+</li>
+<li>
+<p><strong>Justification:</strong> Give teachers the ability to see class performance at a glance and identify weaker students to help.</p>
+</li>
+<li>
+<p><strong>Highlights:</strong> The implementation for this feature required contemplation on the decision of storing and rendering formats for the report.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="code-contributed"><a class="link" href="#code-contributed">Code contributed</a></h3>
+<div class="paragraph">
+<p>Please click the following link to see my code contributions dashboard. <a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=jeongyh99&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">Code Report</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">Other contributions</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Reviewed team&#8217;s code coverage, resolved issues in the tracker, update project Ui.png.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to team documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Updated README and ContactUs with missing acknowledgements and developer contacts.</p>
+</li>
+<li>
+<p>Updated Glossary and Product Survey : <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/24">#24</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to team code:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Wrote the skeleton for storage using the Student entity : <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/47">#47</a></p>
+</li>
+<li>
+<p>Wrote the skeleton for the generic printable interface for print/export functions : <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/105">#105</a></p>
+</li>
+<li>
+<p>Refactor poor practices to follow better scalability and readability : <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/91">#91</a></p>
+</li>
+<li>
+<p>Wrote additional tests and generic model stubs for testing : <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/123">#123</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Made modifications to the Developer Guide and improved readability: <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/25">#25</a></p>
+</li>
+<li>
+<p>Documented the implemented features: <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/77">#77</a>,
+<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/97">#97</a>, <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/181">#181</a>, <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/pull/190">#190</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Reviewed Pull Requests of Other Teams: <a href="https://github.com/nus-cs2103-AY1920S1/addressbook-level3/pull/190">#190</a>, review under username 'lumwb' : <a href="https://github.com/nus-cs2103-AY1920S1/addressbook-level3/pull/23">#23</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tools:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Change team&#8217;s dependencies to be compatible with both Mac and Windows.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write comprehensive documentation targeting end-users.
+I have decided to select one command for each feature as a representation of my abilities. The full document can be seen here: <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/blob/master/docs/UserGuide.adoc">User Guide</a></em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>The following is an example of Creating Notes</strong>:</p>
+</div>
+<div class="sect3">
+<h4 id="creating-a-note"><a class="link" href="#creating-a-note">Creating a note</a></h4>
+<div class="paragraph">
+<p>Create lightweight, digital notes and reminders quickly and easily as specified.<br>
+Format: <code>note note/&#8230;&#8203; desc/&#8230;&#8203; priority/&#8230;&#8203; (optional)</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>note</code> - The note title.</p>
+</li>
+<li>
+<p><code>desc</code> - The description of the note.</p>
+</li>
+<li>
+<p><code>priority(optional)</code> - The level of priority placed on this note. It can be of type <code>unmarked</code>, <code>low</code>, <code>medium</code> or <code>high</code>. It is by default set to unmarked if field is omitted.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All non-optional fields are required and also cannot consist exclusively of whitespace characters. All leading and trailing whitespaces of the fields will be ignored.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All priority fields can be in either lowercase or UPPERCASE. (e.g. <code>note note/sample title desc/sample desc priority/low</code> is the same as e.g. <code>note note/sample title desc/sample desc priority/LOW</code>).
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>priority</code> levels are distinguishable by their colour in the User Interface. <code>unmarked</code> or default notes have grey panels, while <code>low</code>, <code>medium</code> and <code>high</code> priority notes have green, yellow and red panels respectively.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The notes panel is not responsive. The User Interface only supports title and description of limited length. Notes that exceed this length will be truncated. For information on how to view these notes, see the note list command.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Unmarked Note</strong>: <code>note note/Friday morning class 6A desc/give back prelim papers</code><br>
+Creates an unmarked note with title <em>'Friday morning class 6A'</em> and description <em>'give back prelim papers'</em>.</p>
+</li>
+<li>
+<p><strong>High priority note</strong>: <code>note note/Tuesday 1pm desc/Science Conference priority/high</code><br>
+Creates a high priority note with title <em>'Tuesday 1pm'</em> and description <em>'Science Conference'</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>The following is an example of Statistics Generation</strong>:</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="generating-a-statistics-report"><a class="link" href="#generating-a-statistics-report">Generating a Statistics report</a></h4>
+<div class="paragraph">
+<p>Create statistics reports of student scores using excel data files. The statistics generated is based
+on the calculated weighted score of the input data.<br>
+Format: <code>statistics file/&#8230;&#8203; print/&#8230;&#8203;(optional)</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>file</code> - The absolute/relative file path of the data file.</p>
+</li>
+<li>
+<p><code>print(optional)</code> - The filename of the printable report you wish to generate.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The statistics feature only supports file type in the ‘Excel’ format. Data files are to end with the <em>’.xlsx’</em> extension.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>print</code> option allows the generation of a <em>'.png'</em> file containing a snapshot of the statistics report generated. Regardless of the print specifications, a new window is opened with the statistics report.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Printable statistics reports if specified are stored in the same place as where the JAR file is installed. The report can be found under a newly created <code>printable</code> directory. If the directory exists beforehand, no new directory is created.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Filenames without <em>`.png`</em> extension will automatically have the extension appended to the end of the file name.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the file name specified already exists in the printable directory, it will overwrite the existing file.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>View Statistics Report (without saving)</strong>: <code>statistics file/C:\Users\SampleUser\Desktop\6B Prelim Scores.xlsx</code><br>
+Shows the statistics report for excel file named <em>’6B Prelim Scores’</em>.</p>
+</li>
+<li>
+<p><strong>View and Save Statistics Report</strong>: <code>statistics file/C:\Users\SampleUser\Desktop\6B Prelim Scores.xlsx print/6B Prelim Performance Report</code><br>
+Shows the statistics report for excel file named <em>’6B Prelim Scores’</em>. It also saves an image file containing a snapshot of the statistics report in the <em>’printable’</em> directory with name <em>’6B Prelim Performance Report’</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Data File Specifications</strong></p>
+</div>
+<div class="paragraph">
+<p>The data file needs to be specified in the following format to ensure that the statistics report is successfully generated.<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Failure to adhere to the following specifications might result in either the excel file being rejected or erroneous statistics.
+If the report is generated, it might be correct but the behavior is not guaranteed should the specifications mentioned below be violated or overlooked.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Entries start at cell A1 with the cell <code>Students</code>, regardless of whether there is score data.</strong></p>
+</li>
+<li>
+<p><strong>First row begins with the cell <code>Students</code>, followed by their names. (e.g. row 1 of 4 cells having <code>Students</code>, <code>Jason</code>, <code>Mike</code> and <code>Peter</code>)</strong></p>
+</li>
+<li>
+<p><strong>First column states the different subjects starting from the second topmost cell. (e.g column 1 of 4 cells having <code>Students</code>, <code>Math</code>, <code>Science</code> and <code>English</code>.)</strong></p>
+</li>
+<li>
+<p><strong>There is at least one student.</strong></p>
+</li>
+<li>
+<p><strong>There is at least one subject.</strong></p>
+</li>
+<li>
+<p><strong>All student names have unique identifiers. (e.g. two students named Jason could be identified as <code>Jason 1</code> and <code>Jason 2</code>)</strong></p>
+</li>
+<li>
+<p><strong>All subject names have unique identifiers. (e.g. two subjects named Math could be identified as <code>Advanced Math</code> and <code>Elementary Math</code>)</strong></p>
+</li>
+<li>
+<p><strong>All students have a corresponding score for all subjects</strong></p>
+</li>
+<li>
+<p><strong>All scores are numeric characters (integer or decimals)</strong></p>
+</li>
+<li>
+<p><strong>There are no gaps between rows and columns.</strong></p>
+</li>
+<li>
+<p><strong>All cells within the row and column range have at least one non-whitespace character.</strong></p>
+</li>
+<li>
+<p><strong>All cells outside the row and column range are empty.</strong></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Failure to adhere to the following specifications might result in some of the statistical data generated not being useful to the user.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>All scores should be in percentage terms. (0 ~ 100)</strong></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The general rule for the file format is to ensure all entries in the file are as compact to the top left as possible; the entries should form a rectangular shape on the top left corner of the excel sheet. The rectangle should have no empty entries while all cells outside the rectangle are empty entries.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The statistics report generated uses weighted average scores across the different subjects to perform analysis. All scores carry equal weight. The statistics generated
+allow you to see some of the common descriptive statistics and their relative distributions both in terms of frequency and percentile terms.</p>
+</div>
+<div class="paragraph">
+<p>The figure below illustrates a sample data set that fulfills all of the above specifications.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ExcelFormat.png" alt="ExcelFormat">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation. As with the User Guide, I will only showcase
+one example from each feature to demonstrate the depth of my technical capacities and my contributions. The full document can be seen here: <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/blob/master/docs/DeveloperGuide.adoc">Developer Guide</a></em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>The following is an example of Adding Notes</strong>:</p>
+</div>
+<div class="sect3">
+<h4 id="add-note-command"><a class="link" href="#add-note-command">Add Note Command</a></h4>
+<div class="sect4">
+<h5 id="implementation"><a class="link" href="#implementation">Implementation</a></h5>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>NoteAddCommand</code> performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>NoteAddCommand#execute(Model model)</code> method is executed and it validates that the <code>Note</code> object passed from the parser using command input is valid.</p>
+</li>
+<li>
+<p>The method <code>Model#addNote(Note note)</code> will then be called to add the specified note to the <code>NotesRecord</code>. The <code>Note</code> added is validated for uniqueness by <code>Note#isSameNote(Note note)</code>.</p>
+</li>
+<li>
+<p>If successful, a success message will be generated and a new <code>CommandResult</code> will be returned with the generated success message. Otherwise, an error message showing proper note command syntax is thrown as <code>CommandException</code>.</p>
+</li>
+<li>
+<p>If the command syntax was valid and <code>Note</code> was added to the <code>NotesRecord</code>, <code>LogicManager</code> calls <code>Storage#saveNotesRecord(ReadOnlyNotesRecord notesRecord)</code> which saves the <code>NotesRecord</code> in JSON format after serializing it using the <code>JsonSerializableNotesRecord</code>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>ReadOnlyNotesRecord</code> hides the implementation of the NotesRecord from the other layers of the software.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following is a sample sequence diagram of the <code>NoteAddCommand</code>. Other commands under the notes feature follow a similar program flow; their diagrams have been omitted for brevity.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeveloperGuideResources/NotesAddSequenceDiagramColored.png" alt="NotesAddSequenceDiagramColored">
+</div>
+<div class="title">Figure 1. Sequence Diagram for Adding Notes</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeveloperGuideResources/NoteAddFrameColored.png" alt="NoteAddFrameColored">
+</div>
+<div class="title">Figure 2. Supplementary Frame for Sequence Diagram</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="paragraph">
+<p><strong>The following is an example of Statistics Generation</strong>:</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="generating-statistics"><a class="link" href="#generating-statistics">Generating Statistics</a></h4>
+<div class="paragraph">
+<p>The statistics feature allows users of Njoy to generate statistics reports using external files as input data.</p>
+</div>
+<div class="paragraph">
+<p>Current File Compatibilities: Excel(.xlsx)</p>
+</div>
+<div class="paragraph">
+<p>A generic data parser of external files is used to generate <code>HashMap</code> of student’s data as specified by the input file. This processed data is passed to a <code>Statistics</code> <code>Model</code> which performs statistical analysis before passing back to the UI for rendering.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeveloperGuideResources/StatisticsClassDiagramColored.png" alt="StatisticsClassDiagramColored">
+</div>
+<div class="title">Figure 3. Class Diagram for Statistics Feature</div>
+</div>
+<div class="paragraph">
+<p>The following is an example usage scenario where the Actor/User asks Njoy for a statistics report.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Actor/User inputs a statistics command with data path as specified in user guide. <code>MainWindow#executeCommand(String commandText)</code> passes the user input to the <code>LogicManager</code>.</p>
+</li>
+<li>
+<p>The logic manager passes received input into its main parser which recognises this is a command for statistics. It passes the input to the <code>StatisticsCommandParser</code> for retrieving data from the external file. All data file parsers implements the <code>DataParser</code> interface.</p>
+</li>
+<li>
+<p>Suppose the data was successfully retrieved, <code>Statistics</code> object is generated for data processing and passed into <code>StatisticsAddCommand</code>.</p>
+</li>
+<li>
+<p>Execution of this command results in the processed data being passed to the <code>ModelManager</code> using <code>StatisticsAddCommand#execute</code>.</p>
+</li>
+<li>
+<p>The success result of the Statistics command is shown on the GUI and the execution call has returned to <code>MainWindow#executeCommand(String commandText)</code>. It
+recognises the command was a valid Statistics command and opens a new window to show the processed data.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the input file is not formatted as specified in the user guide, a <code>ParseException</code> would be thrown to show error message as the result. No new window is opened. The diagram below illustrates possible program control flows.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeveloperGuideResources/StatisticsActivityDiagramResized.png" alt="StatisticsActivityDiagramResized">
+</div>
+<div class="title">Figure 4. Activity Diagram for Statistics Feature</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-rendering-ui"><a class="link" href="#aspect-rendering-ui">Aspect: Rendering UI</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Opens a new window for the report generated.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: More space to work with, able to generate more comprehensive report that is easier to view.</p>
+</li>
+<li>
+<p>Cons: Data widgets are no longer stateful, they are newly created every time a new report is requested.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Render data for current state of the model on the user interface.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Stateful, no need to recreate the widget every time there is new input data.</p>
+</li>
+<li>
+<p>Cons: Lack of space, hard to render other UI elements such as the timetable.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 06:14:55 UTC</div></div></div></body></html>
