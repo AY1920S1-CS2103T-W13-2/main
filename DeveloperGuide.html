@@ -416,6 +416,8 @@ extends the <code>Question</code> class. Questions are then added into the <code
 </div>
 <div class="sect3">
 <h4 id="Feature-Question-Add"><a class="link" href="#Feature-Question-Add">4.1.1. Add command</a></h4>
+<div class="sect4">
+<h5 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>QuestionAddCommand</code> performs.<br></p>
 </div>
@@ -425,15 +427,18 @@ The type defined will dictate if the resulting question will be a <code>OpenEnde
 </div>
 <div class="paragraph">
 <p><strong>Step 2</strong>. The question is then searched through the <code>QuestionBank#questions</code> list using the <code>Model#hasQuestion(Question question)</code> method
-to check if the question already exists.</p>
+to check if the question already exists. If the question already exists, <code>CommandException</code> will be thrown with the error message.</p>
 </div>
 <div class="paragraph">
 <p><strong>Step 3</strong>. The method <code>Model#addQuestion(Question question)</code> will then be called to add the question and the question added,
 will be appended with the <code>QuestionAddCommand#MESSAGE_SUCCESS</code> constant and a new <code>CommandResult</code> will be returned with the message.</p>
 </div>
 </div>
+</div>
 <div class="sect3">
 <h4 id="Feature-Question-Edit"><a class="link" href="#Feature-Question-Edit">4.1.2. Edit command</a></h4>
+<div class="sect4">
+<h5 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>QuestionEditCommand</code> performs.<br></p>
 </div>
@@ -457,7 +462,7 @@ If the question type is changed from open ended to mcq, it is necessary for the 
 </div>
 <div class="paragraph">
 <p><strong>Step 2</strong>. A new <code>Question</code> with the updated values will be created and the question is then searched through the <code>QuestionBank#questions</code> list
-using the <code>Model#hasQuestion(Question question)</code> method to check if the question already exists.</p>
+using the <code>Model#hasQuestion(Question question)</code> method to check if the question already exists. If the question already exists, <code>CommandException</code> will be thrown with the error message.</p>
 </div>
 <div class="paragraph">
 <p><strong>Step 3</strong>. The newly created <code>Question</code> will replace the existing question object through the <code>Model#setQuestion(Index index, Question question)</code> method
@@ -468,8 +473,11 @@ at the specified <code>Index</code> defined by the user.</p>
 and a new <code>CommandResult</code> will be returned with the message.</p>
 </div>
 </div>
+</div>
 <div class="sect3">
 <h4 id="Feature-Question-Delete"><a class="link" href="#Feature-Question-Delete">4.1.3. Delete command</a></h4>
+<div class="sect4">
+<h5 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>QuestionDeleteCommand</code> performs.<br></p>
 </div>
@@ -486,8 +494,11 @@ the <code>Model#deleteQuestion(Index index)</code> method.</p>
 and a new <code>CommandResult</code> will be returned with the message.</p>
 </div>
 </div>
+</div>
 <div class="sect3">
 <h4 id="Feature-Question-List"><a class="link" href="#Feature-Question-List">4.1.4. List command</a></h4>
+<div class="sect4">
+<h5 id="implementation-5"><a class="link" href="#implementation-5">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>QuestionListCommand</code> performs.<br></p>
 </div>
@@ -500,8 +511,11 @@ does not write to the question list.</p>
 object.</p>
 </div>
 </div>
+</div>
 <div class="sect3">
 <h4 id="Feature-Question-Find"><a class="link" href="#Feature-Question-Find">4.1.5. Find command</a></h4>
+<div class="sect4">
+<h5 id="implementation-6"><a class="link" href="#implementation-6">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>QuestionFindCommand</code> performs.</p>
 </div>
@@ -555,6 +569,7 @@ they will be added to the temporary <code>similarAl</code> list instead.</p>
 </div>
 <div class="paragraph">
 <p><em>Figure 6. Activity diagram of questions search</em></p>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -653,7 +668,7 @@ different meanings e.g 'moon' and 'noon', will be more often included in the sea
 <div class="sect2">
 <h3 id="Feature-Slideshow"><a class="link" href="#Feature-Slideshow">4.2. Slideshow feature</a></h3>
 <div class="paragraph">
-<p>The slideshow feature is dependent on the questions added by the <code>question slideshow [question no(s).]</code> command and
+<p>The slideshow feature is dependent on the questions added by the <code>question slideshow [QUESTIONS INDEX]</code> command and
 interacts with the <code>ModelManager</code> to retrieve the list of questions to be displayed in the slideshow.
 The logic control for displaying the ui resides in the <code>SlideshowWindow</code> class and handles the controls and instantiation
 of the various <code>QuestionPanel</code> that contains each question.<br></p>
@@ -670,11 +685,13 @@ questions displayed in the slideshow.</p>
 <div class="paragraph">
 <p><em>Figure 7. Sequence diagram illustrating the interactions happening</em></p>
 </div>
+<div class="sect4">
+<h5 id="implementation-7"><a class="link" href="#implementation-7">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is an example and detailed explanation as to how the questions are fetched and displayed on the slideshow.<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Step 1.</strong> The user requests to start a slideshow with a selection of questions using the <code>question slideshow [question no(s).]</code> command.
+<p><strong>Step 1.</strong> The user requests to start a slideshow with a selection of questions using the <code>question slideshow [QUESTIONS INDEX]</code> command.
 This will add questions based on the <code>Index</code> specified and will be added to the <code>slideshowQuestions</code> list under the <code>SavedQuestions</code> class.
 The usage of <code>Index</code> here is such that it follows the same convention of when the user edits or deletes a question.</p>
 </div>
@@ -728,8 +745,9 @@ The behaviour of this follows the common procedure that most presentation progra
 <div class="paragraph">
 <p><em>Figure 8. Activity diagram of the actions performed</em></p>
 </div>
+</div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.1. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="controls"><a class="link" href="#controls">Controls</a></h5>
 <div class="ulist">
@@ -741,7 +759,7 @@ The behaviour of this follows the common procedure that most presentation progra
 <li>
 <p>The choice of using the arrow keys for navigation and the <code>Escape</code> key to quit the slideshow is such that it will feel
 familiar to users who uses presentation programs often as they have similar controls. The only difference will be the usage
-of the <code>Space</code> key to show answers as it will be something new to the users and is unique to Njoy.</p>
+of the <code>Space</code> key to show answers as it will be something new to the users and is unique to <strong>Njoy</strong>.</p>
 </li>
 </ul>
 </div>
@@ -778,7 +796,7 @@ the question numbering will be at the top followed by the topic, options and the
 will not be confused by the layout.</p>
 </li>
 <li>
-<p><strong>Font sizes</strong> are displayed in the following descending order to allow the text for easy viewing:</p>
+<p>Font sizes are displayed in the following descending order to allow the text for easy viewing:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -802,7 +820,7 @@ will not be confused by the layout.</p>
 <ul>
 <li>
 <p>Having a separate answer format for MCQ such that it will have an arrow beside the correct option <em>e.g A) 1965</em> <strong>&lt; (Answer)</strong>.
-However, this is not feasible as it will break the standard formatting of the answers display since both <strong>Open Ended</strong> and <strong>MCQ</strong>
+However, this is not feasible as it will break the standard formatting of the answers display since both <code>open</code> and <code>mcq</code>
 questions will have 2 different answer formats and may cause confusion to the user.</p>
 </li>
 </ul>
@@ -896,7 +914,7 @@ The arguments supported by this feature includes:</p>
 This adds questions 1 and 2 to the quiz named CS2103T.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h5>
+<h5 id="implementation-8"><a class="link" href="#implementation-8">Implementation</a></h5>
 <div class="paragraph">
 <p>When the user inputs the <code>quiz manual</code> command in the command line, the following chain of operations occur:</p>
 </div>
@@ -955,7 +973,7 @@ The arguments supported by this feature includes:</p>
 This randomly adds 2 mcq questions to the quiz named CS2103T.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h5>
+<h5 id="implementation-9"><a class="link" href="#implementation-9">Implementation</a></h5>
 <div class="paragraph">
 <p>When the user inputs the <code>quiz auto</code> command in the command line, the following chain of operations occur:</p>
 </div>
@@ -1014,7 +1032,7 @@ The arguments supported by this feature includes:</p>
 This adds question 2 to the quiz named CS2103T as question 3.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h5>
+<h5 id="implementation-10"><a class="link" href="#implementation-10">Implementation</a></h5>
 <div class="paragraph">
 <p>When the user inputs the <code>quiz add</code> command in the command line, the following chain of operations occur:</p>
 </div>
@@ -1070,7 +1088,7 @@ The arguments supported by this feature includes:</p>
 This deletes question number 3 of the quiz named CS2103T.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-5"><a class="link" href="#implementation-5">Implementation</a></h5>
+<h5 id="implementation-11"><a class="link" href="#implementation-11">Implementation</a></h5>
 <div class="paragraph">
 <p>When the user inputs the <code>quiz delete</code> command in the command line, the following chain of operations occur:</p>
 </div>
@@ -1123,7 +1141,7 @@ The arguments supported by this feature includes:</p>
 This exports the quiz named CS2103T to a HTML file in the user&#8217;s directory.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-6"><a class="link" href="#implementation-6">Implementation</a></h5>
+<h5 id="implementation-12"><a class="link" href="#implementation-12">Implementation</a></h5>
 <div class="paragraph">
 <p>When the user inputs the <code>quiz export</code> command in the command line, the following chain of operations occur:</p>
 </div>
@@ -1188,7 +1206,7 @@ The arguments supported by this feature includes:</p>
 This lists the questions and answers of the quiz named CS2103T.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-7"><a class="link" href="#implementation-7">Implementation</a></h5>
+<h5 id="implementation-13"><a class="link" href="#implementation-13">Implementation</a></h5>
 <div class="paragraph">
 <p>When the user inputs the <code>quiz list</code> command in the command line, the following chain of operations occur:</p>
 </div>
@@ -1241,7 +1259,7 @@ The arguments supported by this feature includes:</p>
 This shows the answers of the quiz named CS2103T.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-8"><a class="link" href="#implementation-8">Implementation</a></h5>
+<h5 id="implementation-14"><a class="link" href="#implementation-14">Implementation</a></h5>
 <div class="paragraph">
 <p>When the user inputs the <code>quiz showAnswers</code> command in the command line, the following chain of operations occur:</p>
 </div>
@@ -1294,7 +1312,7 @@ The arguments supported by this feature includes:</p>
 This shows the answers of the quiz named CS2103T.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-9"><a class="link" href="#implementation-9">Implementation</a></h5>
+<h5 id="implementation-15"><a class="link" href="#implementation-15">Implementation</a></h5>
 <div class="paragraph">
 <p>When the user inputs the <code>quiz showQuestions</code> command in the command line, the following chain of operations occur:</p>
 </div>
@@ -1384,7 +1402,7 @@ sequence diagram for the StudentAddCommand.</p>
 <div class="sect3">
 <h4 id="Feature-Student-Add"><a class="link" href="#Feature-Student-Add">4.4.1. Add command</a></h4>
 <div class="sect4">
-<h5 id="implementation-10"><a class="link" href="#implementation-10">Implementation</a></h5>
+<h5 id="implementation-16"><a class="link" href="#implementation-16">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>StudentAddCommand</code> performs.<br></p>
 </div>
@@ -1413,7 +1431,7 @@ returned with the generated success message.</p>
 <div class="sect3">
 <h4 id="Feature-Student-Edit"><a class="link" href="#Feature-Student-Edit">4.4.2. Edit command</a></h4>
 <div class="sect4">
-<h5 id="implementation-11"><a class="link" href="#implementation-11">Implementation</a></h5>
+<h5 id="implementation-17"><a class="link" href="#implementation-17">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>StudentEditCommand</code> performs.<br></p>
 </div>
@@ -1444,7 +1462,7 @@ and a new <code>CommandResult</code> will be returned with the generated success
 <div class="sect3">
 <h4 id="Feature-Student-Delete"><a class="link" href="#Feature-Student-Delete">4.4.3. Delete command</a></h4>
 <div class="sect4">
-<h5 id="implementation-12"><a class="link" href="#implementation-12">Implementation</a></h5>
+<h5 id="implementation-18"><a class="link" href="#implementation-18">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>StudentDeleteCommand</code> performs.<br></p>
 </div>
@@ -1472,7 +1490,7 @@ and a new <code>CommandResult</code> will be returned with the generated success
 <p>The following is a detailed explanation of the operations <code>StudentListCommand</code> performs.<br></p>
 </div>
 <div class="sect4">
-<h5 id="implementation-13"><a class="link" href="#implementation-13">Implementation</a></h5>
+<h5 id="implementation-19"><a class="link" href="#implementation-19">Implementation</a></h5>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1596,7 +1614,7 @@ in the input.</p>
 <div class="sect3">
 <h4 id="Feature-Tag"><a class="link" href="#Feature-Tag">4.5.1. Tag command</a></h4>
 <div class="sect4">
-<h5 id="implementation-14"><a class="link" href="#implementation-14">Implementation</a></h5>
+<h5 id="implementation-20"><a class="link" href="#implementation-20">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>TagCommand</code> performs.<br></p>
 </div>
@@ -1768,7 +1786,7 @@ diagram that depicts the execution of the <code>AddMarkCommand</code>.</p>
 <div class="sect3">
 <h4 id="Feature-Mark-Add"><a class="link" href="#Feature-Mark-Add">4.6.1. Add Mark command</a></h4>
 <div class="sect4">
-<h5 id="implementation-15"><a class="link" href="#implementation-15">Implementation</a></h5>
+<h5 id="implementation-21"><a class="link" href="#implementation-21">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>AddMarkCommand</code> performs.<br></p>
 </div>
@@ -1804,7 +1822,7 @@ Index cannot be out of bounds of the student list, and cannot attempt to mark a 
 <div class="sect3">
 <h4 id="Feature-Mark-Remove"><a class="link" href="#Feature-Mark-Remove">4.6.2. Remove Mark command</a></h4>
 <div class="sect4">
-<h5 id="implementation-16"><a class="link" href="#implementation-16">Implementation</a></h5>
+<h5 id="implementation-22"><a class="link" href="#implementation-22">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>RemoveMarkCommand</code> performs.<br></p>
 </div>
@@ -1952,7 +1970,7 @@ The group feature utilises the <code>GroupCommandParser</code> class to parse th
 <div class="sect3">
 <h4 id="Feature-Group-Create-Manually"><a class="link" href="#Feature-Group-Create-Manually">4.7.1. Create Manually command</a></h4>
 <div class="sect4">
-<h5 id="implementation-17"><a class="link" href="#implementation-17">Implementation</a></h5>
+<h5 id="implementation-23"><a class="link" href="#implementation-23">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>GroupCreateManuallyCommand</code> performs.<br></p>
 </div>
@@ -1974,7 +1992,7 @@ The group feature utilises the <code>GroupCommandParser</code> class to parse th
 <div class="sect3">
 <h4 id="Feature-Group-Add-Student"><a class="link" href="#Feature-Group-Add-Student">4.7.2. Add Student command</a></h4>
 <div class="sect4">
-<h5 id="implementation-18"><a class="link" href="#implementation-18">Implementation</a></h5>
+<h5 id="implementation-24"><a class="link" href="#implementation-24">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>GroupAddStudentCommand</code> performs.<br></p>
 </div>
@@ -1996,7 +2014,7 @@ The group feature utilises the <code>GroupCommandParser</code> class to parse th
 <div class="sect3">
 <h4 id="Feature-Group-Remove-Student"><a class="link" href="#Feature-Group-Remove-Student">4.7.3. Remove Student command</a></h4>
 <div class="sect4">
-<h5 id="implementation-19"><a class="link" href="#implementation-19">Implementation</a></h5>
+<h5 id="implementation-25"><a class="link" href="#implementation-25">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>GroupRemoveStudentCommand</code> performs.<br></p>
 </div>
@@ -2018,7 +2036,7 @@ The group feature utilises the <code>GroupCommandParser</code> class to parse th
 <div class="sect3">
 <h4 id="Feature-Group-List"><a class="link" href="#Feature-Group-List">4.7.4. List(Show) command</a></h4>
 <div class="sect4">
-<h5 id="implementation-20"><a class="link" href="#implementation-20">Implementation</a></h5>
+<h5 id="implementation-26"><a class="link" href="#implementation-26">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>GroupGetStudentsCommand</code> performs.<br></p>
 </div>
@@ -2055,7 +2073,7 @@ In this implementation of the application, the groups and respective students ar
 <div class="sect3">
 <h4 id="Feature-Group-Export"><a class="link" href="#Feature-Group-Export">4.7.5. Export command</a></h4>
 <div class="sect4">
-<h5 id="implementation-21"><a class="link" href="#implementation-21">Implementation</a></h5>
+<h5 id="implementation-27"><a class="link" href="#implementation-27">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>GroupExportCommand</code> performs.<br></p>
 </div>
@@ -2227,7 +2245,7 @@ of a mistake.</p>
 <div class="sect3">
 <h4 id="Feature-Note-Add"><a class="link" href="#Feature-Note-Add">4.8.1. Add Note Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-22"><a class="link" href="#implementation-22">Implementation</a></h5>
+<h5 id="implementation-28"><a class="link" href="#implementation-28">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>NoteAddCommand</code> performs.<br></p>
 </div>
@@ -2279,7 +2297,7 @@ The <code>ReadOnlyNotesRecord</code> hides the implementation of the NotesRecord
 <div class="sect3">
 <h4 id="Feature-Note-Edit"><a class="link" href="#Feature-Note-Edit">4.8.2. Edit Note Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-23"><a class="link" href="#implementation-23">Implementation</a></h5>
+<h5 id="implementation-29"><a class="link" href="#implementation-29">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>NoteEditCommand</code> performs.<br></p>
 </div>
@@ -2304,7 +2322,7 @@ The <code>ReadOnlyNotesRecord</code> hides the implementation of the NotesRecord
 <div class="sect3">
 <h4 id="Feature-Note-Delete"><a class="link" href="#Feature-Note-Delete">4.8.3. Delete note command</a></h4>
 <div class="sect4">
-<h5 id="implementation-24"><a class="link" href="#implementation-24">Implementation</a></h5>
+<h5 id="implementation-30"><a class="link" href="#implementation-30">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>NoteDeleteCommand</code> performs.<br></p>
 </div>
@@ -2350,7 +2368,7 @@ In this implementation of the application, the teacher’s notes are rendered on
 </table>
 </div>
 <div class="sect4">
-<h5 id="implementation-25"><a class="link" href="#implementation-25">Implementation</a></h5>
+<h5 id="implementation-31"><a class="link" href="#implementation-31">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>NoteListCommand</code> performs.<br></p>
 </div>
@@ -2388,7 +2406,7 @@ Sorting is based on <code>Note</code> <code>Priority</code> attribute. <code>Pri
 </table>
 </div>
 <div class="sect4">
-<h5 id="implementation-26"><a class="link" href="#implementation-26">Implementation</a></h5>
+<h5 id="implementation-32"><a class="link" href="#implementation-32">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>NoteSortCommand</code> performs.<br></p>
 </div>
@@ -2654,7 +2672,7 @@ interactions with the <code>Logic</code> and <code>UI</code> layers will mostly 
 <div class="sect3">
 <h4 id="Feature-Event-Add"><a class="link" href="#Feature-Event-Add">4.10.2. Add Event Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-27"><a class="link" href="#implementation-27">Implementation</a></h5>
+<h5 id="implementation-33"><a class="link" href="#implementation-33">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>EventAddCommand</code> performs.<br></p>
 </div>
@@ -2710,7 +2728,7 @@ in the diagram refers to the VEvent object itself and its corresponding index.</
 <div class="title">Figure 21. Activity Diagram for finding index of Event</div>
 </div>
 <div class="sect4">
-<h5 id="implementation-28"><a class="link" href="#implementation-28">Implementation</a></h5>
+<h5 id="implementation-34"><a class="link" href="#implementation-34">Implementation</a></h5>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2761,7 +2779,7 @@ VEvent objects use a <code>summary</code> object to represent the name of an eve
 <div class="sect3">
 <h4 id="Feature-Event-Edit"><a class="link" href="#Feature-Event-Edit">4.10.4. Edit Event Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-29"><a class="link" href="#implementation-29">Implementation</a></h5>
+<h5 id="implementation-35"><a class="link" href="#implementation-35">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>EventEditCommand</code> performs.<br></p>
 </div>
@@ -2794,7 +2812,7 @@ This will replace the target VEvent with the new <code>editedVEvent</code>. A su
 <div class="sect3">
 <h4 id="Feature-Event-Delete"><a class="link" href="#Feature-Event-Delete">4.10.5. Delete event command</a></h4>
 <div class="sect4">
-<h5 id="implementation-30"><a class="link" href="#implementation-30">Implementation</a></h5>
+<h5 id="implementation-36"><a class="link" href="#implementation-36">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>EventDeleteCommand</code> performs.<br></p>
 </div>
@@ -2835,7 +2853,7 @@ show the corresponding week (if it is in week mode) which contains the reference
 the VEvents for that day.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-31"><a class="link" href="#implementation-31">Implementation</a></h5>
+<h5 id="implementation-37"><a class="link" href="#implementation-37">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>EventDeleteCommand</code> performs.<br></p>
 </div>
@@ -2878,7 +2896,7 @@ Specifically the skin mode and the displayed date time
 <p>This command allows the user to take a screenshot of the current state of the <code>EventSchedulePanel</code> and save it to a .png file.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-32"><a class="link" href="#implementation-32">Implementation</a></h5>
+<h5 id="implementation-38"><a class="link" href="#implementation-38">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>EventScreenshotCommand</code> performs.<br></p>
 </div>
@@ -2935,7 +2953,7 @@ The <code>NjoyPrintable</code> object is used to encapsulate the <code>WritableI
 <p>This command allows the user to export all the events into a .ics file.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-33"><a class="link" href="#implementation-33">Implementation</a></h5>
+<h5 id="implementation-39"><a class="link" href="#implementation-39">Implementation</a></h5>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>EventScreenshotCommand</code> performs.<br></p>
 </div>
@@ -4656,4 +4674,4 @@ Expected: Error message stating that the group with the groupID does not exist.<
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 10:34:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 11:05:11 UTC</div></div></div></body></html>
