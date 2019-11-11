@@ -50,12 +50,13 @@
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
 <li><a href="#notes">G.2. Notes</a></li>
-<li><a href="#student">G.3. Student</a></li>
-<li><a href="#tag">G.4. Tag</a></li>
-<li><a href="#mark">G.5. Mark</a></li>
-<li><a href="#group">G.6. Group</a></li>
-<li><a href="#event">G.7. Event</a></li>
-<li><a href="#saving-data">G.8. Saving data</a></li>
+<li><a href="#statistics">G.3. Statistics</a></li>
+<li><a href="#student">G.4. Student</a></li>
+<li><a href="#tag">G.5. Tag</a></li>
+<li><a href="#mark">G.6. Mark</a></li>
+<li><a href="#group">G.7. Group</a></li>
+<li><a href="#event">G.8. Event</a></li>
+<li><a href="#saving-data">G.9. Saving data</a></li>
 </ul>
 </li>
 </ul>
@@ -183,21 +184,15 @@ The following class plays an important role at the architecture level:</p>
 <div class="paragraph">
 <p>For example, the <code>Logic</code> component (see the class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
-</div>
-<div class="title">Figure 2. Class Diagram of the Logic Component</div>
-</div>
 <h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
 <div class="paragraph">
 <p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
+<img src="images/ArchitectureSequenceDiagramForNjoy.png" alt="ArchitectureSequenceDiagramForNjoy">
 </div>
-<div class="title">Figure 3. Component interactions for <code>delete 1</code> command</div>
+<div class="title">Figure 2. Component interactions for <code>delete 1</code> command</div>
 </div>
 <div class="paragraph">
 <p>The sections below give more details of each component.</p>
@@ -209,7 +204,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram">
 </div>
-<div class="title">Figure 4. Structure of the UI Component</div>
+<div class="title">Figure 3. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
@@ -240,7 +235,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
 </div>
-<div class="title">Figure 5. Structure of the Logic Component</div>
+<div class="title">Figure 4. Structure of the Logic Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
@@ -272,7 +267,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
 </div>
-<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 5. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -293,7 +288,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
 </div>
-<div class="title">Figure 7. Structure of the Model Component</div>
+<div class="title">Figure 6. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
@@ -338,7 +333,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
 </div>
-<div class="title">Figure 8. Structure of the Storage Component</div>
+<div class="title">Figure 7. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -882,7 +877,7 @@ questions will have 2 different answer formats and may cause confusion to the us
 <div class="content">
 <img src="images/quizSequence.PNG" alt="quizSequence">
 </div>
-<div class="title">Figure 9. Sequence Diagram for <code>quiz manual</code> and <code>quiz auto</code> Commands</div>
+<div class="title">Figure 8. Sequence Diagram for <code>quiz manual</code> and <code>quiz auto</code> Commands</div>
 </div>
 <div class="paragraph">
 <p>The other processes share similar paths and is further illustrated in the following sequence diagram:</p>
@@ -891,7 +886,7 @@ questions will have 2 different answer formats and may cause confusion to the us
 <div class="content">
 <img src="images/quizSequence2.PNG" alt="quizSequence2">
 </div>
-<div class="title">Figure 10. Sequence Diagram for <code>quiz add</code>, <code>quiz delete</code>, <code>quiz export</code>, <code>quiz list</code>, <code>quiz showAnswers</code> and <code>quiz showQuestions</code> Commands</div>
+<div class="title">Figure 9. Sequence Diagram for <code>quiz add</code>, <code>quiz delete</code>, <code>quiz export</code>, <code>quiz list</code>, <code>quiz showAnswers</code> and <code>quiz showQuestions</code> Commands</div>
 </div>
 <div class="sect3">
 <h4 id="Feature-Quiz-Create-Manually"><a class="link" href="#Feature-Quiz-Create-Manually">4.3.1. Creating Quiz Manually</a></h4>
@@ -1178,13 +1173,13 @@ This exports the quiz named CS2103T to a HTML file in the user&#8217;s directory
 <div class="content">
 <img src="images/QuizExportActivity.png" alt="QuizExportActivity">
 </div>
-<div class="title">Figure 11. Activity Diagram for <code>quiz export</code> command</div>
+<div class="title">Figure 10. Activity Diagram for <code>quiz export</code> command</div>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/CreateQuizHtml.png" alt="CreateQuizHtml">
 </div>
-<div class="title">Figure 12. Follow up Rake Reference Activity Diagram for <code>quiz export</code> command</div>
+<div class="title">Figure 11. Follow up Rake Reference Activity Diagram for <code>quiz export</code> command</div>
 </div>
 </div>
 </div>
@@ -1381,7 +1376,7 @@ sequence diagram for the StudentAddCommand.</p>
 <div class="content">
 <img src="images/StudentAddSequence.png" alt="StudentAddSequence">
 </div>
-<div class="title">Figure 13. Sequence Diagram for <code>StudentAddCommand</code></div>
+<div class="title">Figure 12. Sequence Diagram for <code>StudentAddCommand</code></div>
 </div>
 <div class="paragraph">
 <p>&#160;<br>
@@ -1765,7 +1760,7 @@ diagram that depicts the execution of the <code>AddMarkCommand</code>.</p>
 <div class="content">
 <img src="images/MarkActivityDiagram.png" alt="MarkActivityDiagram">
 </div>
-<div class="title">Figure 14. Activity Diagram for <code>AddMarkCommand</code></div>
+<div class="title">Figure 13. Activity Diagram for <code>AddMarkCommand</code></div>
 </div>
 <div class="paragraph">
 <p>&#160;<br>
@@ -2205,7 +2200,7 @@ of a mistake.</p>
 <div class="content">
 <img src="images/GroupStudentClassDiagram.png" alt="GroupStudentClassDiagram">
 </div>
-<div class="title">Figure 15. Class Diagram depicting relationships between Student/Group/Mark and Tag features.</div>
+<div class="title">Figure 14. Class Diagram depicting relationships between Student/Group/Mark and Tag features.</div>
 </div>
 </div>
 </div>
@@ -2285,13 +2280,13 @@ The <code>ReadOnlyNotesRecord</code> hides the implementation of the NotesRecord
 <div class="content">
 <img src="images/DeveloperGuideResources/NotesAddSequenceDiagramColored.png" alt="NotesAddSequenceDiagramColored">
 </div>
-<div class="title">Figure 16. Sequence Diagram for Adding Notes</div>
+<div class="title">Figure 15. Sequence Diagram for Adding Notes</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DeveloperGuideResources/NoteAddFrameColored.png" alt="NoteAddFrameColored">
 </div>
-<div class="title">Figure 17. Supplementary Frame for Sequence Diagram</div>
+<div class="title">Figure 16. Supplementary Frame for Sequence Diagram</div>
 </div>
 </div>
 </div>
@@ -2382,11 +2377,11 @@ In this implementation of the application, the teacher’s notes are rendered on
 <p>The method <code>NoteListCommand#generateSuccessMessage(ReadOnlyNotesRecord notesRecord)</code> generates a String representation of the notes in the command.</p>
 </li>
 <li>
-<p>If successful, the success message generated is returned and new <code>CommandResult</code> will be returned.
+<p>If successful, the success message generated is returned with the <code>CommandResult</code>.
 Otherwise, an error message showing proper note command syntax is thrown as <code>CommandException</code>.</p>
 </li>
 <li>
-<p>Success message enumerating the notes in the notes record is rendered in the command result box.</p>
+<p>Success or error message for the list notes command is rendered in the command result box.</p>
 </li>
 </ol>
 </div>
@@ -2497,7 +2492,7 @@ aim to keep our notes feature as simple as a pen-paper recording or even simpler
 <div class="content">
 <img src="images/DeveloperGuideResources/StatisticsClassDiagramColored.png" alt="StatisticsClassDiagramColored">
 </div>
-<div class="title">Figure 18. Class Diagram for Statistics Feature</div>
+<div class="title">Figure 17. Class Diagram for Statistics Feature</div>
 </div>
 <div class="paragraph">
 <p>The following is an example usage scenario where the Actor/User asks Njoy for a statistics report.</p>
@@ -2538,7 +2533,7 @@ If the input file is not formatted as specified in the user guide, a <code>Parse
 <div class="content">
 <img src="images/DeveloperGuideResources/StatisticsActivityDiagramResized.png" alt="StatisticsActivityDiagramResized">
 </div>
-<div class="title">Figure 19. Activity Diagram for Statistics Feature</div>
+<div class="title">Figure 18. Activity Diagram for Statistics Feature</div>
 </div>
 </div>
 <div class="sect3">
@@ -2667,7 +2662,7 @@ interactions with the <code>Logic</code> and <code>UI</code> layers will mostly 
 <div class="content">
 <img src="images/DeveloperGuideResources/EventClassDiagram.png" alt="EventClassDiagram">
 </div>
-<div class="title">Figure 20. Class Diagram for EventRecord</div>
+<div class="title">Figure 19. Class Diagram for EventRecord</div>
 </div>
 </div>
 <div class="sect3">
@@ -2726,7 +2721,7 @@ in the diagram refers to the VEvent object itself and its corresponding index.</
 <div class="content">
 <img src="images/DeveloperGuideResources/EventIndexActivityDiagram.png" alt="EventIndexActivityDiagram">
 </div>
-<div class="title">Figure 21. Activity Diagram for finding index of Event</div>
+<div class="title">Figure 20. Activity Diagram for finding index of Event</div>
 </div>
 <div class="sect4">
 <h5 id="implementation-34"><a class="link" href="#implementation-34">Implementation</a></h5>
@@ -2840,7 +2835,7 @@ This will replace the target VEvent with the new <code>editedVEvent</code>. A su
 <div class="content">
 <img src="images/DeveloperGuideResources/EventDeleteSequenceDiagram.png" alt="EventDeleteSequenceDiagram">
 </div>
-<div class="title">Figure 22. Sequence Diagram for Deleting Events</div>
+<div class="title">Figure 21. Sequence Diagram for Deleting Events</div>
 </div>
 </div>
 </div>
@@ -4219,7 +4214,7 @@ Expected: The most recent window size and location is retained.</p>
 Expected: Adds a new note to the notes list panel. Has red panel color to denote high priority.</p>
 </li>
 <li>
-<p>Test case: <code>note note/Tuesday desc/Grade 6A prelim papers</code><br>
+<p>Test case: <code>note note/Tuesday afternoon desc/prepare lectures</code><br>
 Expected: Adds a new note to the notes list panel. Has grey panel color to denote unmarked or default priority.</p>
 </li>
 <li>
@@ -4253,7 +4248,7 @@ Expected: First note in the list changes properties to the fields specified. Thi
 Expected: Shows error message to tell user that at least one field is to be provided.</p>
 </li>
 <li>
-<p>Other incorrect edit commands to try: <code>note 1 note/duplicate note title</code> (some other note has this “duplicate note title”), <code>note 1 note/note one</code> (first note in the notes panel has the note title note one)<br>
+<p>Other incorrect edit commands to try: <code>note 1 note/duplicate note title</code> (some other note has this “duplicate note title”), <code>note 0 note/note one</code><br>
 Expected: Shows appropriate error messages of why the command failed.</p>
 </li>
 </ol>
@@ -4329,7 +4324,39 @@ Expected: Shows appropriate error messages of why the command failed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="student"><a class="link" href="#student">G.3. Student</a></h3>
+<h3 id="statistics"><a class="link" href="#statistics">G.3. Statistics</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Generating a Statistics report.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Tester has test excel files to test. The test files are to follow the data file specifications as mentioned in the <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/blob/master/docs/UserGuide.adoc">User Guide</a>. Some sample excel files to test has been provided  <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/tree/master/src/test/data/SampleStatisticsData">here</a>.</p>
+</li>
+<li>
+<p>Prerequisites: Once the test files have been downloaded or created, testers are assumed to know how to retrieve the correct relative or full file path of the test file(s).</p>
+</li>
+<li>
+<p>Test case: <code>statistics file/{some valid file path} print/MyTestReport</code><br>
+Expected: Generates a statistics report in a new window. Image file of type png is saved to the printable directory with name MyTestReport.</p>
+</li>
+<li>
+<p>Test case: <code>statistics file/{some invalid file path} print/MyTestReport</code><br>
+Expected: If the statistics report is not generated, the command result shows the reasons for failure. Otherwise, it can be verified that the statistics report generated has erroneous data or ineffective descriptive statistics as mentioned in the User Guide as a result of the failure to follow data specifications.</p>
+</li>
+<li>
+<p>Test case: <code>statistics file/{some valid file path} print/{invalid file name}</code>. Examples of illegal characters in file name include /, ? and *.<br>
+Expected: Shows error message of reasons for failure.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="student"><a class="link" href="#student">G.4. Student</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4428,7 +4455,7 @@ Expected: A string representation of the student list is shown in the status res
 </div>
 </div>
 <div class="sect2">
-<h3 id="tag"><a class="link" href="#tag">G.4. Tag</a></h3>
+<h3 id="tag"><a class="link" href="#tag">G.5. Tag</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4465,7 +4492,7 @@ Expected: Shows error message regarding reason for command failure or the correc
 </div>
 </div>
 <div class="sect2">
-<h3 id="mark"><a class="link" href="#mark">G.5. Mark</a></h3>
+<h3 id="mark"><a class="link" href="#mark">G.6. Mark</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4526,7 +4553,7 @@ Expected: Shows error message that the index is invalid.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="group"><a class="link" href="#group">G.6. Group</a></h3>
+<h3 id="group"><a class="link" href="#group">G.7. Group</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4655,7 +4682,7 @@ Expected: Error message stating that the group with the groupID does not exist.<
 </div>
 </div>
 <div class="sect2">
-<h3 id="event"><a class="link" href="#event">G.7. Event</a></h3>
+<h3 id="event"><a class="link" href="#event">G.8. Event</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4834,7 +4861,7 @@ Expected: Shows error message for invalid schedule view mode. Prompting user to 
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.8. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">G.9. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4854,4 +4881,4 @@ Expected: Shows error message for invalid schedule view mode. Prompting user to 
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 04:34:20 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 07:34:31 UTC</div></div></div></body></html>

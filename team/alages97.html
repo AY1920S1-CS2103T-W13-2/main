@@ -586,18 +586,16 @@ have created. Also, some of the command hyperlinks will obviously not work becau
 <div class="paragraph">
 <p><strong>The following is the add <code>student</code> section of the Developer Guide:</strong></p>
 </div>
-<div class="paragraph">
-<p>The Student Commands share similar paths, and is further illustrated in the following sequence diagram, which shows the
-sequence diagram for the StudentAddCommand.</p>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/StudentAddSequence.png" alt="StudentAddSequence">
 </div>
 <div class="title">Figure 7. Sequence Diagram for <code>StudentAddCommand</code></div>
 </div>
-<div class="sect4">
-<h5 id="implementation"><a class="link" href="#implementation">Implementation</a></h5>
+<div class="paragraph">
+<p>&#160;<br>
+<strong>The following are the common steps among all Student commands.</strong></p>
+</div>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>StudentAddCommand</code> performs.<br></p>
 </div>
@@ -621,12 +619,10 @@ returned with the generated success message.</p>
 </li>
 </ol>
 </div>
+<div class="sect3">
+<h4 id="Feature-Student-Edit"><a class="link" href="#Feature-Student-Edit">Edit command</a></h4>
 <div class="paragraph">
 <p><strong>The following is the add <code>mark</code> section of the Developer Guide:</strong></p>
-</div>
-<div class="paragraph">
-<p>The logic flow for both the <code>mark</code> and <code>unmark</code> commands are quite similar, and can be seen by the following activity
-diagram that depicts the execution of the <code>AddMarkCommand</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -635,17 +631,23 @@ diagram that depicts the execution of the <code>AddMarkCommand</code>.</p>
 <div class="title">Figure 8. Activity Diagram for <code>AddMarkCommand</code></div>
 </div>
 <div class="paragraph">
-<p>&#160;<br></p>
+<p>&#160;<br>
+<strong>The following are the common steps among all Mark commands.</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>NjoyParser</code> will delegate the parsing of the command to <code>MarkCommandParser</code></p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p><strong>The following shows the relationship of <code>Student</code>, <code>Group</code>, <code>Mark</code> and <code>Tag</code> via a class diagram in the Developer Guide:</strong></p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/GroupStudentClassDiagram.png" alt="GroupStudentClassDiagram">
 </div>
-<div class="title">Figure 9. Class Diagram depicting relationships between Student/Group/Mark and Tag features.</div>
-</div>
+<div class="sect2">
+<h3 id="Feature-Notes"><a class="link" href="#Feature-Notes">Notes feature</a></h3>
+
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 04:34:20 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 07:34:31 UTC</div></div></div></body></html>

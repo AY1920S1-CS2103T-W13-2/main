@@ -502,13 +502,21 @@ the command hyperlinks will obviously not work because I have omitted them for b
 </tr>
 </tbody>
 </table>
-<div class="sect2">
-<h3 id="quiz-feature"><a class="link" href="#quiz-feature">Quiz feature</a></h3>
 <div class="paragraph">
 <p><span class="big"><strong>Overview</strong></span></p>
 </div>
 <div class="paragraph">
 <p>The quiz feature utilises the questions implemented and stored in the <code>QuestionBank#questions</code> observable list. The quiz feature utilises the <code>QuizCommandParser</code> class to parse the user command input into the different command types and validates the input. Quizzes are then added into the <code>QuizBank#quizzes</code> observable list. The quiz feature also relies heavily on the <code>QuizManager</code> class for handling commands from <code>QuizCommand#execute</code>. This is done to hide the implementation logic from the <code>ModelManager</code> class.<br></p>
+</div>
+<div class="paragraph">
+<p>The feature comprises of eight commands namely,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Feature-Quiz-Create-Manually"><code>QuizCreateManuallyCommand</code></a> - Creates a quiz with user input manually</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>&#160;<br></p>
@@ -525,14 +533,8 @@ The following is an example of <strong>Quiz Creation</strong>:
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>When the user inputs the <code>quiz manual</code> command in the command line, the following chain of operations occur:</p>
-</div>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>The <code>NjoyParser</code> will delegate the parsing of the command to <code>QuizCommandParser</code>.</p>
-</li>
 <li>
 <p><code>QuizCommandParser#parse()</code> will take in a <code>String</code> input consisting of the arguments.</p>
 </li>
@@ -583,6 +585,16 @@ This randomly adds 2 mcq questions to the quiz named CS2103T.</p>
 <div class="sect4">
 <h5 id="implementation"><a class="link" href="#implementation">Implementation</a></h5>
 <div class="paragraph">
+<p>When the user inputs the <code>quiz auto</code> command in the command line, the following chain of operations occur:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>NjoyParser</code> will delegate the parsing of the command to <code>QuizCommandParser</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
 <p>&#160;<br></p>
 </div>
 <div class="admonitionblock note">
@@ -597,14 +609,8 @@ The following is an example of <strong>Quiz Display</strong>:
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>When the user inputs the <code>quiz delete</code> command in the command line, the following chain of operations occur:</p>
-</div>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>The <code>NjoyParser</code> will delegate the parsing of the command to <code>QuizCommandParser</code>.</p>
-</li>
 <li>
 <p><code>QuizCommandParser#parse()</code> will take in a <code>String</code> input consisting of the arguments.</p>
 </li>
@@ -661,10 +667,15 @@ This exports the quiz named CS2103T to a HTML file in the user&#8217;s directory
 <li>
 <p><code>QuizCommandParser#parse()</code> will take in a <code>String</code> input consisting of the arguments.</p>
 </li>
+<li>
+<p>The arguments will be tokenized and the respective models for each argument are created.</p>
+</li>
+<li>
+<p>If the parsing of all arguments are successful, a new <code>QuizExportCommand</code> is returned back to <code>LogicManager</code>.</p>
+</li>
 </ol>
 </div>
 </div>
 </div>
 </div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 04:34:20 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 07:34:31 UTC</div></div></div></body></html>
