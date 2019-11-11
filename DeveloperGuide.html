@@ -54,7 +54,8 @@
 <li><a href="#tag">G.4. Tag</a></li>
 <li><a href="#mark">G.5. Mark</a></li>
 <li><a href="#group">G.6. Group</a></li>
-<li><a href="#saving-data">G.7. Saving data</a></li>
+<li><a href="#event">G.7. Event</a></li>
+<li><a href="#saving-data">G.8. Saving data</a></li>
 </ul>
 </li>
 </ul>
@@ -2645,7 +2646,7 @@ At the model level, VEvents are mapped to Event objects for saving and vice vers
 <p><a href="#Feature-Event-Screenshot"><code>EventScreenshotCommand</code></a> -Takes a screenshot of the current event schedule.</p>
 </li>
 <li>
-<p><a href="#Feature-Event-Expport"><code>EventExportCommand</code></a> -Exports events to a .ics file type.</p>
+<p><a href="#Feature-Event-Export"><code>EventExportCommand</code></a> -Exports events to a .ics file type.</p>
 </li>
 </ul>
 </div>
@@ -4654,7 +4655,186 @@ Expected: Error message stating that the group with the groupID does not exist.<
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.7. Saving data</a></h3>
+<h3 id="event"><a class="link" href="#event">G.7. Event</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a event to the event list.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The event list already already contains one event with event name "Test Event",
+startDateTime "2019-11-01T03:00" and endDateTime "2019-11-01T04:00". The recurrence type and color number do not matter as long
+as it is valid.</p>
+</li>
+<li>
+<p>Test case: <code>event eventName/cs2103 Practical startDateTime/2019-11-15T08:00 endDateTime/2019-11-15T09:00 recur/none color/1</code><br>
+Expected: Adds Event with event name cs2103 Practical to the event list</p>
+</li>
+<li>
+<p>Test case: <code>event eventName/Test Event startDateTime/2019-11-01T03:00 endDateTime/2019-11-01T04:00 recur/none color/1</code><br>
+Expected: Shows error message that will result in duplicate event being created</p>
+</li>
+<li>
+<p>Test case: <code>event eventName/\n</code><br>
+Expected: Shows error message that event name cannot contain backslash.</p>
+</li>
+<li>
+<p>Test case: <code>event eventName/teacher meeting startDateTime/2019-11-15T07:00 endDateTime/2019-11-15T06:00 recur/none color/1</code><br>
+Expected: Shows error message for invalid date range</p>
+</li>
+<li>
+<p>Test case: <code>event eventName/teacher meeting startDateTime/2019-11-15T07:00 endDateTime/2019-11-15T09:00 recur/none color/24</code><br>
+Expected: Shows error message for invalid color number passed.</p>
+</li>
+<li>
+<p>Test case: <code>event eventName/teacher meeting startDateTime/2019-11-15T07:00 endDateTime/2019-11-15T09:00 recur/invalid color/1</code><br>
+Expected: Shows error message for invalid recurrence type passed.</p>
+</li>
+<li>
+<p>Other incorrect add commands to try: <code>event eventName/cs2103 Practical startDateTime/ endDateTime/2019-11-15T09:00 recur/ color/1</code>
+Expected: Shows error message regarding reason for command failure or the correct command syntax.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Finding the index of a existing event in the event list</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The event list contains one event. The event has event name "First Event",
+startDateTime "2019-11-01T03:00" and endDateTime "2019-11-01T04:00". The recurrence type and color number do not matter as long
+as it is valid.</p>
+</li>
+<li>
+<p>Test case: <code>event indexOf/First Event</code><br>
+Expected: Displays the index and details of the event.</p>
+</li>
+<li>
+<p>Test case: <code>event indexOf/First</code><br>
+   Expected: Event was not found but suggests the event with event name "First Event" and displays its index as well as
+its details.</p>
+</li>
+<li>
+<p>Test case: <code>event indexOf/</code><br>
+Expected: Shows error message, asking user to input a event name to be used in the search.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Editing an existing event in the event list.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The event list contains two events. The first event with event name "First Event",
+startDateTime "2019-11-01T03:00" and endDateTime "2019-11-01T04:00" at index one. The second event with event name "Second Event",
+startDateTime "2019-11-01T03:00" and endDateTime "2019-11-01T04:00"</p>
+</li>
+<li>
+<p>Test case: <code>event 1 eventName/changed name color/13 recur/daily</code><br>
+Expected: First event in event list changed event name to "changed name", color to 13 and recurrence to daily.</p>
+</li>
+<li>
+<p>Test case: <code>event 1 eventName/Second Event</code><br>
+Expected: Error message stating this will result in duplicate events.</p>
+</li>
+<li>
+<p>Test case: <code>event 0 eventName/valid Event</code><br>
+Expected: Shows error message that index provided is not valid.</p>
+</li>
+<li>
+<p>Test case: <code>event 5 eventName/Test Five</code><br>
+Expected: Shows error message that index provided is out of bounds.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Deleting a event from the event list.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The event list has one event at index 1.</p>
+</li>
+<li>
+<p>Test case: <code>event delete 1</code><br>
+Expected: First event is deleted from the list.</p>
+</li>
+<li>
+<p>Test case: <code>event delete 0</code><br>
+Expected: Error message stating that index is invalid is shown</p>
+</li>
+<li>
+<p>Test case: <code>event delete 5</code><br>
+Expected: Error message stating that index is out of bounds is shown.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Exporting event to .ics file type.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The event list contains one event with with event name "Test Event",
+startDateTime "2019-11-01T03:00" and endDateTime "2019-11-01T04:00". The recurrence type and color number do not matter as long
+as it is valid.</p>
+</li>
+<li>
+<p>Test case: <code>event export</code><br>
+Expected: A message stating that events were successfully exported. And prompts the user to check the export directory.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Taking a screenshot of the event schedule.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The event list contains one event with with event name "Test Event",
+startDateTime "2019-11-01T03:00" and endDateTime "2019-11-01T04:00". The recurrence type and color number do not matter as long
+as it is valid.</p>
+</li>
+<li>
+<p>Test case: <code>event screenshot</code><br>
+   Expected: Opens a full screen window, taking a screenshot fo the event schedule. Then closes it and shows a message
+indicating the screenshot has successfully been taken.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Viewing the event schedule.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The event list contains one event with with event name "Test Event",
+startDateTime "2019-11-01T03:00" and endDateTime "2019-11-01T04:00". The recurrence type and color number do not matter as long
+as it is valid.</p>
+</li>
+<li>
+<p>Test case: <code>event view targetDate/2019-11-18 scheduleMode/daily</code><br>
+Expected: Changes the view of the event schedule to daily mode and focuses on the date 18 November 2019.</p>
+</li>
+<li>
+<p>Test case: <code>event view targetDate/2019-99-99 scheduleMode/daily</code><br>
+Expected: Shows error message for invalid date format.</p>
+</li>
+<li>
+<p>Test case: <code>event view targetDate/2019-01-01 scheduleMode/invalid</code><br>
+Expected: Shows error message for invalid schedule view mode. Prompting user to input weekly or daily only.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">G.8. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4674,4 +4854,4 @@ Expected: Error message stating that the group with the groupID does not exist.<
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 16:36:52 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 04:34:20 UTC</div></div></div></body></html>
