@@ -343,9 +343,18 @@ The following is an example of <strong>Quiz Editing</strong>:
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Unfortunately, since majority of the quiz commands rely on question and quiz question indexes, it is entirely up to the user
-to ensure the correct indexes of the questions or quiz questions have been entered.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Unfortunately, since majority of the quiz commands rely on question and quiz question indexes, it is entirely up to the user
+to ensure the correct indexes of the questions or quiz questions have been entered.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>You may refer to <a href="#Feature-Question-Add">creating a question</a> for examples on how to add questions and <a href="#Feature-Question-List">listing the questions</a> on how to view the current list of questions in the databank.</p>
@@ -383,55 +392,97 @@ questions are in the question bank.
 <div class="paragraph">
 <p>The format supported by this feature includes:</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The following is an example of <strong>Quiz Display</strong>:
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Keyword</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Keyword</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p>
-<p class="tableblock">[NOTE]
-The following is an example of <strong>Quiz Display</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quiz ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The label of the quiz.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of Questions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of questions you want added to the quiz.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Question Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of questions you want added to the quiz: mcq, open, all.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>| Keyword | Description</p>
+<p>Examples:</p>
 </div>
-<div class="paragraph">
-<p>| Quiz ID | The label of the quiz.
-| Number of Questions | The number of questions you want added to the quiz.
-| Question Type | The type of questions you want added to the quiz: mcq, open, all.</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples:</p>
-<p class="tableblock">* <code>quiz auto quizID/CS2103T numQuestions/2 type/mcq</code><br>
-Adds 2 questions of type mcq to the quiz labelled CS2103T.
-* <code>quiz auto quizID/CS2103T numQuestions/1 type/open</code><br>
-Adds 1 question of type open-ended to the quiz labelled CS2103T.
-* <code>quiz auto quizID/CS2103T numQuestions/3 type/all</code><br>
+<div class="ulist">
+<ul>
+<li>
+<p><code>quiz auto quizID/CS2103T numQuestions/2 type/mcq</code><br>
+Adds 2 questions of type mcq to the quiz labelled CS2103T.</p>
+</li>
+<li>
+<p><code>quiz auto quizID/CS2103T numQuestions/1 type/open</code><br>
+Adds 1 question of type open-ended to the quiz labelled CS2103T.</p>
+</li>
+<li>
+<p><code>quiz auto quizID/CS2103T numQuestions/3 type/all</code><br>
 Adds 3 questions of any type to the quiz labelled CS2103T.</p>
-<p class="tableblock">.Results of the first create quiz automatically command.
-image::QuizAuto1.PNG[]</p>
-<p class="tableblock">.Results of the second create quiz automatically command.
-image::QuizAuto2.PNG[]</p>
-<p class="tableblock">.Results of the third create quiz automatically command.
-image::QuizAuto3.PNG[]</p>
-<p class="tableblock">'''</p>
-<p class="tableblock">==== Adding a Question to a Quiz: <code>add</code></p>
-<p class="tableblock">Allows a user to add a question to a quiz.<br></p>
-<p class="tableblock"><strong class="big">Format:</strong> <code>quiz add quizID/&#8230;&#8203; questionNumber/&#8230;&#8203; quizQuestionNumber/&#8230;&#8203;</code></p>
-<p class="tableblock">The format supported by this feature includes:</p></td>
-</tr>
-</tbody>
-</table>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/QuizAuto1.PNG" alt="QuizAuto1">
+</div>
+<div class="title">Figure 2. Results of the first create quiz automatically command.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/QuizAuto2.PNG" alt="QuizAuto2">
+</div>
+<div class="title">Figure 3. Results of the second create quiz automatically command.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/QuizAuto3.PNG" alt="QuizAuto3">
+</div>
+<div class="title">Figure 4. Results of the third create quiz automatically command.</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="adding-a-question-to-a-quiz-code-add-code"><a class="link" href="#adding-a-question-to-a-quiz-code-add-code">Adding a Question to a Quiz: <code>add</code></a></h4>
+<div class="paragraph">
+<p>Allows a user to add a question to a quiz.<br></p>
+</div>
+<div class="paragraph">
+<p><strong class="big">Format:</strong> <code>quiz add quizID/&#8230;&#8203; questionNumber/&#8230;&#8203; quizQuestionNumber/&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>The format supported by this feature includes:</p>
+</div>
 </div>
 </div>
 </div>
@@ -626,4 +677,4 @@ This exports the quiz named CS2103T to a HTML file in the user&#8217;s directory
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:07:13 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:12:31 UTC</div></div></div></body></html>
