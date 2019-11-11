@@ -235,6 +235,36 @@ I have decided to select one command for each feature as a representation of my 
 <div class="paragraph">
 <p><strong>The following is an example of Creating Notes</strong>:</p>
 </div>
+<div class="paragraph">
+<p><strong>Step 1.</strong> After executing the event export command, the user should
+navigate to their current directory. An exports folder as shown in the image below should be created!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/EventExportLocation.png" alt="EventExportLocation">
+</div>
+<div class="title">Figure 2. Event export location</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br>
+<strong>Step 2.</strong> The file should be named nJoy_Schedule.ics inside the exports directory.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/EventExportFile.PNG" alt="EventExportFile">
+</div>
+<div class="title">Figure 3. Event export file</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br>
+<strong>Step 3.</strong> Now you can import your events into other calendar applications with this ics file!</p>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<hr>
+<div class="sect2">
+<h3 id="notes-code-notes-code"><a class="link" href="#notes-code-notes-code">Notes - <code>notes</code></a></h3>
 <div class="sect3">
 <h4 id="creating-a-note"><a class="link" href="#creating-a-note">Creating a note</a></h4>
 <div class="paragraph">
@@ -252,78 +282,54 @@ Format: <code>note note/&#8230;&#8203; desc/&#8230;&#8203; priority/&#8230;&#820
 <li>
 <p><code>desc</code> - The description of the note.</p>
 </li>
-<li>
-<p><code>priority(optional)</code> - The level of priority placed on this note. It can be of type <code>unmarked</code>, <code>low</code>, <code>medium</code> or <code>high</code>. It is by default set to unmarked if field is omitted.</p>
-</li>
 </ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-All non-optional fields are required and also cannot consist exclusively of whitespace characters. All leading and trailing whitespaces of the fields will be ignored.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-All priority fields can be in either lowercase or UPPERCASE. (e.g. <code>note note/sample title desc/sample desc priority/low</code> is the same as e.g. <code>note note/sample title desc/sample desc priority/LOW</code>).
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<code>priority</code> levels are distinguishable by their colour in the User Interface. <code>unmarked</code> or default notes have grey panels, while <code>low</code>, <code>medium</code> and <code>high</code> priority notes have green, yellow and red panels respectively.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The notes panel is not responsive. The User Interface only supports title and description of limited length. Notes that exceed this length will be truncated. For information on how to view these notes, see the note list command.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Unmarked Note</strong>: <code>note note/Friday morning class 6A desc/give back prelim papers</code><br>
-Creates an unmarked note with title <em>'Friday morning class 6A'</em> and description <em>'give back prelim papers'</em>.</p>
-</li>
-<li>
-<p><strong>High priority note</strong>: <code>note note/Tuesday 1pm desc/Science Conference priority/high</code><br>
-Creates a high priority note with title <em>'Tuesday 1pm'</em> and description <em>'Science Conference'</em>.</p>
-</li>
-</ul>
 </div>
 <div class="paragraph">
 <p><strong>The following is an example of Statistics Generation</strong>:</p>
 </div>
+<div class="paragraph">
+<p>The options supported by this feature includes:<br>
+<strong><em>-This command does not support any additional options-</em></strong></p>
 </div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>note list</code><br>
+Lists the notes.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="Feature-Note-Sort"><a class="link" href="#Feature-Note-Sort">Sorting notes</a></h4>
+<div class="paragraph">
+<p>Sorts the list of notes by priority in descending order of the Priorities <code>HIGH</code>, <code>MEDIUM</code>, <code>LOW</code> and <code>UNMARKED</code>.<br>
+Format: <code>note sort</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:<br>
+<strong><em>-This command does not support any additional options-</em></strong></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>note sort</code><br>
+Sorts the notes by priority.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Feature-Statistics"><a class="link" href="#Feature-Statistics">Statistics - <code>statistics</code></a></h3>
 <div class="sect3">
 <h4 id="generating-a-statistics-report"><a class="link" href="#generating-a-statistics-report">Generating a Statistics report</a></h4>
 <div class="paragraph">
@@ -438,89 +444,6 @@ If the report is generated, it might be correct but the behavior is not guarante
 </tr>
 </table>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Entries start at cell A1 with the cell <code>Students</code>, regardless of whether there is score data.</strong></p>
-</li>
-<li>
-<p><strong>First row begins with the cell <code>Students</code>, followed by their names. (e.g. row 1 of 4 cells having <code>Students</code>, <code>Jason</code>, <code>Mike</code> and <code>Peter</code>)</strong></p>
-</li>
-<li>
-<p><strong>First column states the different subjects starting from the second topmost cell. (e.g column 1 of 4 cells having <code>Students</code>, <code>Math</code>, <code>Science</code> and <code>English</code>.)</strong></p>
-</li>
-<li>
-<p><strong>There is at least one student.</strong></p>
-</li>
-<li>
-<p><strong>There is at least one subject.</strong></p>
-</li>
-<li>
-<p><strong>All student names have unique identifiers. (e.g. two students named Jason could be identified as <code>Jason 1</code> and <code>Jason 2</code>)</strong></p>
-</li>
-<li>
-<p><strong>All subject names have unique identifiers. (e.g. two subjects named Math could be identified as <code>Advanced Math</code> and <code>Elementary Math</code>)</strong></p>
-</li>
-<li>
-<p><strong>All students have a corresponding score for all subjects</strong></p>
-</li>
-<li>
-<p><strong>All scores are numeric characters (integer or decimals)</strong></p>
-</li>
-<li>
-<p><strong>There are no gaps between rows and columns.</strong></p>
-</li>
-<li>
-<p><strong>All cells within the row and column range have at least one non-whitespace character.</strong></p>
-</li>
-<li>
-<p><strong>All cells outside the row and column range are empty.</strong></p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Failure to adhere to the following specifications might result in some of the statistical data generated not being useful to the user.
-</td>
-</tr>
-</table>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>All scores should be in percentage terms. (0 ~ 100)</strong></p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The general rule for the file format is to ensure all entries in the file are as compact to the top left as possible; the entries should form a rectangular shape on the top left corner of the excel sheet. The rectangle should have no empty entries while all cells outside the rectangle are empty entries.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The statistics report generated uses weighted average scores across the different subjects to perform analysis. All scores carry equal weight. The statistics generated
-allow you to see some of the common descriptive statistics and their relative distributions both in terms of frequency and percentile terms.</p>
-</div>
-<div class="paragraph">
-<p>The screenshot below illustrates a sample data set that fulfills all of the above specifications.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/ExcelFormat.png" alt="ExcelFormat">
-</div>
-<div class="title">Figure 2. Screenshot of Valid Excel format</div>
 </div>
 </div>
 </div>
@@ -580,13 +503,13 @@ The <code>ReadOnlyNotesRecord</code> hides the implementation of the NotesRecord
 <div class="content">
 <img src="../images/DeveloperGuideResources/NotesAddSequenceDiagramColored.png" alt="NotesAddSequenceDiagramColored">
 </div>
-<div class="title">Figure 3. Sequence Diagram for Adding Notes</div>
+<div class="title">Figure 4. Sequence Diagram for Adding Notes</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/DeveloperGuideResources/NoteAddFrameColored.png" alt="NoteAddFrameColored">
 </div>
-<div class="title">Figure 4. Supplementary Frame for Sequence Diagram</div>
+<div class="title">Figure 5. Supplementary Frame for Sequence Diagram</div>
 </div>
 <div class="sect3">
 <h4 id="Feature-Note-Edit"><a class="link" href="#Feature-Note-Edit">Edit Note Command</a></h4>
@@ -605,7 +528,7 @@ The <code>ReadOnlyNotesRecord</code> hides the implementation of the NotesRecord
 <div class="content">
 <img src="../images/DeveloperGuideResources/StatisticsClassDiagramColored.png" alt="StatisticsClassDiagramColored">
 </div>
-<div class="title">Figure 5. Class Diagram for Statistics Feature</div>
+<div class="title">Figure 6. Class Diagram for Statistics Feature</div>
 </div>
 <div class="paragraph">
 <p>The following is an example usage scenario where the Actor/User asks Njoy for a statistics report.</p>
@@ -646,7 +569,7 @@ If the input file is not formatted as specified in the user guide, a <code>Parse
 <div class="content">
 <img src="../images/DeveloperGuideResources/StatisticsActivityDiagramResized.png" alt="StatisticsActivityDiagramResized">
 </div>
-<div class="title">Figure 6. Activity Diagram for Statistics Feature</div>
+<div class="title">Figure 7. Activity Diagram for Statistics Feature</div>
 </div>
 </div>
 </div>
@@ -707,4 +630,4 @@ If the input file is not formatted as specified in the user guide, a <code>Parse
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 12:23:50 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 12:35:27 UTC</div></div></div></body></html>

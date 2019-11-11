@@ -45,18 +45,22 @@
 <li><a href="#use-cases">Appendix C: Use Cases</a></li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
-<li><a href="#product-survey">Appendix F: Product Survey</a></li>
+<li><a href="#product-survey">Appendix F: Product Survey</a>
+<ul class="sectlevel2">
+<li><a href="#njoy">F.1. Njoy</a></li>
+</ul>
+</li>
 <li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#notes">G.2. Notes</a></li>
-<li><a href="#statistics">G.3. Statistics</a></li>
-<li><a href="#student">G.4. Student</a></li>
-<li><a href="#tag">G.5. Tag</a></li>
-<li><a href="#mark">G.6. Mark</a></li>
-<li><a href="#group">G.7. Group</a></li>
-<li><a href="#event">G.8. Event</a></li>
-<li><a href="#saving-data">G.9. Saving data</a></li>
+<li><a href="#questions">G.2. Questions</a></li>
+<li><a href="#notes">G.3. Notes</a></li>
+<li><a href="#statistics">G.4. Statistics</a></li>
+<li><a href="#student">G.5. Student</a></li>
+<li><a href="#tag">G.6. Tag</a></li>
+<li><a href="#mark">G.7. Mark</a></li>
+<li><a href="#group">G.8. Group</a></li>
+<li><a href="#event">G.9. Event</a></li>
 </ul>
 </li>
 </ul>
@@ -3059,36 +3063,36 @@ This command will overwrite any previously created .ics files from the export co
 <div class="ulist">
 <ul>
 <li>
-<p>has a need to manage classes of students</p>
+<p>Has a need to manage classes of students</p>
 </li>
 <li>
-<p>prefer desktop apps over other types</p>
+<p>Prefer desktop apps over other types</p>
 </li>
 <li>
-<p>can type fast</p>
+<p>Can type fast</p>
 </li>
 <li>
-<p>prefers typing over mouse input</p>
+<p>Prefers typing over mouse input</p>
 </li>
 <li>
-<p>is reasonably comfortable using CLI apps</p>
+<p>Is reasonably comfortable using CLI apps</p>
 </li>
 <li>
-<p>has a need to create questions easily</p>
+<p>Has a need to create questions easily</p>
 </li>
 <li>
-<p>has a need to generate quizzes with previously created questions</p>
+<p>Has a need to generate quizzes with previously created questions</p>
 </li>
 <li>
-<p>requires a timetable manager</p>
+<p>Requires a timetable manager</p>
 </li>
 <li>
-<p>prefers efficient viewing statistics of students rather than manually computing it</p>
+<p>Prefers efficient viewing statistics of students rather than manually computing it</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Value proposition</strong>: manage classes of students faster than a typical mouse/GUI driven app</p>
+<p><strong>Value proposition</strong>: Manage classes of students faster than a typical mouse/GUI driven app</p>
 </div>
 </div>
 </div>
@@ -3151,10 +3155,16 @@ This command will overwrite any previously created .ics files from the export co
 <td class="tableblock halign-left valign-top"><p class="tableblock">tally the marks accurately instead of manually inputting them into the system</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code> [Epic]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">write questions to a question bank</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">store questions to be used later on</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">store questions that I have prepared</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can refer to them in the future</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">start an in-class activity with my students</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">interact more with my students</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -3239,16 +3249,13 @@ appropriate slots when I am free</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is <code>NJoy</code> and the <strong>Actor</strong> is the <code>Teacher</code>, unless specified otherwise)</p>
+<p>(For all use cases below, the <strong>System</strong> is <code>Njoy</code> and the <strong>Actor</strong> is the <code>Teacher</code>, unless specified otherwise)</p>
 </div>
 <h3 id="use-case-add-a-student-uc01" class="discrete">Use case: Add a student (UC01)</h3>
 <div class="paragraph">
@@ -3260,7 +3267,7 @@ appropriate slots when I am free</p></td>
 <p>Teacher enter details of student</p>
 </li>
 <li>
-<p>NJoy saves the record of the student</p>
+<p>Njoy saves the record of the student</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3277,7 +3284,7 @@ appropriate slots when I am free</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p>1a1. NJoy shows error message.</p>
+<p>1a1. Njoy shows error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 1.</p>
 </div>
@@ -3310,13 +3317,13 @@ appropriate slots when I am free</p></td>
 <p>Teacher requests to edit a student details</p>
 </li>
 <li>
-<p>NJoy returns list of fields able to edit</p>
+<p>Njoy returns list of fields able to edit</p>
 </li>
 <li>
 <p>Teacher enter the field to edit</p>
 </li>
 <li>
-<p>NJoy save the edited record</p>
+<p>Njoy save the edited record</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3359,13 +3366,13 @@ appropriate slots when I am free</p></td>
 <p>Teacher requests to delete a student</p>
 </li>
 <li>
-<p>NJoy request for confirmation</p>
+<p>Njoy request for confirmation</p>
 </li>
 <li>
 <p>Teacher confirms the deletion</p>
 </li>
 <li>
-<p>NJoy deletes the student</p>
+<p>Njoy deletes the student</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3395,7 +3402,7 @@ appropriate slots when I am free</p></td>
 <p>Teacher enter name of student to find</p>
 </li>
 <li>
-<p>NJoy display the student details</p>
+<p>Njoy display the student details</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3412,7 +3419,7 @@ appropriate slots when I am free</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p>1a1. NJoy shows error message</p>
+<p>1a1. Njoy shows error message</p>
 <div class="paragraph">
 <p>Use case resumes at step 1.</p>
 </div>
@@ -3432,7 +3439,7 @@ appropriate slots when I am free</p></td>
 <p>Teacher enter new class details</p>
 </li>
 <li>
-<p>NJoy saves the new class</p>
+<p>Njoy saves the new class</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3449,7 +3456,7 @@ appropriate slots when I am free</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p>1a1. NJoy shows error message</p>
+<p>1a1. Njoy shows error message</p>
 <div class="paragraph">
 <p>Use case resumes at step 1.</p>
 </div>
@@ -3482,7 +3489,7 @@ appropriate slots when I am free</p></td>
 <p>Teacher enters new class description</p>
 </li>
 <li>
-<p>NJoy save the edited record</p>
+<p>Njoy save the edited record</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3522,13 +3529,13 @@ appropriate slots when I am free</p></td>
 <p>Teacher requests to delete a class</p>
 </li>
 <li>
-<p>NJoy request for confirmation</p>
+<p>Njoy request for confirmation</p>
 </li>
 <li>
 <p>Teacher confirms the deletion</p>
 </li>
 <li>
-<p>NJoy deletes the class</p>
+<p>Njoy deletes the class</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3571,7 +3578,7 @@ appropriate slots when I am free</p></td>
 <p>Teacher requests to add a student to class</p>
 </li>
 <li>
-<p>NJoy adds the student to the class</p>
+<p>Njoy adds the student to the class</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3601,13 +3608,13 @@ appropriate slots when I am free</p></td>
 <p>Teacher requests to remove a student from class</p>
 </li>
 <li>
-<p>NJoy request for confirmation</p>
+<p>Njoy request for confirmation</p>
 </li>
 <li>
 <p>Teacher confirms the deletion</p>
 </li>
 <li>
-<p>NJoy remove the student from the class</p>
+<p>Njoy remove the student from the class</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3640,7 +3647,7 @@ appropriate slots when I am free</p></td>
 <p>Teacher enter details of the item</p>
 </li>
 <li>
-<p>NJoy save the item</p>
+<p>Njoy save the item</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3657,7 +3664,7 @@ appropriate slots when I am free</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p>2a1. NJoy shows error message.</p>
+<p>2a1. Njoy shows error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -3670,7 +3677,7 @@ appropriate slots when I am free</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p>2b1. NJoy shows error message.</p>
+<p>2b1. Njoy shows error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -3690,7 +3697,7 @@ appropriate slots when I am free</p></td>
 <p>Teacher requests for the events in</p>
 </li>
 <li>
-<p>NJoy returns list of events in the calendar</p>
+<p>Njoy returns list of events in the calendar</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3733,13 +3740,13 @@ appropriate slots when I am free</p></td>
 <p>Teacher request to delete item in calendar</p>
 </li>
 <li>
-<p>NJoy request for confirmation</p>
+<p>Njoy request for confirmation</p>
 </li>
 <li>
 <p>Teacher confirms the deletion</p>
 </li>
 <li>
-<p>NJoy remove the item from the calendar</p>
+<p>Njoy remove the item from the calendar</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3759,7 +3766,7 @@ appropriate slots when I am free</p></td>
 </li>
 </ul>
 </div>
-<h3 id="use-case-creating-a-mcq-question-uc13" class="discrete">Use case: Creating a mcq question (UC13)</h3>
+<h3 id="use-case-creating-a-open-ended-question-uc13" class="discrete">Use case: Creating a Open Ended question (UC13)</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3769,7 +3776,7 @@ appropriate slots when I am free</p></td>
 <p>Teacher enter topic and answers to the question</p>
 </li>
 <li>
-<p>NJoy save the question</p>
+<p>Njoy save the question</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3786,7 +3793,7 @@ appropriate slots when I am free</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p>1a1. NJoy shows error message.</p>
+<p>1a1. Njoy shows error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 1.</p>
 </div>
@@ -3799,7 +3806,7 @@ appropriate slots when I am free</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p>1b1. NJoy shows error message.</p>
+<p>1b1. Njoy shows error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 1.</p>
 </div>
@@ -3809,7 +3816,120 @@ appropriate slots when I am free</p></td>
 </li>
 </ul>
 </div>
-<h3 id="use-case-make-notes-uc14" class="discrete">Use case: Make notes (UC14)</h3>
+<h3 id="use-case-creating-a-mcq-question-uc14" class="discrete">Use case: Creating a MCQ question (UC14)</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Teacher enter topic and answers to the question and options for MCQ.</p>
+</li>
+<li>
+<p>Njoy save the question</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Teacher did not enter answers</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. Njoy shows error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. Teacher did not enter topic</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1b1. Njoy shows error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1c. Teacher did not enter options to the question</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1c1. Njoy shows error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-start-a-slideshow-uc15" class="discrete">Use case: Start a slideshow (UC15)</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Teacher selects question to add to slideshow.</p>
+</li>
+<li>
+<p>Njoy displays the questions selected</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Teacher did not enter correct question number.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. Njoy shows error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. Teacher did not select and questions.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1b1. Njoy shows error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-make-notes-uc16" class="discrete">Use case: Make notes (UC16)</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3822,7 +3942,7 @@ appropriate slots when I am free</p></td>
 <p>Teacher enters specifications of the note.</p>
 </li>
 <li>
-<p>NJoy saves the item and displays the new record.</p>
+<p>Njoy saves the item and displays the new record.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3839,7 +3959,7 @@ appropriate slots when I am free</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p>2a1. NJoy shows error message.</p>
+<p>2a1. Njoy shows error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3849,7 +3969,7 @@ appropriate slots when I am free</p></td>
 </li>
 </ul>
 </div>
-<h3 id="use-case-edit-notes-uc15" class="discrete">Use case: Edit notes (UC15)</h3>
+<h3 id="use-case-edit-notes-uc17" class="discrete">Use case: Edit notes (UC17)</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3862,7 +3982,7 @@ appropriate slots when I am free</p></td>
 <p>Teacher enters specifications of the edited note.</p>
 </li>
 <li>
-<p>NJoy saves the item and displays the new record.</p>
+<p>Njoy saves the item and displays the new record.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3875,11 +3995,11 @@ appropriate slots when I am free</p></td>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. NJoy detects missing or invalid specifications.</p>
+<p>2a. Njoy detects missing or invalid specifications.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>2a1. NJoy shows error message.</p>
+<p>2a1. Njoy shows error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3889,7 +4009,7 @@ appropriate slots when I am free</p></td>
 </li>
 </ul>
 </div>
-<h3 id="use-case-delete-notes-uc16" class="discrete">Use case: Delete notes (UC16)</h3>
+<h3 id="use-case-delete-notes-uc18" class="discrete">Use case: Delete notes (UC18)</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3902,7 +4022,7 @@ appropriate slots when I am free</p></td>
 <p>Teacher enters specifications of the note to delete.</p>
 </li>
 <li>
-<p>NJoy removes the item and displays the new record.</p>
+<p>Njoy removes the item and displays the new record.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3915,11 +4035,11 @@ appropriate slots when I am free</p></td>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. NJoy detects invalid specifications.</p>
+<p>2a. Njoy detects invalid specifications.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>2a1. NJoy shows error message.</p>
+<p>2a1. Njoy shows error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3929,7 +4049,7 @@ appropriate slots when I am free</p></td>
 </li>
 </ul>
 </div>
-<h3 id="use-case-list-notes-uc17" class="discrete">Use case: List notes (UC17)</h3>
+<h3 id="use-case-list-notes-uc19" class="discrete">Use case: List notes (UC19)</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3939,14 +4059,14 @@ appropriate slots when I am free</p></td>
 <p>Teacher requests to list notes to view.</p>
 </li>
 <li>
-<p>NJoy displays the list of notes record.</p>
+<p>Njoy displays the list of notes record.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
 </ol>
 </div>
-<h3 id="use-case-sort-notes-uc18" class="discrete">Use case: Sort notes (UC18)</h3>
+<h3 id="use-case-sort-notes-uc20" class="discrete">Use case: Sort notes (UC20)</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3956,14 +4076,14 @@ appropriate slots when I am free</p></td>
 <p>Teacher requests to sort the notes by priority.</p>
 </li>
 <li>
-<p>NJoy displays the list of sorted notes record.</p>
+<p>Njoy displays the list of sorted notes record.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
 </ol>
 </div>
-<h3 id="use-case-generate-statistics-uc19" class="discrete">Use case: Generate Statistics (UC19)</h3>
+<h3 id="use-case-generate-statistics-uc21" class="discrete">Use case: Generate Statistics (UC21)</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3976,7 +4096,7 @@ appropriate slots when I am free</p></td>
 <p>Teacher enters specifications of the data file.</p>
 </li>
 <li>
-<p>NJoy reads the data file and generates statistics to show.</p>
+<p>Njoy reads the data file and generates statistics to show.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3989,11 +4109,11 @@ appropriate slots when I am free</p></td>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. NJoy detects invalid specifications of the data file or request.</p>
+<p>2a. Njoy detects invalid specifications of the data file or request.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>2a1. NJoy shows error message.</p>
+<p>2a1. Njoy shows error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -4003,7 +4123,7 @@ appropriate slots when I am free</p></td>
 </li>
 </ul>
 </div>
-<h3 id="use-case-save-statistics-report-uc20" class="discrete">Use case: Save Statistics Report (UC20)</h3>
+<h3 id="use-case-save-statistics-report-uc22" class="discrete">Use case: Save Statistics Report (UC22)</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -4056,9 +4176,6 @@ appropriate slots when I am free</p></td>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -4086,7 +4203,7 @@ appropriate slots when I am free</p></td>
 <p><strong>Class</strong> - A manageable unit of Student that Teacher can create, read, edit and delete.</p>
 </div>
 <div class="paragraph">
-<p><strong>UI</strong> - User Interface that users use to interact with the application.</p>
+<p><strong>GUI or UI</strong> - Graphical User Interface that users use to interact with the application.</p>
 </div>
 <div class="dlist">
 <dl>
@@ -4105,9 +4222,8 @@ appropriate slots when I am free</p></td>
 <div class="sect1">
 <h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><strong>Njoy</strong></p>
-</div>
+<div class="sect2">
+<h3 id="njoy"><a class="link" href="#njoy">F.1. Njoy</a></h3>
 <div class="paragraph">
 <p>Pros:</p>
 </div>
@@ -4134,6 +4250,7 @@ as opposed to managing them separately on multiple different platforms.</p>
 <p>Require understanding of CLI as well as the commands to carry out the functionality of Njoy effectively.</p>
 </li>
 </ul>
+</div>
 </div>
 </div>
 </div>
@@ -4189,12 +4306,150 @@ Expected: The most recent window size and location is retained.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+<div class="sect2">
+<h3 id="questions"><a class="link" href="#questions">G.2. Questions</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a question to the question list.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>question question/What are the multiples of 10? answer/ 10, 20, 30, 40, 50, &#8230;&#8203; type/open</code><br>
+Expected: Adds a new Open Ended question to the question list.</p>
+</li>
+<li>
+<p>Test case: `question question/What is 30 + 20? answer/50 type/mcq a/30 b/40 c/50 d/60 `<br>
+Expected: Adds a new MCQ question to the question list.</p>
+</li>
+<li>
+<p>Test case: <code>question question/ answer/ type/</code><br>
+Expected: Shows error message of missing keywords.</p>
+</li>
+<li>
+<p>Other incorrect commands to try: <code>question question/Test question answer/ type/</code>, <code>question question/Test question answer/Test answer type/mcq</code><br>
+Expected: Shows error message regarding reason for failure.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Editing a question from the question list.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: At least one question has to be in the question list.</p>
+</li>
+<li>
+<p>Test case: <code>question 1 question/What are the multiples of 20? answer/ 20, 40, 60, 80, &#8230;&#8203;</code><br>
+Expected: Edits the first question topic and answer.</p>
+</li>
+<li>
+<p>Test case: `question 1 type/mcq a/30 b/40 c/50 d/60 `<br>
+Expected: Changes the first question type.</p>
+</li>
+<li>
+<p>Test case: <code>question 1 type/mcq</code><br>
+Expected: Shows error message of missing options.</p>
+</li>
+<li>
+<p>Other incorrect commands to try: <code>question 0 question/Test question</code>, <code>question 1 question/</code><br>
+Expected: Shows error message regarding reason for failure.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Deleting a question from the question list.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: At least one question has to be in the question list.</p>
+</li>
+<li>
+<p>Test case: <code>question delete 1</code><br>
+Expected: Deletes the first question.</p>
+</li>
+<li>
+<p>Test case: <code>question delete 0</code><br>
+Expected: Shows error message of invalid index.</p>
+</li>
+<li>
+<p>Test case: <code>question delete -1</code>,`<br>
+Expected: Shows error message of invalid index.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Listing questions.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: <code>question list</code><br>
+Expected: Lists the questions stored.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Finding questions</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Question list has to contain a question 'What is 1+1?'.</p>
+</li>
+<li>
+<p>Test case: <code>question find/What is 1+1?</code><br>
+Expected: Lists the question that matches the search term.</p>
+</li>
+<li>
+<p>Test case: <code>question find/Whxt is 1+1?</code><br>
+Expected: Lists the question that is similar to the search term.</p>
+</li>
+<li>
+<p>Test case: <code>question find/What is</code><br>
+Expected: Lists the question that is similar to the search term.</p>
+</li>
+<li>
+<p>Test case: <code>question find/Last digit of pi?</code><br>
+Expected: Return zero results.</p>
+</li>
+<li>
+<p>Test case: <code>question find/</code><br>
+Expected: Shows error message of empty search.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Starting a slideshow</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Question list has to contain at least one question.</p>
+</li>
+<li>
+<p>Test case: <code>question slideshow 1</code><br>
+Expected: Opens a fullscreen window with question prompt.</p>
+</li>
+<li>
+<p>Test case: <code>question slideshow</code><br>
+Expected: Shows error message of having no index defined.</p>
+</li>
+<li>
+<p>Other incorrect add commands to try: <code>question slideshow 2 3</code>, <code>question slideshow a</code><br>
+Expected: Shows error message of having invalid indexes.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="notes"><a class="link" href="#notes">G.2. Notes</a></h3>
+<h3 id="notes"><a class="link" href="#notes">G.3. Notes</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4316,7 +4571,7 @@ Expected: Shows appropriate error messages of why the command failed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="statistics"><a class="link" href="#statistics">G.3. Statistics</a></h3>
+<h3 id="statistics"><a class="link" href="#statistics">G.4. Statistics</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4348,7 +4603,7 @@ Expected: Shows error message of reasons for failure.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="student"><a class="link" href="#student">G.4. Student</a></h3>
+<h3 id="student"><a class="link" href="#student">G.5. Student</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4447,7 +4702,7 @@ Expected: A string representation of the student list is shown in the status res
 </div>
 </div>
 <div class="sect2">
-<h3 id="tag"><a class="link" href="#tag">G.5. Tag</a></h3>
+<h3 id="tag"><a class="link" href="#tag">G.6. Tag</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4484,7 +4739,7 @@ Expected: Shows error message regarding reason for command failure or the correc
 </div>
 </div>
 <div class="sect2">
-<h3 id="mark"><a class="link" href="#mark">G.6. Mark</a></h3>
+<h3 id="mark"><a class="link" href="#mark">G.7. Mark</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4545,7 +4800,7 @@ Expected: Shows error message that the index is invalid.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="group"><a class="link" href="#group">G.7. Group</a></h3>
+<h3 id="group"><a class="link" href="#group">G.8. Group</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4674,7 +4929,7 @@ Expected: Error message stating that the group with the groupID does not exist.<
 </div>
 </div>
 <div class="sect2">
-<h3 id="event"><a class="link" href="#event">G.8. Event</a></h3>
+<h3 id="event"><a class="link" href="#event">G.9. Event</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4852,25 +5107,5 @@ Expected: Shows error message for invalid schedule view mode. Prompting user to 
 </ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.9. Saving data</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Dealing with missing/corrupted data files</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em></p>
-</li>
-</ol>
 </div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 12:23:49 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 12:35:27 UTC</div></div></div></body></html>

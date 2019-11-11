@@ -236,6 +236,41 @@ of creation, editing and display for the features that I have created, as they a
 <div class="paragraph">
 <p><strong>The following is an example of <code>Event</code> screenshot section the User Guide:</strong></p>
 </div>
+<div class="paragraph">
+<p>Delete a event from the calendar.<br>
+Format: <code>event delete [INDEX]</code></p>
+</div>
+<div class="paragraph">
+<p>The options supported by this feature includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>[INDEX]</code> - The event index as defined by the <a href="#Feature-Event-Index">index</a> command.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Deleting a event which is recurring (daily or weeekly) will delete all instances of that event.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>event delete 1</code><br>
+Deletes the event with index 1</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<hr>
 <div class="sect3">
 <h4 id="taking-screenshot-of-schedule"><a class="link" href="#taking-screenshot-of-schedule">Taking screenshot of schedule</a></h4>
 <div class="paragraph">
@@ -295,14 +330,15 @@ Takes a screenshot of the current calendar and saves it into Printable folder.</
 <p>The following example demonstrates how to find the screenshot:</p>
 </div>
 <div class="paragraph">
-<p><strong>Step 1.</strong> After executing the event screenshot command, the user should
-navigate to their current directory. An printable folder as shown in the image below should be created!</p>
+<p><strong>Step 1.</strong> After executing the event screenshot command, the user should</p>
+</div>
+<div class="paragraph">
+<p><strong>The following is an example of <code>Event</code> view section the User Guide:</strong></p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/EventPrintableLocation.png" alt="EventPrintableLocation">
 </div>
-<div class="title">Figure 2. Event screenshot Location</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br>
@@ -312,7 +348,7 @@ navigate to their current directory. An printable folder as shown in the image b
 <div class="content">
 <img src="../images/EventScreenshotFile.PNG" alt="EventScreenshotFile">
 </div>
-<div class="title">Figure 3. Event screenshot file</div>
+<div class="title">Figure 2. Event screenshot file</div>
 </div>
 <div class="paragraph">
 <p>&#160;<br>
@@ -322,61 +358,16 @@ navigate to their current directory. An printable folder as shown in the image b
 <div class="content">
 <img src="../images/EventScreenshotSample.PNG" alt="EventScreenshotSample">
 </div>
-<div class="title">Figure 4. Sample event screenshot</div>
+<div class="title">Figure 3. Sample event screenshot</div>
 </div>
 <div class="paragraph">
-<p><strong>The following is an example of <code>Event</code> view section the User Guide:</strong></p>
+<p>&#160;<br></p>
 </div>
+<hr>
 </div>
 <div class="sect3">
 <h4 id="viewing-all-events"><a class="link" href="#viewing-all-events">Viewing all events</a></h4>
-<div class="paragraph">
-<p>Show all your events in the calendar. All fields are optional
-Format: <code>event view scheduleMode/&#8230;&#8203; targetDate/&#8230;&#8203;</code></p>
-</div>
-<div class="paragraph">
-<p>The options supported by this feature includes:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><code>scheduleMode</code> - Schedule viewing mode of the calendar. Either weekly or daily.</p>
-</li>
-<li>
-<p><code>targetDate</code> - The target date to show for the week. If in daily mode, simply show the events in the date.
-If in weekly mode, show the week which includes the specified date</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The target date option must be specified in the following format: yyyy-mm-dd. E.g. 2019-11-23
-</td>
-</tr>
-</table>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>event view scheduleMode/daily targetDate/2019-11-07</code><br>
-Opens the calendar view in daily mode with the target date 7 November 2019.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/EventViewDailyMode.PNG" alt="EventViewDailyMode">
-</div>
-<div class="title">Figure 5. Viewing the calendar in daily mode with target date 7 November 2019</div>
-</div>
+
 </div>
 </div>
 </div>
@@ -408,7 +399,7 @@ interactions with the <code>Logic</code> and <code>UI</code> layers will mostly 
 <div class="content">
 <img src="../images/DeveloperGuideResources/EventClassDiagram.png" alt="EventClassDiagram">
 </div>
-<div class="title">Figure 6. Class Diagram for EventRecord</div>
+<div class="title">Figure 4. Class Diagram for EventRecord</div>
 </div>
 <div class="sect3">
 <h4 id="Feature-Event-Add"><a class="link" href="#Feature-Event-Add">Add Event Command</a></h4>
@@ -441,7 +432,7 @@ interactions with the <code>Logic</code> and <code>UI</code> layers will mostly 
 <div class="content">
 <img src="../images/DeveloperGuideResources/EventDeleteSequenceDiagram.png" alt="EventDeleteSequenceDiagram">
 </div>
-<div class="title">Figure 7. Sequence Diagram for Deleting Events</div>
+<div class="title">Figure 5. Sequence Diagram for Deleting Events</div>
 </div>
 </div>
 <div class="sect3">
@@ -462,7 +453,7 @@ in the diagram refers to the VEvent object itself and its corresponding index.</
 <div class="content">
 <img src="../images/DeveloperGuideResources/EventIndexActivityDiagram.png" alt="EventIndexActivityDiagram">
 </div>
-<div class="title">Figure 8. Activity Diagram for finding index of Event</div>
+<div class="title">Figure 6. Activity Diagram for finding index of Event</div>
 </div>
 <div class="sect4">
 <h5 id="implementation"><a class="link" href="#implementation">Implementation</a></h5>
@@ -518,4 +509,4 @@ VEvent objects use a <code>summary</code> object to represent the name of an eve
 
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 12:23:50 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 12:35:27 UTC</div></div></div></body></html>
