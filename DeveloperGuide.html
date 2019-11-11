@@ -130,7 +130,7 @@ Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how 
 </table>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has two classes called <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p><code>Main</code> has two classes called <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -211,13 +211,13 @@ The following class plays an important role at the architecture level:</p>
 <div class="title">Figure 3. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>XYZListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -243,7 +243,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/AY1920S1-CS2103T-W13-2/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -295,7 +295,7 @@ The lifeline for <code>XYZCommandParser</code> should end at the destroy marker 
 <div class="title">Figure 6. Structure of the Model Component using <code>Student</code> Entity as an example.</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -326,7 +326,7 @@ The lifeline for <code>XYZCommandParser</code> should end at the destroy marker 
 <div class="title">Figure 7. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103T-W13-2/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -2608,7 +2608,7 @@ If the input file is not formatted as specified in the user guide, a <code>Parse
 <p><span class="big"><strong>Overview</strong></span></p>
 </div>
 <div class="paragraph">
-<p>The events feature allows users of Njoy to manage, view and export their events. This feature is built based on the jfxtras iCalendarAgenda library.
+<p>The events feature allows users of Njoy to manage, view and export their events. This feature is built based on the Jfxtras iCalendarAgenda library.
 The iCalendarAgenda object is used on the UI side to render VEvents. The VEvent object from the iCalendarAgenda library is used to encapsulate event details such as
 event name, start date time, recurrence, etc. Note that VEvent is primarily used throughout the application, as it is the required object type for iCalendarAgenda.
 At the model level, VEvents are mapped to Event objects for saving and vice versa for reading purposes in the storage layer.</p>
@@ -2622,7 +2622,7 @@ At the model level, VEvents are mapped to Event objects for saving and vice vers
 <p><a href="#Feature-Event-Add"><code>EventAddCommand</code></a> - Creates a new event.</p>
 </li>
 <li>
-<p><a href="#Feature-Event-Index"><code>EventIndexCommand</code></a> -Gets the index of an event.</p>
+<p><a href="#Feature-Event-Index"><code>EventIndexCommand</code></a> - Gets the index of an event.</p>
 </li>
 <li>
 <p><a href="#Feature-Event-Edit"><code>EventEditCommand</code></a> - Edits an existing event, identified by their index.</p>
@@ -2631,13 +2631,13 @@ At the model level, VEvents are mapped to Event objects for saving and vice vers
 <p><a href="#Feature-Event-Delete"><code>EventDeleteCommand</code></a> - Deletes an existing event, identified by their index.</p>
 </li>
 <li>
-<p><a href="#Feature-Event-View"><code>EventViewCommand</code></a> -View and set the preferences of the event schedule.</p>
+<p><a href="#Feature-Event-View"><code>EventViewCommand</code></a> - View and set the preferences of the event schedule.</p>
 </li>
 <li>
-<p><a href="#Feature-Event-Screenshot"><code>EventScreenshotCommand</code></a> -Takes a screenshot of the current event schedule.</p>
+<p><a href="#Feature-Event-Screenshot"><code>EventScreenshotCommand</code></a> - Takes a screenshot of the current event schedule.</p>
 </li>
 <li>
-<p><a href="#Feature-Event-Export"><code>EventExportCommand</code></a> -Exports events to a .ics file type.</p>
+<p><a href="#Feature-Event-Export"><code>EventExportCommand</code></a> - Exports events to a .ics file type.</p>
 </li>
 </ul>
 </div>
@@ -2652,13 +2652,13 @@ At the model level, VEvents are mapped to Event objects for saving and vice vers
 class has a dependency on <code>Event</code> object in its constructor, but only has a <code>VEvent</code> attribute: <code>vEvents</code>. This
 highlights a mapping between the Event and VEvent object within the <code>EventRecord</code> class. Althought the methods
 of the <code>EventRecord</code> class are omitted for brevity, they are mostly <code>VEvent</code> based, which again highlights that
-interactions with the <code>Logic</code> and <code>UI</code> layers will mostly be done in <code>VEvent</code> type.</p>
+interactions with the <code>Logic</code> and <code>UI</code> components will mostly be done in <code>VEvent</code> type.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DeveloperGuideResources/EventClassDiagram.png" alt="EventClassDiagram">
 </div>
-<div class="title">Figure 19. Class Diagram for EventRecord</div>
+<div class="title">Figure 19. Class Diagram for EventRecord and its related classes</div>
 </div>
 </div>
 <div class="sect3">
@@ -2679,7 +2679,7 @@ The <code>VEvent</code> added is validated for uniqueness by <code>EventUtil#isS
 </li>
 <li>
 <p>If successful, a success message will be generated and a new <code>CommandResult</code> will be returned with the generated success message.
-Otherwise, an error message showing proper note command syntax is thrown as <code>CommandException</code>.</p>
+Otherwise, an error message showing the proper event add command syntax will be thrown as <code>CommandException</code>.</p>
 </li>
 <li>
 <p>If the command syntax was valid and <code>VEvent</code> was added to the <code>EventRecord</code>, <code>LogicManager</code>
@@ -2694,7 +2694,7 @@ calls <code>Storage#saveEvents(ReadOnlyEvents eventRecord)</code> which saves th
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <code>ReadOnlyVEventRecord</code> and <code>ReadOnlyEventRecord</code> hides the implementation of the EventRecord from the other layers of the software.
+The <code>ReadOnlyVEventRecord</code> and <code>ReadOnlyEventRecord</code> interfaces hides the implementation of the EventRecord from the other layers of the software.
 </td>
 </tr>
 </table>
@@ -2706,7 +2706,7 @@ The <code>ReadOnlyVEventRecord</code> and <code>ReadOnlyEventRecord</code> hides
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>EventIndexCommand</code> performs.
 The purpose of this command is to return the index of the vEvent(s) with event name that equals to the <code>desiredEventName</code> which is input from the user.
-And if there are no matching VEvents with the same string. Suggest the a VEvent with the most similar event name to that of
+And if there are no matching VEvents with the same event name. Suggest a VEvent with the most similar event name to that of
 the <code>desiredEventName</code> based on the <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance formula</a></p>
 </div>
 <div class="paragraph">
@@ -2730,8 +2730,8 @@ in the diagram refers to the VEvent object itself and its corresponding index.</
 <p>The method <code>EventRecord#findVEvents(String desiredEventName)</code> is then called through the <code>Model#findVEvents(String desiredEventName)</code> method.</p>
 </li>
 <li>
-<p>The <code>EventRecord#vEvents</code> list is iterated once and the search is performed on the 'desiredEventName' using <code>String.util#equalsIgnoreCase</code> with the <code>summary</code>
-value of each VEvent. Matching VEvents and their corresponding index in vEvents will form a new <code>Pair&lt;Index, VEvent&gt;</code> and be added to the <code>resultIndexList</code>. At the end of the iteration
+<p>The <code>EventRecord#vEvents</code> list is iterated once and the search is performed on the 'desiredEventName' using <code>StringUtil#equalsIgnoreCase</code> with the <code>summary</code>
+value of each <code>VEvent</code>. Matching <code>VEvent&#8217;s and their corresponding index in `vEvents</code> will form a new <code>Pair&lt;Index, VEvent&gt;</code> and be added to the <code>resultIndexList</code>. At the end of the iteration
 <code>resultIndexList</code> is returned.</p>
 </li>
 <li>
@@ -2743,11 +2743,11 @@ stating the Index and the corresponding details of the VEvents found.</p>
 is then called through the <code>Model#findMostSimilarVEvent(String desiredEventName)</code> method.</p>
 </li>
 <li>
-<p>If the there are no VEvents, in <code>vEvents</code> of <code>EventRecord</code> the method will throw a <code>VEventNotFoundException</code> which will be caught and throw wrapped to a <code>CommandException</code> with a corresponding user message to be shown.</p>
+<p>If the there are no <code>VEvent</code>, in <code>vEvents</code> of <code>EventRecord</code> the method will throw a <code>VEventNotFoundException</code> which will be caught. This exception will then be wrapped to a <code>CommandException</code>  and thrown upwards with a corresponding user message to be shown.</p>
 </li>
 <li>
-<p>Otherwise, <code>EventRecord#vEvents</code> list will be iterated once, and the similarity between <code>desiredEventName</code> and the <code>summary</code> value of each VEvent will be calculated based on the
-<a href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance formula</a>. At the end the event which is most similar and its index will create a new <code>Pair&lt;Index, VEvent&gt;</code> and be returned.</p>
+<p>Otherwise, <code>EventRecord#vEvents</code> will be iterated once, and the similarity between <code>desiredEventName</code> and the <code>summary</code> value of each VEvent will be calculated based on the
+<a href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance formula</a>. At the end the event which is most similar and its index will create be returned as a new <code>Pair&lt;Index, VEvent&gt;</code>.</p>
 </li>
 <li>
 <p>A new <code>CommandResult</code> will be returned with a message stating the Index and the corresponding details of the most similar VEvent found.</p>
@@ -2811,7 +2811,7 @@ This will replace the target VEvent with the new <code>editedVEvent</code>. A su
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>EventDeleteCommand#execute(Model model)</code> method is executed and it validates that the specified <code>VEvent</code> index to delete is within range. If valid, the vEvent is retrieved using its index in the <code>Model</code>’s <code>eventRecord</code>.</p>
+<p>The <code>EventDeleteCommand#execute(Model model)</code> method is executed and it validates that the specified <code>Index</code> to delete is within range. If valid, the vEvent to be deleted will be retrieved using its <code>Index</code>.</p>
 </li>
 <li>
 <p>The method <code>Model#deleteVEvent(Index index)</code> will then be called to remove the <code>VEvent</code> from the <code>EventRecord</code>. <code>EventRecord#deleteVEvent(Index index)</code> is invoked which makes a call to its internal list to remove the speficied vEvent.</p>
@@ -2875,7 +2875,7 @@ call <code>Logic#getScheduleViewMode()</code> and <code>Logic#getEventScheduleTa
 </td>
 <td class="content">
 The <code>EventSchedulePrefs</code> object is used to store the preference of the user for the <code>iCalendarAgenda</code>.
-Specifically the skin mode and the displayed date time
+Specifically the skin mode and the reference date time.
 </td>
 </tr>
 </table>
@@ -2899,16 +2899,16 @@ Specifically the skin mode and the displayed date time
 <code>CommandResult</code> with type <code>CommandResultType.SCHEDULE_SCREENSHOT</code> and <code>targetPrintableFileName</code> from <code>Model#getEventSchedulePrefString()</code></p>
 </li>
 <li>
-<p>The <code>MainWindow</code> which detects that the <code>CommandResult`is of type `CommandResultType.SCHEDULE_SCREENSHOT</code> will
+<p>The <code>MainWindow</code> which detects that the <code>CommandResult</code> is of type <code>CommandResultType.SCHEDULE_SCREENSHOT</code> will
 call <code>MainWindow# handleScheduleScreenshot(String targetPrintableFileName)</code>.</p>
 </li>
 <li>
 <p>Within the <code>MainWindow# handleScheduleScreenshot(String targetPrintableFileName)</code> it will then open a new full-screen window
-of the current <code>EventSchedulePanel</code> and get its <code>WritableImage</code>. Then it will construct a new <code>SchedulePrintable</code> with the <code>targetPrintableFileName</code> and <code>WritabelImage</code> and call
+of the current <code>EventSchedulePanel</code> and get its <code>WritableImage</code>. Then it will construct a new <code>SchedulePrintable</code> with the <code>targetPrintableFileName</code> and <code>WritableImage</code> and call
 <code>logic#savePrintable(NjoyPrintable printable)</code>.</p>
 </li>
 <li>
-<p>If successful, this will save the EventSchedulePanel as .png file type in the printable directory with file name <code>targetPrintableFileName</code></p>
+<p>If successful, this will save the <code>EventSchedulePanel</code> as .png file type in the printable directory with file name <code>targetPrintableFileName</code></p>
 </li>
 </ol>
 </div>
@@ -2920,7 +2920,7 @@ of the current <code>EventSchedulePanel</code> and get its <code>WritableImage</
 </td>
 <td class="content">
 The <code>Model#getEventSchedulePrefString()</code> method gets the a string representation of the current state of the Event Schedule Panel.
-This is to allow user to easily identify what the .png screenshot shows.
+This is to allow user to easily identify what the .png screenshot represents.
 </td>
 </tr>
 </table>
@@ -2956,15 +2956,15 @@ The <code>NjoyPrintable</code> object is used to encapsulate the <code>WritableI
 <code>CommandResult</code> with type <code>CommandResultType.EXPORT_CALENDAR</code></p>
 </li>
 <li>
-<p>When the <code>LogicManager</code> detects that <code>CommandResultType</code> is equals to CommandResultType.EXPORT_CALENDAR`, it wil then call
-<code>Storage#exportEvent(ReadOnlyVEvents eventRecord)</code> which in turn calls <code>IcsEventExport#exportEvent(ReadOnlyVEvents eventRecord)</code></p>
+<p>When the <code>LogicManager</code> detects that <code>CommandResultType</code> is equals to <code>CommandResultType.EXPORT_CALENDAR</code>, it wil then call
+<code>Storage#exportEvent(ReadOnlyVEvents eventRecord)</code> which in turn calls <code>IcsEventExport#exportEvent(ReadOnlyVEvents eventRecord)</code> to export the events.</p>
 </li>
 <li>
-<p>Then it will check and create the exports directory if it does not exist.</p>
+<p>Validation is done to check if the "export" directory exists within the <code>IcsEventExport#exportEvent(ReadOnlyVEvents eventRecord)</code> method. The directory will be created if it doesn&#8217;t exist.</p>
 </li>
 <li>
-<p>The contents of the .ics file is generated by loading the 'VEvents' in <code>ReadOnlyVEvents</code> into a <code>VCalendar</code> object from the
-iCalendarAgenda library and calling its <code>toString()</code> method. Which formats the VEvents into .ics format. Then the contents are written into the .ics file
+<p>Contents of the .ics file is generated by loading the <code>VEvents</code> in <code>ReadOnlyVEvents</code> into a <code>VCalendar</code> object from the
+<code>iCalendarAgenda</code> library and calling its <code>toString()</code> method. Which formats the VEvents details into .ics format. Then the contents are written into the .ics file
 with file name as specified in <code>EVENT_SCHEDULE_FILE_NAME</code> in <code>IcsEventExport</code></p>
 </li>
 </ol>
@@ -5108,4 +5108,4 @@ Expected: Shows error message for invalid schedule view mode. Prompting user to 
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:24:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:42:08 UTC</div></div></div></body></html>
