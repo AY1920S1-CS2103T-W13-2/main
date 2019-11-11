@@ -502,6 +502,12 @@ the command hyperlinks will obviously not work because I have omitted them for b
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>The quiz feature utilises the questions implemented and stored in the <code>QuestionBank#questions</code> observable list. The quiz feature utilises the <code>QuizCommandParser</code> class to parse the user command input into the different command types and validates the input. Quizzes are then added into the <code>QuizBank#quizzes</code> observable list. The quiz feature also relies heavily on the <code>QuizManager</code> class for handling commands from <code>QuizCommand#execute</code>. This is done to hide the implementation logic from the <code>ModelManager</code> class.<br></p>
+</div>
+<div class="paragraph">
+<p>The feature comprises of eight commands namely,</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -509,18 +515,6 @@ the command hyperlinks will obviously not work because I have omitted them for b
 </li>
 <li>
 <p><a href="#Feature-Quiz-Create-Automatically"><code>QuizCreateAutomaticallyCommand</code></a> - Creates a quiz automatically</p>
-</li>
-<li>
-<p><a href="#Feature-Quiz-Add-Question"><code>QuizAddQuestionCommand</code></a> - Adds an existing question to an existing quiz</p>
-</li>
-<li>
-<p><a href="#Feature-Quiz-Delete-Question"><code>QuizDeleteQuestionCommand</code></a> - Deletes an existing question from an existing quiz</p>
-</li>
-<li>
-<p><a href="#Feature-Quiz-Export"><code>QuizExportCommand</code></a> - Exports an existing quiz to a html file</p>
-</li>
-<li>
-<p><a href="#Feature-Quiz-List"><code>QuizListCommand</code></a> - Listing questions and answers of an existing quiz</p>
 </li>
 </ul>
 </div>
@@ -541,6 +535,12 @@ The following is an example of <strong>Quiz Creation</strong>:
 </div>
 <div class="olist arabic">
 <ol class="arabic">
+<li>
+<p><code>QuizCommandParser#parse()</code> will take in a <code>String</code> input consisting of the arguments.</p>
+</li>
+<li>
+<p>The arguments will be tokenized and the respective models for each argument are created.</p>
+</li>
 <li>
 <p>If the parsing of all arguments are successful, a new <code>QuizCreateManuallyCommand</code> is returned back to <code>LogicManager</code>.</p>
 </li>
@@ -592,12 +592,6 @@ This randomly adds 2 mcq questions to the quiz named CS2103T.</p>
 <li>
 <p>The <code>NjoyParser</code> will delegate the parsing of the command to <code>QuizCommandParser</code>.</p>
 </li>
-<li>
-<p><code>QuizCommandParser#parse()</code> will take in a <code>String</code> input consisting of the arguments.</p>
-</li>
-<li>
-<p>The arguments will be tokenized and the respective models for each argument are created.</p>
-</li>
 </ol>
 </div>
 <div class="paragraph">
@@ -617,6 +611,12 @@ The following is an example of <strong>Quiz Display</strong>:
 </div>
 <div class="olist arabic">
 <ol class="arabic">
+<li>
+<p><code>QuizCommandParser#parse()</code> will take in a <code>String</code> input consisting of the arguments.</p>
+</li>
+<li>
+<p>The arguments will be tokenized and the respective models for each argument are created.</p>
+</li>
 <li>
 <p>If the parsing of all arguments are successful, a new <code>QuizDeleteQuestionCommand</code> is returned back to <code>LogicManager</code>.</p>
 </li>
@@ -673,15 +673,9 @@ This exports the quiz named CS2103T to a HTML file in the user&#8217;s directory
 <li>
 <p>If the parsing of all arguments are successful, a new <code>QuizExportCommand</code> is returned back to <code>LogicManager</code>.</p>
 </li>
-<li>
-<p>The <code>LogicManager</code> executes <code>QuizExportCommand#execute()</code>. This in turn executes <code>model#exportQuiz()</code>.</p>
-</li>
-<li>
-<p>The <code>ModelManager</code> defers the operations to <code>SavedQuizzes#exportQuiz()</code>.</p>
-</li>
 </ol>
 </div>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 10:34:02 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 10:54:48 UTC</div></div></div></body></html>

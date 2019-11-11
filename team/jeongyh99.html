@@ -542,8 +542,14 @@ one example from each feature to demonstrate the depth of my technical capacitie
 <div class="paragraph">
 <p><strong>The following is an example of Adding Notes</strong>:</p>
 </div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>NoteAddCommand</code> performs.<br></p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
+<li>
+<p>The <code>NoteAddCommand#execute(Model model)</code> method is executed and it validates that the <code>Note</code> object passed from the parser using command input is valid.</p>
+</li>
 <li>
 <p>The method <code>Model#addNote(Note note)</code> will then be called to add the specified note to the <code>NotesRecord</code>. The <code>Note</code> added is validated for uniqueness by <code>Note#isSameNote(Note note)</code>.</p>
 </li>
@@ -587,25 +593,19 @@ The <code>ReadOnlyNotesRecord</code> hides the implementation of the NotesRecord
 <div class="sect4">
 <h5 id="implementation"><a class="link" href="#implementation">Implementation</a></h5>
 <div class="paragraph">
-<p>The following is a detailed explanation of the operations <code>NoteEditCommand</code> performs.<br></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The <code>NoteEditCommand#execute(Model model)</code> method is executed and it validates that the <code>Note</code> index is within range. It uses the <code>NoteEditCommand.EditNoteDescriptor</code> to create the new note.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
 <p>&#160;<br></p>
 </div>
 <div class="paragraph">
 <p><strong>The following is an example of Statistics Generation</strong>:</p>
 </div>
+<div class="paragraph">
+<p>A generic data parser of external files is used to generate <code>HashMap</code> of student’s data as specified by the input file. This processed data is passed to a <code>Statistics</code> <code>Model</code> which performs statistical analysis before passing back to the UI for rendering.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/DeveloperGuideResources/StatisticsClassDiagramColored.png" alt="StatisticsClassDiagramColored">
 </div>
+<div class="title">Figure 5. Class Diagram for Statistics Feature</div>
 </div>
 <div class="paragraph">
 <p>The following is an example usage scenario where the Actor/User asks Njoy for a statistics report.</p>
@@ -646,7 +646,7 @@ If the input file is not formatted as specified in the user guide, a <code>Parse
 <div class="content">
 <img src="../images/DeveloperGuideResources/StatisticsActivityDiagramResized.png" alt="StatisticsActivityDiagramResized">
 </div>
-<div class="title">Figure 5. Activity Diagram for Statistics Feature</div>
+<div class="title">Figure 6. Activity Diagram for Statistics Feature</div>
 </div>
 </div>
 </div>
@@ -702,22 +702,9 @@ If the input file is not formatted as specified in the user guide, a <code>Parse
 </ul>
 </div>
 </li>
-<li>
-<p><strong>Alternative 2:</strong> Save to database every time a report is generated and showing them when requested by unique identifiers.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to use, no need to input long file path every time.</p>
-</li>
-<li>
-<p>Cons: User most likely have data stored in respective educational database system. Report generation is not computationally intensive and thus offers little performance advantage for effort.</p>
-</li>
-</ul>
-</div>
-</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 10:34:02 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 10:54:48 UTC</div></div></div></body></html>
