@@ -231,6 +231,20 @@ I have decided to select one command for each feature as a representation of my 
 <div class="paragraph">
 <p><strong>The following is an example of Creating Notes</strong>:</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/EventExportFile.png" alt="EventExportFile">
+</div>
+<div class="title">Figure 2. Event export file</div>
+</div>
+<div class="paragraph">
+<p>&#160;<br>
+<strong>Step 3.</strong> Now you can import your events into other calendar applications with this ics file!</p>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<hr>
 <div class="sect2">
 <h3 id="notes-code-notes-code"><a class="link" href="#notes-code-notes-code">Notes - <code>notes</code></a></h3>
 <div class="sect3">
@@ -291,40 +305,26 @@ All priority fields can be in either lowercase or UPPERCASE. (e.g. <code>note no
 </tr>
 </table>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The notes panel is not responsive. The User Interface only supports title and description of limited length. Notes that exceed this length will be truncated. For information on how to view these notes, see the note list command.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Unmarked Note</strong>: <code>note note/Friday morning class 6A desc/give back prelim papers</code><br>
-Creates an unmarked note with title <em>'Friday morning class 6A'</em> and description <em>'give back prelim papers'</em>.</p>
-</li>
-<li>
-<p><strong>High priority note</strong>: <code>note note/Tuesday 1pm desc/Science Conference priority/high</code><br></p>
-</li>
-</ul>
-</div>
 <hr>
 <div class="paragraph">
 <p><strong>The following is an example of Statistics Generation</strong>:</p>
 </div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>note sort</code><br>
+Sorts the notes by priority.</p>
+</li>
+</ul>
+</div>
+<hr>
 </div>
 </div>
 <div class="sect2">
-<h3 id="statistics-code-statistics-code"><a class="link" href="#statistics-code-statistics-code">Statistics - <code>statistics</code></a></h3>
+<h3 id="Feature-Statistics"><a class="link" href="#Feature-Statistics">Statistics - <code>statistics</code></a></h3>
 <div class="sect3">
 <h4 id="generating-a-statistics-report"><a class="link" href="#generating-a-statistics-report">Generating a Statistics report</a></h4>
 <div class="paragraph">
@@ -498,25 +498,6 @@ Failure to adhere to the following specifications might result in some of the st
 </li>
 </ul>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The general rule for the file format is to ensure all entries in the file are as compact to the top left as possible; the entries should form a rectangular shape on the top left corner of the excel sheet. The rectangle should have no empty entries while all cells outside the rectangle are empty entries.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The statistics report generated uses weighted average scores across the different subjects to perform analysis. All scores carry equal weight. The statistics generated
-allow you to see some of the common descriptive statistics and their relative distributions both in terms of frequency and percentile terms.</p>
-</div>
-<div class="paragraph">
-<p>The screenshot below illustrates a sample data set that fulfills all of the above specifications.</p>
-</div>
 </div>
 </div>
 </div>
@@ -525,7 +506,6 @@ allow you to see some of the common descriptive statistics and their relative di
 <h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 1. Screenshot of Valid Excel format</caption>
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
@@ -581,13 +561,13 @@ The <code>ReadOnlyNotesRecord</code> hides the implementation of the NotesRecord
 <div class="content">
 <img src="../images/DeveloperGuideResources/NotesAddSequenceDiagramColored.png" alt="NotesAddSequenceDiagramColored">
 </div>
-<div class="title">Figure 2. Sequence Diagram for Adding Notes</div>
+<div class="title">Figure 3. Sequence Diagram for Adding Notes</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/DeveloperGuideResources/NoteAddFrameColored.png" alt="NoteAddFrameColored">
 </div>
-<div class="title">Figure 3. Supplementary Frame for Sequence Diagram</div>
+<div class="title">Figure 4. Supplementary Frame for Sequence Diagram</div>
 </div>
 <hr>
 <div class="paragraph">
@@ -610,7 +590,7 @@ The <code>ReadOnlyNotesRecord</code> hides the implementation of the NotesRecord
 <div class="content">
 <img src="../images/DeveloperGuideResources/StatisticsClassDiagramColored.png" alt="StatisticsClassDiagramColored">
 </div>
-<div class="title">Figure 4. Class Diagram for Statistics Feature</div>
+<div class="title">Figure 5. Class Diagram for Statistics Feature</div>
 </div>
 <div class="paragraph">
 <p>The following is an example usage scenario where the Actor/User asks Njoy for a statistics report.</p>
@@ -651,7 +631,7 @@ If the input file is not formatted as specified in the user guide, a <code>Parse
 <div class="content">
 <img src="../images/DeveloperGuideResources/StatisticsActivityDiagramResized.png" alt="StatisticsActivityDiagramResized">
 </div>
-<div class="title">Figure 5. Activity Diagram for Statistics Feature</div>
+<div class="title">Figure 6. Activity Diagram for Statistics Feature</div>
 </div>
 </div>
 <div class="sect3">
@@ -691,4 +671,4 @@ If the input file is not formatted as specified in the user guide, a <code>Parse
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:11:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:48:23 UTC</div></div></div></body></html>

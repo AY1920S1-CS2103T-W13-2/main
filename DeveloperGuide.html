@@ -4442,6 +4442,19 @@ Expected: Shows error message of having invalid indexes.</p>
 </div>
 <div class="sect2">
 <h3 id="notes"><a class="link" href="#notes">G.3. Notes</a></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The test cases for this part are meant to be independent of each other. If there are existing data that causes the command to fail through purposeful or intended, validation, testers
+are expected to change to fields to attain the expected result.(e.g. to maintain the unique property of notes title et cetera)
+</td>
+</tr>
+</table>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4505,7 +4518,7 @@ Expected: Shows appropriate error messages of why the command failed.</p>
 Expected: First note is deleted from the list. Details of the deleted note shown in the status message. Notes panel is updated.</p>
 </li>
 <li>
-<p>Test case: <code>delete 0</code><br>
+<p>Test case: <code>note delete 0</code><br>
 Expected: No note is deleted. Error details shown in the status message. No change observed in the notes panel.</p>
 </li>
 <li>
@@ -4618,8 +4631,8 @@ Expected: Shows error message that a student with the same name already exists i
 Expected: Shows error message that student names can only contain alphabets and spaces.</p>
 </li>
 <li>
-<p>Test case: <code>student name/Test Student tag/Tag</code><br>
-Expected: Adds student "Test Student" with tag "Tag"</p>
+<p>Test case: <code>student name/Test StudentTwo tag/Tag</code><br>
+Expected: Adds student "Test StudentTwo" with tag "Tag"</p>
 </li>
 <li>
 <p>Other incorrect add commands to try: <code>student name/new student tag/</code>, <code>student name/new student tag/tag with space</code><br>
@@ -4929,7 +4942,7 @@ Expected: Error message stating that the group with the groupID does not exist.<
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: The event list already already contains one event with event name "Test Event",
+<p>Prerequisites: The event list already contains one event with event name "Test Event",
 startDateTime "2019-11-01T03:00" and endDateTime "2019-11-01T04:00". The recurrence type and color number do not matter as long
 as it is valid.</p>
 </li>
@@ -4943,7 +4956,7 @@ Expected: Shows error message that will result in duplicate event being created<
 </li>
 <li>
 <p>Test case: <code>event eventName/\n</code><br>
-Expected: Shows error message that event name cannot contain backslash.</p>
+Expected: Shows error message for invalid command.</p>
 </li>
 <li>
 <p>Test case: <code>event eventName/teacher meeting startDateTime/2019-11-15T07:00 endDateTime/2019-11-15T06:00 recur/none color/1</code><br>
@@ -5100,4 +5113,4 @@ Expected: Shows error message for invalid schedule view mode. Prompting user to 
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:11:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:48:23 UTC</div></div></div></body></html>

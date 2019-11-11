@@ -343,6 +343,13 @@ The following is an example of <strong>Quiz Editing</strong>:
 </tr>
 </table>
 </div>
+<div class="sect2">
+<h3 id="quizzes-code-quiz-code"><a class="link" href="#quizzes-code-quiz-code">Quizzes ​-​ <code>quiz</code></a></h3>
+<div class="paragraph">
+<p>After taking the effort to record different questions, a teacher might be wondering what other features could the NJoy Teaching
+Assistant actually provide? What better way to make use of your predefined questions to create quizzes for homework, revision
+or even assignments?</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -383,124 +390,297 @@ questions are in the question bank.
 </div>
 <div class="sect3">
 <h4 id="creating-a-quiz-manually-code-manual-code"><a class="link" href="#creating-a-quiz-manually-code-manual-code">Creating a Quiz manually: <code>manual</code></a></h4>
-<div class="paragraph">
-<p>Allows a user to create a quiz manually.<br></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The following is an example of <strong>Quiz Display</strong>:
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The questions chosen are randomised from the questions that you have previously added. As such, the user has to ensure enough questions are available in storage for quiz creation.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p><strong class="big">Format:</strong> <code>quiz manual quizID/&#8230;&#8203; questionNumber/&#8230;&#8203; (One or more question numbers can be added)</code></p>
+<p><strong class="big">Format:</strong> <code>quiz auto quizID/&#8230;&#8203; numQuestions/&#8230;&#8203; type/&#8230;&#8203; (Type can either be mcq/open/all)</code></p>
 </div>
 <div class="paragraph">
 <p>The format supported by this feature includes:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 100%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Keyword</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[NOTE]
-The following is an example of <strong>Quiz Display</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quiz ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The label of the quiz.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of Questions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of questions you want added to the quiz.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Question Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of questions you want added to the quiz: mcq, open, all.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>| Keyword | Description</p>
+<p>Examples:</p>
 </div>
-<div class="paragraph">
-<p>| Quiz ID | The label of the quiz.
-| Number of Questions | The number of questions you want added to the quiz.
-| Question Type | The type of questions you want added to the quiz: mcq, open, all.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>quiz auto quizID/CS2103T numQuestions/2 type/mcq</code><br>
+Adds 2 questions of type mcq to the quiz labelled CS2103T.</p>
+</li>
+<li>
+<p><code>quiz auto quizID/CS2103T numQuestions/1 type/open</code><br>
+Adds 1 question of type open-ended to the quiz labelled CS2103T.</p>
+</li>
+<li>
+<p><code>quiz auto quizID/CS2103T numQuestions/3 type/all</code><br>
+Adds 3 questions of any type to the quiz labelled CS2103T.</p>
+</li>
+</ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/QuizAuto1.PNG" alt="QuizAuto1">
+</div>
+<div class="title">Figure 2. Results of the first create quiz automatically command.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/QuizAuto2.PNG" alt="QuizAuto2">
+</div>
+<div class="title">Figure 3. Results of the second create quiz automatically command.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/QuizAuto3.PNG" alt="QuizAuto3">
+</div>
+<div class="title">Figure 4. Results of the third create quiz automatically command.</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="adding-a-question-to-a-quiz-code-add-code"><a class="link" href="#adding-a-question-to-a-quiz-code-add-code">Adding a Question to a Quiz: <code>add</code></a></h4>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Examples:</p>
-<p class="tableblock">* <code>quiz auto quizID/CS2103T numQuestions/2 type/mcq</code><br>
-Adds 2 questions of type mcq to the quiz labelled CS2103T.
-* <code>quiz auto quizID/CS2103T numQuestions/1 type/open</code><br>
-Adds 1 question of type open-ended to the quiz labelled CS2103T.
-* <code>quiz auto quizID/CS2103T numQuestions/3 type/all</code><br>
-Adds 3 questions of any type to the quiz labelled CS2103T.</p>
-<p class="tableblock">.Results of the first create quiz automatically command.
-image::QuizAuto1.PNG[]</p>
-<p class="tableblock">.Results of the second create quiz automatically command.
-image::QuizAuto2.PNG[]</p>
-<p class="tableblock">.Results of the third create quiz automatically command.
-image::QuizAuto3.PNG[]</p>
-<p class="tableblock">'''</p>
-<p class="tableblock">==== Adding a Question to a Quiz: <code>add</code></p>
-<p class="tableblock">Allows a user to add a question to a quiz.<br></p>
-<p class="tableblock"><strong class="big">Format:</strong> <code>quiz add quizID/&#8230;&#8203; questionNumber/&#8230;&#8203; quizQuestionNumber/&#8230;&#8203;</code></p>
-<p class="tableblock">The format supported by this feature includes:</p>
-<p class="tableblock">== Contributions to the Developer Guide</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">===</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.
 Again, I&#8217;m only going to include the most relevant portions of the guide as mentioned in the <a href="#Grouping"><code>above</code></a> citing. Also, some of
 the command hyperlinks will not work because I have omitted them for brevity.</em></p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">===</p>
-<p class="tableblock">The quiz feature utilises the questions implemented and stored in the <code>QuestionBank#questions</code> observable list. The quiz feature utilises the <code>QuizCommandParser</code> class to parse the user command input into the different command types and validates the input. Quizzes are then added into the <code>QuizBank#quizzes</code> observable list. The quiz feature also relies heavily on the <code>QuizManager</code> class for handling commands from <code>QuizCommand#execute</code>. This is done to hide the implementation logic from the <code>ModelManager</code> class.<br></p>
-<p class="tableblock">The feature comprises of eight commands namely,</p>
-<p class="tableblock">* <a href="#Feature-Quiz-Create-Manually"><code>QuizCreateManuallyCommand</code></a> - Creates a quiz with user input manually
-* <a href="#Feature-Quiz-Create-Automatically"><code>QuizCreateAutomaticallyCommand</code></a> - Creates a quiz automatically</p>
-<p class="tableblock">&#160;<br></p>
-<p class="tableblock">[NOTE]
-The following is an example of <strong>Quiz Creation</strong>:</p>
-<p class="tableblock">2. <code>QuizCommandParser#parse()</code> will take in a <code>String</code> input consisting of the arguments.</p>
-<p class="tableblock">3. The arguments will be tokenized and the respective models for each argument are created.</p>
-<p class="tableblock">4. If the parsing of all arguments are successful, a new <code>QuizCreateManuallyCommand</code> is returned back to <code>LogicManager</code>.</p>
-<p class="tableblock">5. The <code>LogicManager</code> executes <code>QuizCreateManuallyCommand#execute()</code>. This in turn executes <code>model#createQuizManually()</code>.</p>
-<p class="tableblock">6. The <code>ModelManager</code> defers the operations to <code>SavedQuizzes#createQuizManually()</code>.</p>
-<p class="tableblock">7. Finally, this delegates the actual operations to <code>QuizManager#createQuizManually()</code>.</p>
-<p class="tableblock">8. The newly created <code>Quiz</code> object is added to the <code>QuizBank</code> in <code>SavedQuizzes</code> for storage and further use.</p>
-<p class="tableblock"><a id="Feature-Quiz-Create-Automatically"></a>
-==== Creating Quiz Automatically
-The create quiz automatically feature allows the user to create a quiz in Njoy.
-This feature is facilitated by <code>CreateQuizAutomaticallyCommand</code>, <code>QuizCommandParser</code>, <code>NjoyParser</code>, <code>SavedQuizzes</code>, <code>QuizBank</code> and <code>QuizManager</code>.
-The arguments supported by this feature includes:</p>
-<p class="tableblock">- <code>Quiz ID</code>
-- <code>Number of Questions</code> (1&#8230;&#8203;<strong>)
-- <code>Question Type</code> (Mcq, Open ended, All)</p>
-<p class="tableblock">Example of a possible command: <code>quiz auto quizID/CS2103T numQuestions/2 type/mcq</code>
-This randomly adds 2 mcq questions to the quiz named CS2103T.</p>
-<p class="tableblock">===== Implementation</p>
-<p class="tableblock">When the user inputs the <code>quiz auto</code> command in the command line, the following chain of operations occur:</p>
-<p class="tableblock">1. The <code>NjoyParser</code> will delegate the parsing of the command to <code>QuizCommandParser</code>.</p>
-<p class="tableblock">&#160;<br></p>
-<p class="tableblock">[NOTE]
-The following is an example of *Quiz Display</strong>:</p>
-<p class="tableblock">2. <code>QuizCommandParser#parse()</code> will take in a <code>String</code> input consisting of the arguments.</p>
-<p class="tableblock">3. The arguments will be tokenized and the respective models for each argument are created.</p>
-<p class="tableblock">4. If the parsing of all arguments are successful, a new <code>QuizDeleteQuestionCommand</code> is returned back to <code>LogicManager</code>.</p>
-<p class="tableblock">5. The <code>LogicManager</code> executes <code>QuizDeleteQuestionCommand#execute()</code>. This in turn executes <code>model#deleteQuizQuestion()</code>.</p>
-<p class="tableblock">6. The <code>ModelManager</code> defers the operations to <code>SavedQuizzes#deleteQuizQuestion()</code>.</p>
-<p class="tableblock">7. Finally, this delegates the actual operations to <code>QuizManager#deleteQuizQuestion()</code>.</p>
-<p class="tableblock">8. The <code>Question</code> object is deleted from the chosen <code>Quiz</code> object in the <code>QuizBank</code> in <code>SavedQuizzes</code> for storage and further use.</p>
-<p class="tableblock"><a id="Feature-Quiz-Export"></a>
-==== Exporting a Quiz to HTML
-The quiz export feature allows the user to export a quiz to HTML in Njoy.
-This feature is facilitated by <code>QuizExportCommand</code>, <code>QuizCommandParser</code>, <code>NjoyParser</code>, <code>SavedQuizzes</code>, <code>QuizBank</code> and <code>QuizManager</code>.
-The arguments supported by this feature includes:</p>
-<p class="tableblock">- <code>Quiz ID</code></p>
-<p class="tableblock">Example of a possible command: <code>quiz export quizID/CS2103T</code>
-This exports the quiz named CS2103T to a HTML file in the user&#8217;s directory.</p>
-<p class="tableblock">===== Implementation</p>
-<p class="tableblock">When the user inputs the <code>quiz export</code> command in the command line, the following chain of operations occur:</p>
-<p class="tableblock">1. The <code>NjoyParser</code> will delegate the parsing of the command to <code>QuizCommandParser</code>.</p>
-<p class="tableblock">2. <code>QuizCommandParser#parse()</code> will take in a <code>String</code> input consisting of the arguments.</p>
-<p class="tableblock">3. The arguments will be tokenized and the respective models for each argument are created.</p>
-<p class="tableblock">4. If the parsing of all arguments are successful, a new <code>QuizExportCommand</code> is returned back to <code>LogicManager</code>.</p></td>
-</tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>The quiz feature utilises the questions implemented and stored in the <code>QuestionBank#questions</code> observable list. The quiz feature utilises the <code>QuizCommandParser</code> class to parse the user command input into the different command types and validates the input. Quizzes are then added into the <code>QuizBank#quizzes</code> observable list. The quiz feature also relies heavily on the <code>QuizManager</code> class for handling commands from <code>QuizCommand#execute</code>. This is done to hide the implementation logic from the <code>ModelManager</code> class.<br></p>
+</div>
+<div class="paragraph">
+<p>The feature comprises of eight commands namely,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Feature-Quiz-Create-Manually"><code>QuizCreateManuallyCommand</code></a> - Creates a quiz with user input manually</p>
+</li>
+<li>
+<p><a href="#Feature-Quiz-Create-Automatically"><code>QuizCreateAutomaticallyCommand</code></a> - Creates a quiz automatically</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The following is an example of <strong>Quiz Creation</strong>:
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>QuizCommandParser#parse()</code> will take in a <code>String</code> input consisting of the arguments.</p>
+</li>
+<li>
+<p>The arguments will be tokenized and the respective models for each argument are created.</p>
+</li>
+<li>
+<p>If the parsing of all arguments are successful, a new <code>QuizCreateManuallyCommand</code> is returned back to <code>LogicManager</code>.</p>
+</li>
+<li>
+<p>The <code>LogicManager</code> executes <code>QuizCreateManuallyCommand#execute()</code>. This in turn executes <code>model#createQuizManually()</code>.</p>
+</li>
+<li>
+<p>The <code>ModelManager</code> defers the operations to <code>SavedQuizzes#createQuizManually()</code>.</p>
+</li>
+<li>
+<p>Finally, this delegates the actual operations to <code>QuizManager#createQuizManually()</code>.</p>
+</li>
+<li>
+<p>The newly created <code>Quiz</code> object is added to the <code>QuizBank</code> in <code>SavedQuizzes</code> for storage and further use.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="Feature-Quiz-Create-Automatically"><a class="link" href="#Feature-Quiz-Create-Automatically">Creating Quiz Automatically</a></h4>
+<div class="paragraph">
+<p>The create quiz automatically feature allows the user to create a quiz in Njoy.
+This feature is facilitated by <code>CreateQuizAutomaticallyCommand</code>, <code>QuizCommandParser</code>, <code>NjoyParser</code>, <code>SavedQuizzes</code>, <code>QuizBank</code> and <code>QuizManager</code>.
+The arguments supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Quiz ID</code></p>
+</li>
+<li>
+<p><code>Number of Questions</code> (1&#8230;&#8203;*)</p>
+</li>
+<li>
+<p><code>Question Type</code> (Mcq, Open ended, All)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example of a possible command: <code>quiz auto quizID/CS2103T numQuestions/2 type/mcq</code>
+This randomly adds 2 mcq questions to the quiz named CS2103T.</p>
+</div>
+<div class="sect4">
+<h5 id="implementation"><a class="link" href="#implementation">Implementation</a></h5>
+<div class="paragraph">
+<p>When the user inputs the <code>quiz auto</code> command in the command line, the following chain of operations occur:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>NjoyParser</code> will delegate the parsing of the command to <code>QuizCommandParser</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>&#160;<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The following is an example of <strong>Quiz Display</strong>:
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>QuizCommandParser#parse()</code> will take in a <code>String</code> input consisting of the arguments.</p>
+</li>
+<li>
+<p>The arguments will be tokenized and the respective models for each argument are created.</p>
+</li>
+<li>
+<p>If the parsing of all arguments are successful, a new <code>QuizDeleteQuestionCommand</code> is returned back to <code>LogicManager</code>.</p>
+</li>
+<li>
+<p>The <code>LogicManager</code> executes <code>QuizDeleteQuestionCommand#execute()</code>. This in turn executes <code>model#deleteQuizQuestion()</code>.</p>
+</li>
+<li>
+<p>The <code>ModelManager</code> defers the operations to <code>SavedQuizzes#deleteQuizQuestion()</code>.</p>
+</li>
+<li>
+<p>Finally, this delegates the actual operations to <code>QuizManager#deleteQuizQuestion()</code>.</p>
+</li>
+<li>
+<p>The <code>Question</code> object is deleted from the chosen <code>Quiz</code> object in the <code>QuizBank</code> in <code>SavedQuizzes</code> for storage and further use.</p>
+</li>
+</ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:11:44 UTC</div></div></div></body></html>
+</div>
+<div class="sect3">
+<h4 id="Feature-Quiz-Export"><a class="link" href="#Feature-Quiz-Export">Exporting a Quiz to HTML</a></h4>
+<div class="paragraph">
+<p>The quiz export feature allows the user to export a quiz to HTML in Njoy.
+This feature is facilitated by <code>QuizExportCommand</code>, <code>QuizCommandParser</code>, <code>NjoyParser</code>, <code>SavedQuizzes</code>, <code>QuizBank</code> and <code>QuizManager</code>.
+The arguments supported by this feature includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Quiz ID</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example of a possible command: <code>quiz export quizID/CS2103T</code>
+This exports the quiz named CS2103T to a HTML file in the user&#8217;s directory.</p>
+</div>
+<div class="sect4">
+<h5 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h5>
+<div class="paragraph">
+<p>When the user inputs the <code>quiz export</code> command in the command line, the following chain of operations occur:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>NjoyParser</code> will delegate the parsing of the command to <code>QuizCommandParser</code>.</p>
+</li>
+<li>
+<p><code>QuizCommandParser#parse()</code> will take in a <code>String</code> input consisting of the arguments.</p>
+</li>
+<li>
+<p>The arguments will be tokenized and the respective models for each argument are created.</p>
+</li>
+<li>
+<p>If the parsing of all arguments are successful, a new <code>QuizExportCommand</code> is returned back to <code>LogicManager</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 14:48:23 UTC</div></div></div></body></html>
